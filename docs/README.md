@@ -19,17 +19,20 @@ Quality Meat is a single-page clone of Bandcamp, a popular music sharing/purchas
   * Adequate and appropriate seeds to demonstrate the feature
 
 5. Song Player
-  -
-  -
-  -
+  * Adequate styling
+  * Smooth, bug-free navigation
+  * Adequate and appropriate seeds to demonstrate the feature
+
 6. Search
-  -
-  -
-  -
+  * Adequate styling
+  * Smooth, bug-free navigation
+  * Adequate and appropriate seeds to demonstrate the feature
+
 7. Upload/Download Songs
-  -
-  -
-  -
+  * Adequate styling
+  * Smooth, bug-free navigation
+  * Adequate and appropriate seeds to demonstrate the feature
+
 
 ## Design Docs
   - [Wireframes]
@@ -37,3 +40,34 @@ Quality Meat is a single-page clone of Bandcamp, a popular music sharing/purchas
   - [API Endpoints]
   - [DB Schema]
   - [Sample State]
+
+## Implementation Timeline
+
+### Phase 1: Setup backend and user authorization (2 days)
+
+**Objective 1:** Have a functioning Rails project with strong front-end authentication
+**Objective 2:** Seed database properly
+
+### Phase 2: Artist Page architecture (3 days)
+
+**Objective 1:** Have a functioning artist page
+**Objective 2:** Style the artist page
+**Objective 3:** Set up routes to be able to render different artist pages
+
+### Phase 3: Search (2 days)
+
+**Objective 1:** Set up search bar in artist page
+**Objective 2:** Have search bar autocomplete
+**Objective 3:** Clicking desired search brings up proper artist page
+**Objective 4:** Be able to navigate search using only arrow keys and <Enter> key
+
+### Phase 4: Upload/Download songs (3 days)
+
+**Objective 1:** Songs can be downloaded through <Download> link next to individual tracks
+**Objective 2:** Songs can be uploaded through a button that goes to an <Upload> form
+**Objective 3:** Songs must be added to an existing album
+
+## Bonus Features
+
+1. Purchase songs
+2. Follows
