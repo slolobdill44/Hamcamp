@@ -1,34 +1,37 @@
 ## Component Hierarchy
 
--- BOLD THINGS THAT HAVE ROUTES --
-
 * header
   * accountInfo
   * searchBarContainer
     * searchResults
 * songPlayerFooterContainer
   * songPlayer
-  * songInfo
-* authModalContainer
-  * signUp
-  * signIn
-* index
-  * featuredArtistsList
-* artistPageContainer
-  - artistPage
-    * songPlayer
-    * artistInfoSidebar
-* uploadForm
-  * albumUpload
-  * trackUpload
-* editArtist
-* editAlbum
-* editTracks
+* authContainer
+  * **signUp**
+  * **logIn**
+* **homeContainer**
+  * home
+    * featuredArtistsContainer
+      * featuredArtistsList
+        * featuredArtistsListItem
+* **artistPageContainer**
+  * artistPage
+  * artistInfoSidebar
+* **albumPageContainer**
+  * albumSongPlayer
+  * albumInfoSidebar
+* **editAlbum** (includes uploading)
+  * editTrack (includes uploading)
+* **editArtist**
 
 
 ## Routes and Container Components
 
-| Path  | Components   |
-| Computer | $1600 |
-| Phone    | $12   | 
-| Pipe     | $1    |
+| Path               | Component             |
+| "/sign-up"         | authContainer         |
+| "/sign-in"         | authContainer         |
+| "/home"            | homeContainer         |
+| "/artist/:id"      | artistPageContainer   |
+| "/artist/:id/edit" | editArtist            |
+| "/album/:id"       | albumPageContainer    |
+| "/album/:id/edit"  | editAlbum             |
