@@ -35,7 +35,7 @@ Quality Meat is a single-page clone of Bandcamp, a popular music sharing/purchas
 
 
 ## Design Docs
-  - [Wireframes][wireframes]
+  - [Wireframes]: docs/wireframes
   - [Components][component-hierarchy]
   - [API Endpoints][api-endpoints]
   - [DB Schema][schema]
