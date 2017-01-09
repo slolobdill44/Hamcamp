@@ -3,9 +3,7 @@
 * header
 
   * accountInfo
-
   * searchBarContainer
-
     * searchResults
 
 * songPlayerFooterContainer
@@ -15,29 +13,23 @@
 * authContainer
 
   * **signUp**
-
   * **logIn**
 
 * **homeContainer**
 
   * home
-
     * featuredArtistsContainer
-
       * featuredArtistsList
-
         * featuredArtistsListItem
 
 * **artistPageContainer**
 
   * artistPage
-
   * artistInfoSidebar
 
 * **albumPageContainer**
 
   * albumSongPlayer
-
   * albumInfoSidebar
 
 * **editAlbum**
@@ -52,11 +44,10 @@
 
 |Path   | Component   |
 |-------|-------------|
-| Path  | Component  |
 | "/sign-up" | authContainer  |
 | "/sign-in"  | authContainer  |
 | "/home"  | homeContainer  |
-| "/artist/:id" | artistPageContainer |
-| "/artist/:id/edit"| editArtist  |
-| "/album/:id" | albumPageContainer |
-| "/album/:id/edit"| editAlbum  |
+| "/artists/:id" | artistPageContainer |
+| "/artists/:id/edit"| editArtist  |
+| "/albums/:id" | albumPageContainer |
+| "/albums/:id/edit"| editAlbum  |
