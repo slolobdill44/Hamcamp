@@ -35,11 +35,11 @@ Quality Meat is a single-page clone of Bandcamp, a popular music sharing/purchas
 
 
 ## Design Docs
-  - [Wireframes]
-  - [Components]
-  - [API Endpoints]
-  - [DB Schema]
-  - [Sample State]
+  - [Wireframes][wireframes]
+  - [Components][component-hierarchy]
+  - [API Endpoints][api-endpoints]
+  - [DB Schema][schema]
+  - [Sample State][sample-state]
 
 ## Implementation Timeline
 
@@ -64,8 +64,7 @@ Quality Meat is a single-page clone of Bandcamp, a popular music sharing/purchas
 ### Phase 4: Upload/Download songs (3 days)
 
 **Objective 1:** Songs can be downloaded through <Download> link next to individual tracks
-**Objective 2:** Songs can be uploaded through a button that goes to an <Upload> form
-**Objective 3:** Songs must be added to an existing album
+**Objective 2:** Songs can be uploaded through a button that goes to an <Album Edit/Upload> form
 
 ## Bonus Features
 

@@ -1,6 +1,6 @@
 # Quality Meat
 
-[Live Meat]
+[Live App]
 
 Quality Meat is a full-stack web application that was inspired by the desire to bring a Facebook music-sharing group to a wider audience.
 
@@ -16,31 +16,50 @@ Frontend: React.js with a Redux architecture
 
 Music is organized in the database by Artists, Albums, and Tracks.
 
-Artists have:
+Artists (all users are artists) have a:
 * id
 * name
 
-Albums have:
+Albums have a:
 * id
 * title
 * artist_id
 * image_url
-* genre?
+* description
 
-Tracks have:
+Tracks have a:
 * id
 * name
 * album_id
-* length?
+* length
+* url
+
+Each artist page lists out an artists' `albums`.
 
 
 # Song Player
 
-f
+Each album page has a song player. Each individual track can be played by clicking on that track's play button.
 
 # Search
 
+The search bar in the header will use an autocomplete feature in order to search for both artists and albums. 
+
 # Uploading/Downloading Songs
+
+**uploading:** When adding/editing an album, a button will allow the user to upload individual track files. Those files will be persisted to the database.
+
+**downloading:** Each individual track on an album's page has a link that allows a user to download it.
 
 
 ### Future Directions for the Project
+
+I plan to implement the following features in the future:
+
+# Purchasing Songs
+
+The foundation of Bandcamp lies in the artist being able to set the price for a song. I would like to use some sort of payments API in order to accept payments in exchange for allowing a download of songs and/or albums.
+
+# Follows
+
+I would like to set up a system wherein users are notified when an artist uploads a new track or album. I plan to set up follows through a separate `follows` table. When a followed artist uploads a track or album, all the following users are notified by e-mail.

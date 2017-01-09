@@ -8,12 +8,6 @@ column name     | data type | details
 | username      | string    | not null, indexed, unique
 | password_digest | string  |
 | session_token | string    | not null, indexed, unique
-
-## artists
-
-column name     | data type | details
-----------------|-----------|-----------------------
-| id            | integer   | not null, primary key
 | name | string | not null, indexed
 
 ## albums
@@ -34,4 +28,3 @@ column name     | data type | details
 | name | string | not null, indexed
 | album_id | integer | not null, indexed, foreign key (references albums)
 | length | integer |
-| url | string | not null

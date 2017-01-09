@@ -33,8 +33,8 @@
 
 # Tracks
 
-* `GET api/tracks`
-* `GET api/tracks/:id`
-* `POST api/tracks/:id`
-* `PATCH api/tracks/:id`
-* `DELETE api/tracks/:id`
+  * `GET api/tracks`
+  * `GET api/tracks/:id`
+  * `POST api/tracks/:id`
+  * `PATCH api/tracks/:id`
+  * `DELETE api/tracks/:id`

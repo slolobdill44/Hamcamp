@@ -4,7 +4,6 @@
     name: "Down On The Street",
     album_id: 2,
     length: 224000,
-    url: "http://song_link.url"
 	}
   session: {
     currentUser: {
@@ -31,7 +30,6 @@
                 name: "Down On The Street",
                 album_id: 2,
                 length: 224000,
-                url: "http://song_link.url"
               }
             }
           }
