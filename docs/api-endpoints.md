@@ -8,36 +8,33 @@
 
 ## JSON API
 
-# Users
+# Users/Artists
 
-  * `POST /api/users`
+  * `POST /api/artists`
+  * `GET api/artists`
+    * For search
+  * `GET api/artists/:id`
+  * `POST api/artists/:id`
+  * `PATCH api/artists/:id`
 
 # Session
 
   * `POST /api/session`
   * `DELETE /api/session`
 
-# Artists
-
-  * `GET /artists`
-    * For search
-  * `GET /artists/:id`
-  * `POST /artists/:id`
-  * `PATCH /artists/:id`
-
 # Albums
 
-  * `GET /albums`
+  * `GET api/albums`
     * For search
-  * `GET /albums/:id`
-  * `POST /albums/:id`
-  * `PATCH /albums/:id`
-  * `DELETE /albums/:id`
+  * `GET api/albums/:id`
+  * `POST api/albums/:id`
+  * `PATCH api/albums/:id`
+  * `DELETE api/albums/:id`
 
 # Tracks
 
-* `GET /tracks`
-* `GET /tracks/:id`
-* `POST /tracks/:id`
-* `PATCH /tracks/:id`
-* `DELETE /tracks/:id`
+* `GET api/tracks`
+* `GET api/tracks/:id`
+* `POST api/tracks/:id`
+* `PATCH api/tracks/:id`
+* `DELETE api/tracks/:id`
