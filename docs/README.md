@@ -2,9 +2,12 @@
 
 Quality Meat is a single-page clone of Bandcamp, a popular music sharing/purchasing platform.
 
-[Heroku Link]
+[Heroku Link][heroku]
 
-[Bandcamp]https://bandcamp.com/
+[Bandcamp][bandcamp]
+
+[heroku]: https://heroku.com/
+[bandcamp]: https://bandcamp.com/
 
 ## Minimum Viable Product
 
