@@ -1,6 +1,6 @@
-# Quality Meat
+# Quality Cuts
 
-Quality Meat is a single-page clone of Bandcamp, a popular music sharing/purchasing platform.
+Quality Cuts is a single-page clone of Bandcamp, a popular music sharing/purchasing platform.
 
 [Heroku Link][heroku]
 
@@ -73,7 +73,7 @@ Quality Meat is a single-page clone of Bandcamp, a popular music sharing/purchas
 **Objective 3:** Clicking desired search brings up proper artist page
 **Objective 4:** Be able to navigate search using only arrow keys and <Enter> key
 
-### Phase 4: Upload/Download songs (3 days)
+### Phase 4: Upload/Download songs (2 days)
 
 **Objective 1:** Songs can be downloaded through <Download> link next to individual tracks
 **Objective 2:** Songs can be uploaded through a button that goes to an <Album Edit/Upload> form

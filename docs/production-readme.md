@@ -1,8 +1,8 @@
-# Quality Meat
+# Quality Cuts
 
 [Live App]
 
-Quality Meat is a full-stack web application that was inspired by the desire to bring a Facebook music-sharing group to a wider audience.
+Quality Cuts is a full-stack web application that was inspired by the desire to bring a Facebook music-sharing group to a wider audience.
 
 This app takes most of its inspiration from [Bandcamp]https://bandcamp.com/.
 

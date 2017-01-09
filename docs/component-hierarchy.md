@@ -5,6 +5,7 @@
   * accountInfo
   * searchBarContainer
     * searchResults
+      * searchResultItem
 
 * songPlayerFooterContainer
 
