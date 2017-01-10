@@ -1,8 +1,8 @@
-# Hamcamps
+# Hamcamp
 
 [Live App]
 
-Hamcamps is a full-stack web application that was inspired by the desire to bring a Facebook music-sharing group to a wider audience.
+Hamcamp is a full-stack web application that was inspired by the desire to bring a Facebook music-sharing group to a wider audience.
 
 This app takes most of its inspiration from [Bandcamp]https://bandcamp.com/.
 
