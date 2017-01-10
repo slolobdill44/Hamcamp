@@ -1,6 +1,6 @@
-== Hamcamps
+# Hamcamp
 
-Hamcamps is a single-page clone of Bandcamp, a popular music sharing/purchasing platform.
+Hamcamp is a single-page clone of Bandcamp, a popular music sharing/purchasing platform.
 
 [Heroku Link][heroku]
 
