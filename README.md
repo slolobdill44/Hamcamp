@@ -1,6 +1,6 @@
-# Quality Cuts
+== Hamcamps
 
-Quality Cuts is a single-page clone of Bandcamp, a popular music sharing/purchasing platform.
+Hamcamps is a single-page clone of Bandcamp, a popular music sharing/purchasing platform.
 
 [Heroku Link][heroku]
 
