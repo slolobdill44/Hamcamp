@@ -17,7 +17,6 @@ const userInfo = ( user, logout ) => (
 );
 
 const AccountInfo = ({ user, logout }) => {
-  debugger;
   return user ? userInfo(user, logout) : sessionLinks(logout);
 };
 

@@ -4,7 +4,6 @@ import Header from './header';
 
 
 const mapStateToProps = state => {
-  debugger;
   return { user: state.session.currentUser };
 };
 
