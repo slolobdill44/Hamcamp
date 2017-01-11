@@ -1,10 +1,10 @@
 import React from 'react';
-import Header from './header/header';
+import HeaderContainer from './header/header_container';
 import Footer from './footer/footer';
 
 const App = ({ children }) => (
   <div>
-    <Header />
+    <HeaderContainer />
     <h1>Welcome to Hamcamp</h1>
     <Footer />
     { children }

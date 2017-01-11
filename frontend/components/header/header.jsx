@@ -4,6 +4,7 @@ import AccountInfo from './account_info';
 class Header extends React.Component {
 
   render () {
+    console.log(this.props);
     return (
       <div className="header">
         <img></img>
