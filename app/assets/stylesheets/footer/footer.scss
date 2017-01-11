@@ -1,3 +1,8 @@
-.footer {
-  border: 2px solid black;
+footer {
+  border-top: 2px solid black;
+  position: absolute;
+  height: 35px;
+  bottom: 0px;
+  width: 100%;
+  background-color: green;
 }

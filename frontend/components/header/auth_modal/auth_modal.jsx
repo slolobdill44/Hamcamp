@@ -57,10 +57,12 @@ class AuthModal extends React.Component {
   render() {
     return (
       <div className="login-form-container">
+
+        <h2 className="login-form-header">{this.props.formType}</h2>
+
 				<form onSubmit={this.handleSubmit} className="login-form-box">
-					Welcome to Hamcamp!
 					<br/>
-					Please {this.props.formType} or {this.navLink()}
+
 					{this.renderErrors()}
 					<div className="login-form">
 						<br/>
@@ -70,7 +72,7 @@ class AuthModal extends React.Component {
 								onChange={this.update("username")}
 								className="login-input" />
 						</label>
-						<br/>
+            <br/>
 						<label> Password:
 							<input type="text"
 								value={this.state.password}
@@ -78,9 +80,11 @@ class AuthModal extends React.Component {
 								className="login-input" />
 						</label>
 						<br/>
-						<input type="submit" value="Submit" />
+						<input className="login-button" type="submit" value="Submit" />
 					</div>
 				</form>
+
+        Already have an account? {this.navLink()}
 			</div>
     );
   }

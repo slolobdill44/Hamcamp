@@ -11,3 +11,34 @@
 .session-links {
   float: right;
 }
+
+.login-form-container {
+  text-align: center;
+  margin: 0 auto;
+  text-align: center;
+  width: 375px;
+  height: 310px;
+  border: 1px solid black;
+}
+
+.login-form-header {
+  text-align: center;
+}
+
+.login-input {
+  border: 1px solid black;
+  height: 25px;
+  text-align: left;
+  padding-left: 2px;
+  padding-right: 2px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.login-button {
+  border: 1px solid black;
+  height: 25px;
+  width: 102px;
+  margin: 15;
+  margin: 15px;
+}

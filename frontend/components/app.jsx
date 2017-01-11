@@ -5,9 +5,9 @@ import Footer from './footer/footer';
 const App = ({ children }) => (
   <div>
     <HeaderContainer />
-    <body>
+    <main className="home-body">
       <h1>Welcome to Hamcamp</h1>
-    </body>
+    </main>
     <Footer />
     { children }
   </div>

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { login, logout, signup } from '../../../actions/session_actions';
-import SessionForm from './auth_modal';
+import AuthModal from './auth_modal';
 
 
 const mapStateToProps = ({ session }) => ({
@@ -9,11 +9,11 @@ const mapStateToProps = ({ session }) => ({
 });
 
 const mapDispatchToProps = (dispatch, { location }) => {
-  const formType = location.pathname.slice(1);
-  let processForm = signup;
-  if (formType === 'login') {
-    processForm = login;
-  }
+  const formType = 'login';
+  let processForm = login;
+  // if (formType === 'login') {
+  //   processForm = login;
+  // }
 
   return {
     processForm: user => dispatch(processForm(user)),
@@ -25,4 +25,4 @@ const mapDispatchToProps = (dispatch, { location }) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SessionForm);
+)(AuthModal);
