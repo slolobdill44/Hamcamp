@@ -9,7 +9,7 @@ class AuthModal extends React.Component {
       this.state = {
           username: "",
           password: "",
-        formType: this.props.formType
+          formType: this.props.formType
       };
       this.formType = this.props.formType;
       this.handleSubmit = this.handleSubmit.bind(this);

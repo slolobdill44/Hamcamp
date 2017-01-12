@@ -59,6 +59,8 @@ class AuthModalWrapper extends React.Component {
           onRequestClose={this.closeModal}>
 
           <AuthModalContainer formType={this.state.modalType}/>
+
+
         </Modal>
       </div>
     );

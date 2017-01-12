@@ -10,7 +10,10 @@ class Header extends React.Component {
         <h2 className="title">Hamcamp</h2>
         <section className="splash-right">
           <input className='search-bar'></input>
-          <AccountInfo user={this.props.user} logout={this.props.logout} />
+          <AccountInfo
+            user={this.props.user}
+            login={this.props.login}
+            logout={this.props.logout} />
         </section>
       </div>
     );

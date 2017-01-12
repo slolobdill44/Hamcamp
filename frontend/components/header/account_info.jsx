@@ -2,9 +2,10 @@ import React from 'react';
 import { Link } from 'react-router';
 import AuthModalWrapper from './auth_modal/auth_modal_wrapper';
 
-const sessionLinks = (logout) => (
+const sessionLinks = ( login ) => (
   <nav className="session-links">
     <AuthModalWrapper />
+    <a className="header-login-link" className="guest-login" onClick={() => login({user: { username:"guestaccount", password:"guestaccount"}})}>guest account</a>
   </nav>
 );
 
@@ -15,8 +16,8 @@ const userInfo = ( user, logout ) => (
   </nav>
 );
 
-const AccountInfo = ({ user, logout }) => {
-  return user ? userInfo(user, logout) : sessionLinks(logout);
+const AccountInfo = ({ user, logout, login }) => {
+  return user ? userInfo(user, logout) : sessionLinks(login);
 };
 
 
