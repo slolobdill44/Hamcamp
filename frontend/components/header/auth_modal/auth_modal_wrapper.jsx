@@ -48,9 +48,9 @@ class AuthModalWrapper extends React.Component {
 
     return (
       <div>
-        <button onClick={this.openModal('login')}>Login</button>
+        <a className="header-login-link" onClick={this.openModal('login')}>log in</a>
 
-        <button onClick={this.openModal('signup')}>Signup</button>
+        <a className="header-login-link" onClick={this.openModal('signup')}>sign up</a>
 
         <Modal
           contentLabel="Modal"

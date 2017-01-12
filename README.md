@@ -8,7 +8,7 @@ Hamcamp is a single-page clone of Bandcamp, a popular music sharing/purchasing p
 
 [Bandcamp][bandcamp]
 
-[heroku]: https://heroku.com/
+[heroku]: https://hamcamp.herokuapp.com/
 [trello]: https://trello.com/b/0b04qV3h/quality-meat
 [bandcamp]: https://bandcamp.com/
 

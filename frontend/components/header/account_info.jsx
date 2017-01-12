@@ -10,8 +10,8 @@ const sessionLinks = (logout) => (
 
 const userInfo = ( user, logout ) => (
   <nav className="session-links">
-    <h3>Hello, {user.username}</h3>
-    <button onClick={() => logout()}>Log Out</button>
+    <h3 className="session-greeting">Hello, {user.username}</h3>
+    <a className="log-out-link"  onClick={() => logout()}>Log Out</a >
   </nav>
 );
 
