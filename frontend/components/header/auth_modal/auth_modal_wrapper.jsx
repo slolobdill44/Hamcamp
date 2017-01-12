@@ -8,6 +8,7 @@ class AuthModalWrapper extends React.Component {
 
     this.state = {
       modalOpen: false,
+      modalType: 'signup'
     };
 
     this.closeModal = this.closeModal.bind(this);
@@ -18,8 +19,8 @@ class AuthModalWrapper extends React.Component {
     this.setState({ modalOpen: false });
   }
 
-  openModal() {
-    this.setState({ modalOpen: true });
+  openModal(modalType) {
+    return () => this.setState({ modalOpen: true, modalType } );
   }
 
   render() {
@@ -47,7 +48,9 @@ class AuthModalWrapper extends React.Component {
 
     return (
       <div>
-        <button onClick={this.openModal}>Login/Signup</button>
+        <button onClick={this.openModal('login')}>Login</button>
+
+        <button onClick={this.openModal('signup')}>Signup</button>
 
         <Modal
           contentLabel="Modal"
@@ -55,7 +58,7 @@ class AuthModalWrapper extends React.Component {
           style={style}
           onRequestClose={this.closeModal}>
 
-          <AuthModalContainer />
+          <AuthModalContainer formType={this.state.modalType}/>
         </Modal>
       </div>
     );

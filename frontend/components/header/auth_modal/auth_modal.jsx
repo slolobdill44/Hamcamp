@@ -1,4 +1,5 @@
 import React from 'react';
+import AuthModalContainer from './auth_modal_container';
 import { Link, withRouter } from 'react-router';
 
 class AuthModal extends React.Component {
@@ -7,13 +8,17 @@ class AuthModal extends React.Component {
 
       this.state = {
           username: "",
-          password: ""
+          password: "",
+          formType: this.props.formType
       };
+      this.formType = this.props.formType;
       this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   	componentDidUpdate() {
-  		this.redirectIfLoggedIn();
+      if (this.state.formType === 'login') {
+  		    this.redirectIfLoggedIn();
+      }
   	}
 
   	redirectIfLoggedIn() {
@@ -35,10 +40,10 @@ class AuthModal extends React.Component {
   	}
 
   	navLink() {
-  		if (this.props.formType === "login") {
-  			return <Link to="/signup">sign up instead</Link>;
+  		if (this.state.formType === "login") {
+        this.setState({formType: 'signup'});
   		} else {
-  			return <Link to="/login">log in instead</Link>;
+  			this.setState({formType: 'login'});
   		}
   	}
 
@@ -55,10 +60,14 @@ class AuthModal extends React.Component {
   	}
 
   render() {
+    const text = this.state.formType === 'login' ? 'Log In' : 'Create Account';
+    const flavorText = this.state.formType  === 'login' ? 'Don\'t have an account?' : 'Already have an account?';
+    const otherFormType = this.state.formType === 'login' ? 'Create an account' : 'Log in';
+
     return (
       <div className="login-form-container">
 
-        <h2 className="login-form-header">{this.props.formType}</h2>
+        <h2 className="login-form-header">{text}</h2>
 
 				<form onSubmit={this.handleSubmit} className="login-form-box">
 					<br/>
@@ -80,11 +89,11 @@ class AuthModal extends React.Component {
 								className="login-input" />
 						</label>
 						<br/>
-						<input className="login-button" type="submit" value="Submit" />
+						<input className="login-button" type="submit" value={text} />
 					</div>
 				</form>
 
-        Already have an account? {this.navLink()}
+        {flavorText} <a className="login-link" onClick={() => this.navLink()}>{otherFormType} instead</a>
 			</div>
     );
   }
