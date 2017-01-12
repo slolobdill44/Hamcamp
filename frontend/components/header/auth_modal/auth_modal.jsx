@@ -9,7 +9,7 @@ class AuthModal extends React.Component {
       this.state = {
           username: "",
           password: "",
-          formType: this.props.formType
+        formType: this.props.formType
       };
       this.formType = this.props.formType;
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -60,9 +60,9 @@ class AuthModal extends React.Component {
   	}
 
   render() {
-    const text = this.state.formType === 'login' ? 'Log In' : 'Create Account';
+    const text = this.state.formType === 'login' ? 'Login' : 'Create Account';
     const flavorText = this.state.formType  === 'login' ? 'Don\'t have an account?' : 'Already have an account?';
-    const otherFormType = this.state.formType === 'login' ? 'Create an account' : 'Log in';
+    const otherFormType = this.state.formType === 'login' ? 'Create an account' : 'Login';
 
     return (
       <div className="login-form-container">
@@ -73,22 +73,25 @@ class AuthModal extends React.Component {
 					<br/>
 
 					{this.renderErrors()}
-					<div className="login-form">
 						<br/>
-						<label> Username:
-							<input type="text"
-								value={this.state.username}
-								onChange={this.update("username")}
-								className="login-input" />
-						</label>
+            <div className="login-boxes">
+              <label className="login-section"> Username:
+                <input type="text"
+                  value={this.state.username}
+                  onChange={this.update("username")}
+                  className="login-input" />
+              </label>
+              <br/>
+              <br/>
+
+              <label className="login-section"> Password:
+                <input type="text"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  className="login-input" />
+              </label>
+						<br/>
             <br/>
-						<label> Password:
-							<input type="text"
-								value={this.state.password}
-								onChange={this.update("password")}
-								className="login-input" />
-						</label>
-						<br/>
 						<input className="login-button" type="submit" value={text} />
 					</div>
 				</form>
