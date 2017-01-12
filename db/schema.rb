@@ -11,10 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170110212648) do
+ActiveRecord::Schema.define(version: 20170112172220) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "albums", force: :cascade do |t|
+    t.string   "title",       null: false
+    t.integer  "artist_id",   null: false
+    t.string   "image_url"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "albums", ["artist_id"], name: "index_albums_on_artist_id", using: :btree
+  add_index "albums", ["description"], name: "index_albums_on_description", using: :btree
+  add_index "albums", ["title"], name: "index_albums_on_title", using: :btree
+
+  create_table "tracks", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.integer  "album_id",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "tracks", ["album_id"], name: "index_tracks_on_album_id", using: :btree
+  add_index "tracks", ["name"], name: "index_tracks_on_name", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false
@@ -23,5 +46,7 @@ ActiveRecord::Schema.define(version: 20170110212648) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
+
+  add_index "users", ["username"], name: "index_users_on_username", using: :btree
 
 end
