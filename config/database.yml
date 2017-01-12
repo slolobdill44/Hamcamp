@@ -78,8 +78,3 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: HamcampsApp_production
-  username: HamcampsApp
-  password: <%= ENV['HamcampsAPP_DATABASE_PASSWORD'] %>
