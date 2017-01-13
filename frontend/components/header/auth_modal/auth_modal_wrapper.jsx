@@ -37,7 +37,7 @@ class AuthModalWrapper extends React.Component {
       content : {
         position        : 'fixed',
         width : 375,
-        height: 310,
+        height: 320,
         margin: '0 auto',
         top: '20%',
         border          : '1px solid #ccc',

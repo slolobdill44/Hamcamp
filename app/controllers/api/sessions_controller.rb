@@ -6,8 +6,7 @@ class Api::SessionsController < ApplicationController
       login!(@user)
       render '/api/users/show'
     else
-      flash[:errors] = ["Invalid credentials!"]
-      render json: @user.errors.full_messages, status: 404
+      render json: ["Invalid username/password combination"], status: 401
     end
   end
 
@@ -17,7 +16,7 @@ class Api::SessionsController < ApplicationController
       logout!
       render '/api/users/show'
     else
-      render json: @user.errors.full_messages, status: 404
+      render json: ["No one is signed in"], status: 404
     end
   end
 

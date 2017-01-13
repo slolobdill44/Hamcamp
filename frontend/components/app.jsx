@@ -5,11 +5,10 @@ import Footer from './footer/footer';
 const App = ({ children }) => (
   <div>
     <HeaderContainer />
-    <main className="splash-body">
-      <img className="splash-image" src="https://source.unsplash.com/collection/1068/1200x440" />
-    </main>
-    <Footer />
+
     { children }
+    <Footer />
+
   </div>
 );
 

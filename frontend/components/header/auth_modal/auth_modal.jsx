@@ -51,7 +51,7 @@ class AuthModal extends React.Component {
   		return(
   			<ul>
   				{this.props.errors.map((error, i) => (
-  					<li key={`error-${i}`}>
+  					<li className="login-error" key={`error-${i}`}>
   						{error}
   					</li>
   				))}
@@ -60,7 +60,7 @@ class AuthModal extends React.Component {
   	}
 
   render() {
-    const text = this.state.formType === 'login' ? 'Login' : 'Create Account';
+    const text = this.state.formType === 'login' ? 'Log in' : 'Create Account';
     const flavorText = this.state.formType  === 'login' ? 'Don\'t have an account?' : 'Already have an account?';
     const otherFormType = this.state.formType === 'login' ? 'Create an account' : 'Login';
 
@@ -71,16 +71,16 @@ class AuthModal extends React.Component {
 
 				<form onSubmit={this.handleSubmit} className="login-form-box">
 					<br/>
+          <br/>
 
-					{this.renderErrors()}
-						<br/>
             <div className="login-boxes">
-              <label className="login-section"> Username:
+              <label className="login-section"> Band Name:
                 <input type="text"
                   value={this.state.username}
                   onChange={this.update("username")}
                   className="login-input" />
               </label>
+
               <br/>
               <br/>
 
@@ -92,6 +92,7 @@ class AuthModal extends React.Component {
               </label>
 						<br/>
             <br/>
+            {this.renderErrors()}
 						<input className="login-button" type="submit" value={text} />
 					</div>
 				</form>

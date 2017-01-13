@@ -27,6 +27,7 @@
   float: right;
   margin-right: 15%;
   height: 100%;
+  width: 480px;
 }
 
 .search-bar {
@@ -83,6 +84,12 @@
   margin-bottom: 0px;
   border-bottom: 4px solid grey;
   border-bottom-style: dotted;
+  font: 22px/1.2307692308 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-weight: bold;
+}
+
+.login-form-box {
+  font: 14px/1.2307692308 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
 .login-input {
@@ -95,6 +102,10 @@
   margin-right: 5px;
 }
 
+.login-error {
+  color: red;
+}
+
 .login-button {
   border: 1px solid black;
   border-radius: 11px;
@@ -102,11 +113,11 @@
   width: 190px;
   margin: 15px;
   margin-bottom: 20px;
-  transition: background 0.5s linear;
+  transition: background 0.35s linear;
 }
 
 .login-button:hover{
-  background-color: green;
+  background-color: #3FA34D;
 }
 
 .login-link {
@@ -122,6 +133,7 @@
   margin: 0;
   margin-right: 25px;
   font-size: 15px;
+  cursor: default;
 }
 
 .log-out-link {
