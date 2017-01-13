@@ -1,6 +1,42 @@
 .artist-page-container {
   position: absolute;
+  border: 1px solid black;
+  margin: auto;
   margin-top: 90px;
   height: 100%;
+  width: 80%;
+  left: 10%;
+}
+
+.artist-header {
+  border: 1px solid black;
+  display: inline-block;
+  height: 135px;
   width: 100%;
+}
+
+.artist-info-sidebar {
+  border: 1px solid black;
+  display: block;
+  height: 100%;
+  width: 120px;
+  padding: 45px 35px 0 0;
+  float: right;
+}
+
+.album-container {
+  border: 1px solid black;
+  height: 100%;
+  width: 80%;
+  margin: auto;
+}
+
+.album-list-item {
+  border: 1px solid black;
+  position: relative;
+  display: inline-block;
+  margin: 0 26px 30px 0;
+  width: 168px;
+  height: 168px;
+  vertical-align: top;
 }
