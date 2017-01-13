@@ -11,7 +11,7 @@ const mapStateToProps = ({ artist }, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-
+  debugger;
   return {
     fetchArtist: id => dispatch(fetchArtist(id))
   };
