@@ -9,7 +9,8 @@ class AuthModal extends React.Component {
       this.state = {
           username: "",
           password: "",
-          formType: this.props.formType
+          formType: this.props.formType,
+          errors: this.props.errors
       };
       this.formType = this.props.formType;
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -42,15 +43,17 @@ class AuthModal extends React.Component {
   	navLink() {
   		if (this.state.formType === "login") {
         this.setState({formType: 'signup'});
+        this.setState({errors: []});
   		} else {
   			this.setState({formType: 'login'});
-  		}
+        this.setState({errors: []});
+      }
   	}
 
   	renderErrors() {
   		return(
   			<ul>
-  				{this.props.errors.map((error, i) => (
+  				{this.state.errors.map((error, i) => (
   					<li className="login-error" key={`error-${i}`}>
   						{error}
   					</li>

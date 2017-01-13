@@ -5,15 +5,22 @@ class ArtistShow extends React.Component {
     super(props);
 
     this.state = {
-      artist: ''
+      artist: {}
     };
   }
 
-  componentWillMount() {
-    const artist = this.props.fetchArtist(this.props.id);
-    this.setState({artist});
-    // this.props.fetchArtist(this.props.id).then(artist => {
-    // this.setState({artist: artist});});
+  componentDidMount() {
+    this.props.fetchArtist().then(() => {
+      this.setState({artist: this.props.artist});
+    });
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.params.artistId !== nextProps.params.artistId ) {
+      this.props.fetchArtist().then(() => {
+        this.setState({artist: this.props.artist});
+      });
+    }
   }
 
 
@@ -24,7 +31,7 @@ class ArtistShow extends React.Component {
         <section className="album-list"></section>
         <aside className="artist-info-sidebar">Sidebar</aside>
         <h1>Artist Show Page</h1>
-        <h1>{this.state.artist.name}</h1>
+        <h1>{this.state.artist.username}</h1>
         <h1>{this.state.artist.id}</h1>
         <ul className="album-container">
           <li className="album-list-item">Item 1</li>

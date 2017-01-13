@@ -4,17 +4,16 @@ import ArtistShow from './artist_show';
 
 
 const mapStateToProps = ({ artist }, ownProps) => {
-  const id = ownProps.params.artistId;
-  return {
-    id
+    return {
+      artist
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch, ownProps) => {
+  console.log(ownProps.params.artistId);
   return {
-    fetchArtist: id => dispatch(fetchArtist(id))
+    fetchArtist: () => dispatch(fetchArtist(ownProps.params.artistId))
   };
-
 };
 
 export default connect(

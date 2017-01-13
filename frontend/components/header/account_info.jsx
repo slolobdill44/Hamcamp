@@ -5,7 +5,7 @@ import AuthModalWrapper from './auth_modal/auth_modal_wrapper';
 const sessionLinks = ( login ) => (
   <nav className="session-links">
     <AuthModalWrapper />
-    <a className="header-login-link" className="guest-login" onClick={() => login({user: { username:"guestaccount", password:"guestaccount"}})}>guest account</a>
+    <a className="header-login-link" className="guest-login" onClick={() => login({user: { username:"Guest", password:"guestpassword"}})}>guest account</a>
   </nav>
 );
 

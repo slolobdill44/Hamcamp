@@ -8,7 +8,6 @@ import { fetchArtist } from './actions/artist_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
-  window.store = configureStore();
 
   window.fetchArtist = fetchArtist;
 
@@ -20,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
+  window.store = store;
 
   const root = document.getElementById('root');
   Modal.setAppElement(root);

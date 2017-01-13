@@ -3,6 +3,11 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
+  has_many :albums,
+    primary_key: :id,
+    foreign_key: :artist_id,
+    class_name: "Album"
+
   validates :password_digest, presence: true
   # If a password was set, we validate it meets the requirements.
   # Note the `allow_nil`.
