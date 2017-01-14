@@ -1,3 +1,10 @@
+.app-background {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  // background-color: grey;
+}
+
 .artist-page-container {
   position: absolute;
   border: 1px solid black;
@@ -17,26 +24,37 @@
 
 .artist-info-sidebar {
   border: 1px solid black;
-  display: block;
   height: 100%;
   width: 120px;
   padding: 45px 35px 0 0;
   float: right;
+  position: absolute;
+  right: 35px;
+}
+
+.artist-title {
+  position: relative;
+  display: inline-block;
+  margin-left: 11px;
+  bottom: 12px;
+  font: 14px/1.2307692308 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-weight: bold;
+  left: 15%;
 }
 
 .album-container {
-  border: 1px solid black;
   height: 100%;
   width: 80%;
   margin: auto;
+  margin-top: 38px;
 }
 
 .album-list-item {
   border: 1px solid black;
   position: relative;
   display: inline-block;
-  margin: 0 26px 30px 0;
-  width: 168px;
-  height: 168px;
+  margin: 14px 45px 30px 0;
+  width: 195px;
+  height: 195px;
   vertical-align: top;
 }

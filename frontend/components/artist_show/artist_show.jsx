@@ -5,11 +5,13 @@ class ArtistShow extends React.Component {
     super(props);
 
     this.state = {
-      artist: {}
+      artist: {
+        albums: []
+      }
     };
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchArtist().then(() => {
       this.setState({artist: this.props.artist});
     });
@@ -24,20 +26,26 @@ class ArtistShow extends React.Component {
   }
 
 
+
   render () {
+    const albumList = this.state.artist.albums.map(album => {
+      return (
+        <li key={album.id} className="album-list-item">
+          <img src={`${album.image_url}`}></img>
+          <a>{album.title}</a>
+        </li>
+      );
+    });
+
     return (
       <div className="artist-page-container">
         <section className="artist-header">Header</section>
         <section className="album-list"></section>
-        <aside className="artist-info-sidebar">Sidebar</aside>
-        <h1>Artist Show Page</h1>
-        <h1>{this.state.artist.username}</h1>
-        <h1>{this.state.artist.id}</h1>
+        <aside className="artist-info-sidebar">
+          <span className="artist-title">{this.state.artist.username}</span>
+        </aside>
         <ul className="album-container">
-          <li className="album-list-item">Item 1</li>
-          <li className="album-list-item">Item 2</li>
-          <li className="album-list-item">Item 3</li>
-          <li className="album-list-item">Item 4</li>
+            { albumList }
         </ul>
       </div>
     );

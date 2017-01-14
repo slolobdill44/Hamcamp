@@ -1,5 +1,5 @@
 .splash-body {
-  background-color: #264653;
+  background-color: #417B8E;
   position: absolute;
   margin-top: 90px;
   height: 100%;
@@ -9,6 +9,14 @@
 .splash-image {
   display: block;
   margin: 0 auto;
-  width: 1200px;
-  height: 540px;
+  width: 80%;
+  height: 340px;
+}
+
+.featured-artists {
+  background-color: #F2F1F1;
+  display: block;
+  margin: 0 auto;;
+  width: 80%;
+  height: 400px;
 }
