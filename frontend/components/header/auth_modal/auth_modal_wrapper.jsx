@@ -17,6 +17,7 @@ class AuthModalWrapper extends React.Component {
 
   closeModal() {
     this.setState({ modalOpen: false });
+    this.props.clearErrors();
   }
 
   openModal(modalType) {

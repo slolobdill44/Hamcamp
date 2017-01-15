@@ -32,7 +32,7 @@ class ArtistShow extends React.Component {
       return (
         <li key={album.id} className="album-list-item">
           <img src={`${album.image_url}`}></img>
-          <a>{album.title}</a>
+          <a className="album-list-link">{album.title}</a>
         </li>
       );
     });

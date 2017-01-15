@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
-import AuthModalWrapper from './auth_modal/auth_modal_wrapper';
+import AuthModalWrapperContainer from './auth_modal/auth_modal_wrapper_container';
 
 const sessionLinks = ( login ) => (
   <nav className="session-links">
-    <AuthModalWrapper />
+    <AuthModalWrapperContainer />
     <a className="header-login-link" className="guest-login" onClick={() => login({user: { username:"Guest", password:"guestpassword"}})}>guest account</a>
   </nav>
 );
