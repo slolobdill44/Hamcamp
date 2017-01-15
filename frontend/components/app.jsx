@@ -5,7 +5,6 @@ import Footer from './footer/footer';
 const App = ({ children }) => (
   <div className="app-background">
     <MainHeaderContainer />
-
     { children }
     <Footer />
 

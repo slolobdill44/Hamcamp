@@ -13,7 +13,8 @@
  *= require_self
  */
 @import "reset.scss";
-@import "header/header.scss";
+@import "headers/splash_header.scss";
+@import "headers/main_header.scss";
 @import "footer/footer.scss";
 @import "splash.scss";
 @import "artist_show.scss";

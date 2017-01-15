@@ -11,7 +11,7 @@ const sessionLinks = ( login ) => (
 
 const userInfo = ( user, logout ) => (
   <nav className="session-links">
-    <h3 className="session-greeting">Hello, {user.username}</h3>
+    <a className="session-greeting">Hello, {user.username}</a>
     <a className="log-out-link"  onClick={() => logout()}>Log Out</a >
   </nav>
 );
