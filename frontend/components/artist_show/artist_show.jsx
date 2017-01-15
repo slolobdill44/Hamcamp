@@ -12,16 +12,18 @@ class ArtistShow extends React.Component {
   }
 
   componentWillMount() {
-    this.props.fetchArtist().then(() => {
+    this.props.fetchArtist(this.props.params.artistId).then(() => {
       this.setState({artist: this.props.artist});
     });
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.params.artistId !== nextProps.params.artistId ) {
-      this.props.fetchArtist().then(() => {
+
+      this.props.fetchArtist(nextProps.params.artistId).then(() => {
         this.setState({artist: this.props.artist});
       });
+      debugger;
     }
   }
 
