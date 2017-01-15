@@ -2,7 +2,7 @@ import React from 'react';
 import AccountInfo from './account_info';
 import { Link } from 'react-router';
 
-class Header extends React.Component {
+class SplashHeader extends React.Component {
 
   render () {
     return (
@@ -22,4 +22,4 @@ class Header extends React.Component {
 }
 
 
-export default Header;
+export default SplashHeader;
