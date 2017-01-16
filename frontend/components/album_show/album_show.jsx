@@ -32,6 +32,25 @@ class AlbumShow extends React.Component {
   render () {
     const artist = this.state.currentAlbum.artist;
 
+    const trackList = this.state.currentAlbum.tracks.map(track => {
+      return (
+        <tr key={track.album_track_number} className='track-row'>
+          <td className='track-row-play-col'>
+            <a className='track-play-link'></a>
+          </td>
+          <td className='track-row-number-col'>
+            <div className='track-number-info'>{track.album_track_number}.</div>
+          </td>
+          <td className='track-title-col'>
+            <div className='track-title-info'>{track.name}</div>
+          </td>
+          <td className='track-download-col'>
+            <a className='track-download-link'>download</a>
+          </td>
+        </tr>
+      );
+    });
+
     return (
       <div style={{backgroundColor: artist.secondary_color}} className='show-page-background'>
         <div className='show-page-container'>
@@ -75,51 +94,11 @@ class AlbumShow extends React.Component {
                   </div>
                   <table>
                     <tbody>
-                      <tr className='track-row'>
-                        <td className='track-row-play-col'>
-                          <a className='track-play-link'></a>
-                        </td>
-                        <td className='track-row-number-col'>
-                          <div className='track-number-info'>1.</div>
-                        </td>
-                        <td className='track-title-col'>
-                          <div className='track-title-info'>Really long track name asdfasc</div>
-                        </td>
-                        <td className='track-download-col'>
-                          <a className='track-download-link'>download</a>
-                        </td>
-                      </tr>
-                      <tr className='track-row'>
-                        <td className='track-row-play-col'>
-                          <a className='track-play-link'></a>
-                        </td>
-                        <td className='track-row-number-col'>
-                          <div className='track-number-info'>2.</div>
-                        </td>
-                        <td className='track-title-col'>
-                          <div className='track-title-info'>Track 2</div>
-                        </td>
-                        <td className='track-download-col'>
-                          <a className='track-download-link'>download</a>
-                        </td>
-                      </tr>
-                      <tr className='track-row'>
-                        <td className='track-row-play-col'>
-                          <a className='track-play-link'></a>
-                        </td>
-                        <td className='track-row-number-col'>
-                          <div className='track-number-info'>3.</div>
-                        </td>
-                        <td className='track-title-col'>
-                          <div className='track-title-info'>Track 3</div>
-                        </td>
-                        <td className='track-download-col'>
-                          <a className='track-download-link'>download</a>
-                        </td>
-                      </tr>
+                      { trackList }
                     </tbody>
                   </table>
                 </div>
+                <div className="description-section">{this.state.currentAlbum.description}.</div>
               </section>
               <div className='album-art'>
                 <img className='album-image' src={`${this.state.currentAlbum.image_url}`}></img>

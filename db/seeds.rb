@@ -73,6 +73,12 @@ Album.create!(
   image_url: "https://i.scdn.co/image/f763bd5e411be05a44e0f7fc93168bf4dfb283da",
   description: "EP released in 2014"
 )
+Album.create!(
+  title: "Underneath the Rainbow",
+  artist_id: User.find_by_username('Black Lips').id,
+  image_url: "https://i.scdn.co/image/efe62f5490706f1f3c1c80fc1e25009eb6b927a9",
+  description: "Seventh studio album released by the Black Lips in 2014"
+)
 
 Track.destroy_all
 Track.create!(
@@ -154,4 +160,87 @@ Track.create!(
   name: "Return of the B-boy",
   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
   album_track_number: 16
+)
+
+Track.create!(
+  name: "Flatline",
+  album_id: Album.find_by_title('Concealer').id,
+  album_track_number: 1
+)
+Track.create!(
+  name: "These Days",
+  album_id: Album.find_by_title('Concealer').id,
+  album_track_number: 2
+)
+Track.create!(
+  name: "Clark",
+  album_id: Album.find_by_title('Concealer').id,
+  album_track_number: 3
+)
+Track.create!(
+  name: "Arrow",
+  album_id: Album.find_by_title('Concealer').id,
+  album_track_number: 4
+)
+
+
+Track.create!(
+  name: "Drive By Buddy",
+  album_id: Album.find_by_title('Underneath the Rainbow').id,
+  album_track_number: 1
+)
+Track.create!(
+  name: "Smiling",
+  album_id: Album.find_by_title('Underneath the Rainbow').id,
+  album_track_number: 2
+)
+Track.create!(
+  name: "Make You Mine",
+  album_id: Album.find_by_title('Underneath the Rainbow').id,
+  album_track_number: 3
+)
+Track.create!(
+  name: "Funny",
+  album_id: Album.find_by_title('Underneath the Rainbow').id,
+  album_track_number: 4
+)
+Track.create!(
+  name: "Dorner Party",
+  album_id: Album.find_by_title('Underneath the Rainbow').id,
+  album_track_number: 5
+)
+Track.create!(
+  name: "Justice After All",
+  album_id: Album.find_by_title('Underneath the Rainbow').id,
+  album_track_number: 6
+)
+Track.create!(
+  name: "Boys in the Wood",
+  album_id: Album.find_by_title('Underneath the Rainbow').id,
+  album_track_number: 7
+)
+Track.create!(
+  name: "Waiting",
+  album_id: Album.find_by_title('Underneath the Rainbow').id,
+  album_track_number: 8
+)
+Track.create!(
+  name: "Do the Vibrate",
+  album_id: Album.find_by_title('Underneath the Rainbow').id,
+  album_track_number: 9
+)
+Track.create!(
+  name: "I Don't Wanna Go Home",
+  album_id: Album.find_by_title('Underneath the Rainbow').id,
+  album_track_number: 10
+)
+Track.create!(
+  name: "Dandelion Dust",
+  album_id: Album.find_by_title('Underneath the Rainbow').id,
+  album_track_number: 11
+)
+Track.create!(
+  name: "Dog Years",
+  album_id: Album.find_by_title('Underneath the Rainbow').id,
+  album_track_number: 12
 )

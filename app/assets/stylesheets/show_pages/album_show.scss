@@ -183,6 +183,10 @@ tr {
   cursor: pointer;
 }
 
+.track-row:hover > .track-download-col > .track-download-link {
+  visibility: visible;
+}
+
 .track-row-play-col {
   padding: 4px 0 0;
   width: 20px;
@@ -241,11 +245,21 @@ tr {
   visibility: hidden;
 }
 
+.track-download-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.description-section {
+  margin-top: 35px;
+  font: normal 12px/13px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: italic;
+}
+
 .album-art {
   display: inline-block;
   width: 350px;
   height: 350px;
-  border: 1px solid black;
   float: right;
 }
 
