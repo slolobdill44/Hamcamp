@@ -21,7 +21,7 @@ const Root = ({ store }) => {
         <Route path="/" component={ Splash } />
           <Route component={ App }>
             <Route path="artists/:artistId" component={ ArtistShowContainer } />
-            <Route path="albums/:albumID" component={ AlbumShowContainer } />
+            <Route path="albums/:albumId" component={ AlbumShowContainer } />
           </Route>
       </Router>
     </Provider>

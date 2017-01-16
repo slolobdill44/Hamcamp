@@ -23,7 +23,6 @@ class ArtistShow extends React.Component {
       this.props.fetchArtist(nextProps.params.artistId).then(() => {
         this.setState({artist: this.props.artist});
       });
-      debugger;
     }
   }
 

@@ -11,7 +11,6 @@ const mapStateToProps = ({ artist }, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  console.log(ownProps.params.artistId);
   return {
     fetchArtist: (artistId) => dispatch(fetchArtist(artistId))
   };

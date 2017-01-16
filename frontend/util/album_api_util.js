@@ -1,7 +1,7 @@
-export const fetchArtist = id => (
+export const fetchAlbum = id => (
   $.ajax({
     method: 'GET',
-    url: `api/users/${id}`,
+    url: `api/albums/${id}`,
     error: (err) => console.log(err)
   })
 );
