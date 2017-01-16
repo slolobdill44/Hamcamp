@@ -50,11 +50,18 @@
 table {
   border-collapse: collapse;
   font-size: inherit;
+  font: normal 12px/13px 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 td {
   display: table-cell;
   text-align: left;
+}
+
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
 }
 
 .play-cell {
@@ -174,6 +181,64 @@ td {
   display: block;
   margin-right: 5px;
   cursor: pointer;
+}
+
+.track-row-play-col {
+  padding: 4px 0 0;
+  width: 20px;
+  vertical-align: top;
+  border: none;
+  height: 16px;
+  width: 17px;
+}
+
+.track-play-link {
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  min-height: 16px;
+  min-width: 17px;
+  display: block;
+}
+
+.track-row-number-col {
+  border: none;
+  vertical-align: top;
+  padding: 6px 2px;
+  min-width: 15px;
+}
+
+.track-number-info {
+  text-align: right;
+  margin-left: 10px;
+  display: block;
+}
+
+.track-title-col {
+  padding: 6px 2px;
+  vertical-align: top;
+  border: none;
+}
+
+.track-title-info {
+  width: 275px;
+  display: block;
+}
+
+.track-title-info:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.track-download-col {
+  padding: 6px 2px;
+  vertical-align: top;
+  border: none;
+}
+
+.track-download-link {
+  text-align: right;
+  width: 95px;
+  visibility: hidden;
 }
 
 .album-art {

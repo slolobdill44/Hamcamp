@@ -73,10 +73,52 @@ class AlbumShow extends React.Component {
                       </tbody>
                     </table>
                   </div>
-                  <ul>
-                    <li>Track 1</li>
-                    <li>Track 2</li>
-                  </ul>
+                  <table>
+                    <tbody>
+                      <tr className='track-row'>
+                        <td className='track-row-play-col'>
+                          <a className='track-play-link'></a>
+                        </td>
+                        <td className='track-row-number-col'>
+                          <div className='track-number-info'>1.</div>
+                        </td>
+                        <td className='track-title-col'>
+                          <div className='track-title-info'>Really long track name asdfasc</div>
+                        </td>
+                        <td className='track-download-col'>
+                          <a className='track-download-link'>download</a>
+                        </td>
+                      </tr>
+                      <tr className='track-row'>
+                        <td className='track-row-play-col'>
+                          <a className='track-play-link'></a>
+                        </td>
+                        <td className='track-row-number-col'>
+                          <div className='track-number-info'>2.</div>
+                        </td>
+                        <td className='track-title-col'>
+                          <div className='track-title-info'>Track 2</div>
+                        </td>
+                        <td className='track-download-col'>
+                          <a className='track-download-link'>download</a>
+                        </td>
+                      </tr>
+                      <tr className='track-row'>
+                        <td className='track-row-play-col'>
+                          <a className='track-play-link'></a>
+                        </td>
+                        <td className='track-row-number-col'>
+                          <div className='track-number-info'>3.</div>
+                        </td>
+                        <td className='track-title-col'>
+                          <div className='track-title-info'>Track 3</div>
+                        </td>
+                        <td className='track-download-col'>
+                          <a className='track-download-link'>download</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </section>
               <div className='album-art'>
