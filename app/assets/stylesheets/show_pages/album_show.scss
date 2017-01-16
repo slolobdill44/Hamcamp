@@ -1,5 +1,4 @@
 .album-player {
-  border: 1px solid black;
   height: 100%;
   width: 748px;
   position: absolute;
@@ -7,8 +6,23 @@
   left: 30px;
 }
 
+.name-section {
+  display: block;
+  float: left;
+  margin: 0;
+}
+
+.album-title {
+  font: normal 28px/1em 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: -4px 30px 8px 0;
+}
+
+.album-artist-name {
+  font: normal 14px/15px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+
 .song-player {
-  border: 1px solid black;
   position: absolute;
   width: 380px;
   height: 450px;

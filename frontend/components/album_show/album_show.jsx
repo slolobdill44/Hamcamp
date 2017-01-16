@@ -37,8 +37,28 @@ class AlbumShow extends React.Component {
         <div style={{backgroundColor: artist.primary_color}} className='show-page-container'>
           <section className='show-page-header'>
             <main className='album-player'>
-              <section className='song-player'>Song Player
-                <div className='track listing'>
+              <section className='song-player'>
+                <div className='name-section'>
+                  <h2 className='album-title'>{this.state.currentAlbum.title}</h2>
+                  <h3 className='album-artist-name'>by {artist.username}</h3>
+                </div>
+                <div className='track-listing'>
+                  <div className='inline-player'>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td className='play-cell' rowspan="2"></td>
+                            <a className='play-button'></a>
+                          <td className=''></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                   <ul>
                     <li>Track 1</li>
                     <li>Track 2</li>
