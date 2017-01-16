@@ -5,7 +5,8 @@ import AlbumShow from './album_show';
 
 const mapStateToProps = ({ currentAlbum }, ownProps) => {
     return {
-      albumId: ownProps.params.albumId
+      albumId: ownProps.params.albumId,
+      currentAlbum
   };
 };
 

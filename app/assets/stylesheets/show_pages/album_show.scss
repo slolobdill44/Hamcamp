@@ -1,0 +1,36 @@
+.album-player {
+  border: 1px solid black;
+  height: 100%;
+  width: 748px;
+  position: absolute;
+  margin-top: 172px;
+  left: 30px;
+}
+
+.song-player {
+  border: 1px solid black;
+  position: absolute;
+  width: 380px;
+  height: 450px;
+  float: left;
+}
+
+.album-art {
+  display: inline-block;
+  width: 350px;
+  height: 350px;
+  border: 1px solid black;
+  float: right;
+}
+
+.album-artist-info-sidebar {
+  border: 1px solid black;
+  margin-top: 135px;
+  height: 100%;
+  width: 120px;
+  padding: 45px 0 0 0;
+  float: right;
+  position: absolute;
+  right: 30px;
+
+}

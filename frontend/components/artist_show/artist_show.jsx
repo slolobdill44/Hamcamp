@@ -44,10 +44,10 @@ class ArtistShow extends React.Component {
     // const headerColor = { backgroundColor: color };
 
     return (
-      <div style={{backgroundColor: this.state.artist.secondary_color}}  className="artist-background">
-        <div style={{backgroundColor: this.state.artist.primary_color}} className="artist-page-container">
-          <section className="artist-header"></section>
-          <section  className="album-list"></section>
+      <div style={{backgroundColor: this.state.artist.secondary_color}}  className="show-page-background">
+        <div style={{backgroundColor: this.state.artist.primary_color}} className="show-page-container">
+          <section className="show-page-header"></section>
+          <section className="album-list"></section>
           <aside className="artist-info-sidebar">
             <span className="artist-title">{this.state.artist.username}</span>
           </aside>

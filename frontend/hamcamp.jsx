@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import Modal from 'react-modal';
 import configureStore from './store/store';
-import { fetchAlbum } from './util/album_api_util';
+import { fetchAlbum } from './actions/album_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
