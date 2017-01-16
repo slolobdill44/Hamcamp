@@ -86,7 +86,7 @@ class AuthModal extends React.Component {
               <br/>
 
               <label className="login-section"> Password:
-                <input type="text"
+                <input type="password"
                   value={this.state.password}
                   onChange={this.update("password")}
                   className="login-input" />
