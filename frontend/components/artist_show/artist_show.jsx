@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 class ArtistShow extends React.Component {
   constructor(props) {
@@ -31,8 +32,10 @@ class ArtistShow extends React.Component {
     const albumList = this.state.artist.albums.map(album => {
       return (
         <li key={album.id} className="album-list-item">
-          <img src={`${album.image_url}`}></img>
-          <a className="album-list-link">{album.title}</a>
+          <Link to={`/albums/${album.id}`}>
+            <img src={`${album.image_url}`}></img>
+            <div className="album-list-link">{album.title}</div>
+          </Link>
         </li>
       );
     });

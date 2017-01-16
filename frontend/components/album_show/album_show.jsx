@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 class AlbumShow extends React.Component {
   constructor(props) {
@@ -9,7 +10,9 @@ class AlbumShow extends React.Component {
         artist: {
           username: null
         },
-        tracks: []
+        tracks: [
+          { name: "" }
+        ]
       }
     };
   }
@@ -31,6 +34,8 @@ class AlbumShow extends React.Component {
 
   render () {
     const artist = this.state.currentAlbum.artist;
+
+    const tracks = this.state.currentAlbum.tracks;
 
     const trackList = this.state.currentAlbum.tracks.map(track => {
       return (
@@ -59,7 +64,10 @@ class AlbumShow extends React.Component {
               <section className='song-player-column'>
                 <div className='name-section'>
                   <h2 className='album-title'>{this.state.currentAlbum.title}</h2>
-                  <h3 className='album-artist-name'>by <a className='album-artist-name-link'>{artist.username}</a></h3>
+                  <h3 className='album-artist-name'>by <Link
+                      to={`artists/${artist.id}`}
+                      className='album-artist-name-link'>{artist.username}</Link>
+                  </h3>
                 </div>
                 <div className='track-listing'>
                   <div className='inline-player'>
@@ -71,7 +79,7 @@ class AlbumShow extends React.Component {
                           </td>
                           <td className='player-track-cell' colSpan="3">
                             <div className='player-track-info'>
-                              <span className='title-section'>4 Better or 4 Worse (interlude)</span>
+                              <span className='title-section'>{tracks[0].name}</span>
                               <span className='time'>00:00 / 03:34</span>
                             </div>
                           </td>
