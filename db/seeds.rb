@@ -6,17 +6,31 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+COLORS = [
+  #lighter, darker
+  ['#77141F', '#3F0F14'], #red
+  [ '#7C784A', '#3A3710'], #green
+  [ '#ADD7F6', '#87CDFF'], #light blue
+  [ '#0C7C59', '#2B4162'], #green/blue
+  [ '#F7E3AF', '#C08497'] #pastel kinda
+]
+
 User.destroy_all
-User.create!(username: "Adrian", password: "adrian");
-User.create!(username: "Guest", password: "guestpassword");
-User.create!(username: "Pharcyde", password: "pharcyde");
-User.create!(username: "Black Lips", password: "blacklips");
-User.create!(username: "Jacques Greene", password: "jacquesgreene")
+User.create!(username: "Adrian", password: "adrian", primary_color: '#0C7489', secondary_color: '#499F68' );
+User.create!(username: "Guest", password: "guestpassword", primary_color: '#77141F', secondary_color: '#3F0F14');
+User.create!(username: "Pharcyde", password: "pharcyde", primary_color: '#7C784A', secondary_color: '#3A3710');
+User.create!(username: "Black Lips", password: "blacklips", primary_color: '#ADD7F6', secondary_color: '#87CDFF');
+User.create!(username: "Jacques Greene", password: "jacquesgreene", primary_color: '#465362', secondary_color: '#011936' )
+User.create!(username: "Vanessa", password: "vanessa", primary_color: '#0C7489', secondary_color: '#499F68')
 
 def new_faker_user
+  pallete = rand(0..4)
+
   User.create(
     username: Faker::Space.moon + " " + Faker::Name.last_name,
-    password: "password"
+    password: "password",
+    primary_color: COLORS[pallete][0],
+    secondary_color: COLORS[pallete][1]
   )
 end
 

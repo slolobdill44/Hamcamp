@@ -28,7 +28,6 @@ class ArtistShow extends React.Component {
   }
 
 
-
   render () {
     const albumList = this.state.artist.albums.map(album => {
       return (
@@ -39,16 +38,24 @@ class ArtistShow extends React.Component {
       );
     });
 
+
+    // code for adding random background color. to use, add style={stylingObject}
+
+    // const color = '#'+Math.floor(Math.random()*16777215).toString(16);
+    // const headerColor = { backgroundColor: color };
+
     return (
-      <div className="artist-page-container">
-        <section className="artist-header">Header</section>
-        <section className="album-list"></section>
-        <aside className="artist-info-sidebar">
-          <span className="artist-title">{this.state.artist.username}</span>
-        </aside>
-        <ul className="album-container">
-            { albumList }
-        </ul>
+      <div style={{backgroundColor: this.state.artist.secondary_color}}  className="artist-background">
+        <div style={{backgroundColor: this.state.artist.primary_color}} className="artist-page-container">
+          <section className="artist-header">Header</section>
+          <section  className="album-list"></section>
+          <aside className="artist-info-sidebar">
+            <span className="artist-title">{this.state.artist.username}</span>
+          </aside>
+          <ul className="album-container">
+              { albumList }
+          </ul>
+        </div>
       </div>
     );
   }
