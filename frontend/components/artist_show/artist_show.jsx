@@ -47,7 +47,7 @@ class ArtistShow extends React.Component {
     return (
       <div style={{backgroundColor: this.state.artist.secondary_color}}  className="artist-background">
         <div style={{backgroundColor: this.state.artist.primary_color}} className="artist-page-container">
-          <section className="artist-header">Header</section>
+          <section className="artist-header"></section>
           <section  className="album-list"></section>
           <aside className="artist-info-sidebar">
             <span className="artist-title">{this.state.artist.username}</span>

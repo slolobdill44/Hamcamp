@@ -43,6 +43,7 @@ class AuthModalWrapper extends React.Component {
         top: '20%',
         border          : '1px solid #ccc',
         padding         : '20px',
+        backgroundColor : '#E6EBE0',
         zIndex          : 11
       }
     };
