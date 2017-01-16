@@ -12,6 +12,13 @@
   margin: 0;
 }
 
+.song-player-column {
+  position: absolute;
+  width: 380px;
+  height: 450px;
+  float: left;
+}
+
 .album-title {
   font: normal 28px/1em 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: -4px 30px 8px 0;
@@ -22,11 +29,151 @@
   margin: 0;
 }
 
-.song-player {
+.album-artist-name-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.track-listing {
+
+}
+
+.inline-player {
+  position: relative;
+  white-space: nowrap;
+  display: inline-block;
+  width: 100%;
+  margin: 24px 0 17px;
+  height: 50px;
+}
+
+table {
+  border-collapse: collapse;
+  font-size: inherit;
+}
+
+td {
+  display: table-cell;
+  text-align: left;
+}
+
+.play-cell {
+  vertical-align: bottom;
+}
+
+.play-button {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  cursor: pointer;
+  min-height: 50px;
+  min-width: 54px;
+}
+
+.player-track-cell {
+  border: 1px solid black;
+  height: 32px;
+  vertical-align: bottom;
+  border: none;
+  padding: 0;
+  text-align: left;
+  display: table-cell;
+}
+
+.player-track-info {
+  min-height: 24px;
+  min-width: 262px;
+  white-space: normal;
+  display: block;
+  margin-left: 13px;
+}
+
+.title-section {
+  padding-right: 0.5em;
+  font: normal 12px/13px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+}
+
+.title-section:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.time {
+  white-space: nowrap;
+  font: normal 12px/13px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.progress-bar-cell {
+  min-width: 270px ;
+  position: relative;
+  border: none;
+  padding: 0;
+}
+
+.progress-bar {
+  position: relative;
+  height: 12px;
+  margin: 1px 0.83333em 0;
+  background: #fefefe;
+  background-color: rgba(255,255,255,.3);
+  border: 1px solid grey;
+  border-color: rgba(0,0,0,.15);
+  border-radius: 1px;
+  position: relative;
+  width: auto;
+  height: 8px;
+  overflow: visible;
+}
+
+.track-progress-square {
+  background: #fff;
+  border: 1px solid grey;
+  border-color: rgba(0,0,0,.25);
+  border-radius: 1px;
   position: absolute;
-  width: 380px;
-  height: 450px;
-  float: left;
+  left: 0px;
+  top: -2px;
+  width: 22px;
+  height: 10px;
+  margin-left: -1px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.prev-track-cell {
+  border: none;
+  padding: 0;
+}
+
+.prev-track-button {
+  border: 1px solid black;
+  background-size: 40px 12px;
+  display: block;
+  margin-right: 2px;
+  cursor: pointer;
+  width: 20px;
+  height: 12px;
+  margin: 0 0 1px;
+}
+
+.next-track-cell {
+  border: none;
+  padding: 0;
+}
+
+.next-track-button {
+  border: 1px solid black;
+  background-size: 40px 12px;
+  width: 20px;
+  height: 12px;
+  margin: 0 6px 1px;
+  display: block;
+  margin-right: 5px;
+  cursor: pointer;
 }
 
 .album-art {
@@ -34,6 +181,12 @@
   width: 350px;
   height: 350px;
   border: 1px solid black;
+  float: right;
+}
+
+.album-image {
+  width: 350px;
+  height: 350px;
   float: right;
 }
 

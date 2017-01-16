@@ -34,27 +34,41 @@ class AlbumShow extends React.Component {
 
     return (
       <div style={{backgroundColor: artist.secondary_color}} className='show-page-background'>
-        <div style={{backgroundColor: artist.primary_color}} className='show-page-container'>
+        <div className='show-page-container'>
           <section className='show-page-header'>
             <main className='album-player'>
-              <section className='song-player'>
+              <section className='song-player-column'>
                 <div className='name-section'>
                   <h2 className='album-title'>{this.state.currentAlbum.title}</h2>
-                  <h3 className='album-artist-name'>by {artist.username}</h3>
+                  <h3 className='album-artist-name'>by <a className='album-artist-name-link'>{artist.username}</a></h3>
                 </div>
                 <div className='track-listing'>
                   <div className='inline-player'>
                     <table>
                       <tbody>
                         <tr>
-                          <td className='play-cell' rowspan="2"></td>
+                          <td className='play-cell' rowSpan="2">
                             <a className='play-button'></a>
-                          <td className=''></td>
+                          </td>
+                          <td className='player-track-cell' colSpan="3">
+                            <div className='player-track-info'>
+                              <span className='title-section'>4 Better or 4 Worse (interlude)</span>
+                              <span className='time'>00:00 / 03:34</span>
+                            </div>
+                          </td>
                         </tr>
                         <tr>
-                          <td></td>
-                          <td></td>
-                          <td></td>
+                          <td className='progress-bar-cell'>
+                            <div className='progress-bar'>
+                              <div className='track-progress-square'></div>
+                            </div>
+                          </td>
+                          <td className='prev-track-cell'>
+                            <a className='prev-track-button'></a>
+                          </td>
+                          <td className='next-track-cell'>
+                            <a className='next-track-button'></a>
+                          </td>
                         </tr>
                       </tbody>
                     </table>
@@ -66,7 +80,7 @@ class AlbumShow extends React.Component {
                 </div>
               </section>
               <div className='album-art'>
-                <img src={`${this.state.currentAlbum.image_url}`}></img>
+                <img className='album-image' src={`${this.state.currentAlbum.image_url}`}></img>
               </div>
             </main>
             <aside className='album-artist-info-sidebar'>

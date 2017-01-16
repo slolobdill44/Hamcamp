@@ -1,4 +1,5 @@
 .show-page-background {
+
   position: fixed;
   height: 100%;
   width: 100%;
@@ -9,6 +10,7 @@
 }
 
 .show-page-container {
+  background-color: white;
   position: absolute;
   border: 1px solid black;
   margin: auto;
