@@ -13,8 +13,12 @@ class AlbumShow extends React.Component {
         tracks: [
           { name: "" }
         ]
-      }
+      },
+      musicPlaying: false,
+      currentTime: 0,
+      playheadPosition: "0%"
     };
+    this.playAudio = this.playAudio.bind(this);
   }
 
   componentWillMount() {
@@ -32,8 +36,27 @@ class AlbumShow extends React.Component {
     }
   }
 
+  playAudio() {
+    const music = document.getElementById('music');
+    const playHead = document.getElementById('playhead');
+      if (this.state.musicPlaying) {
+        music.pause();
+        this.setState({musicPlaying: false});
+  	} else {
+        music.play();
+        this.setState({musicPlaying: true});
+        this.setState({currentTime: music.currentTime});
+        const percentage = 100 * (music.currentTime / music.duration);
+        this.setState({playheadPosition: percentage});
+        console.log(music.currentTime);
+        console.log(music.duration);
+  	}
+  }
+
   render () {
     const artist = this.state.currentAlbum.artist;
+
+    const pauseOrPlayLarge = this.state.musicPlaying === true ? "http://res.cloudinary.com/adrianlobdill/image/upload/v1484616436/pause_button.png" : "http://res.cloudinary.com/adrianlobdill/image/upload/v1484614687/play_button.png"
 
     const tracks = this.state.currentAlbum.tracks;
 
@@ -59,7 +82,7 @@ class AlbumShow extends React.Component {
     return (
       <div style={{backgroundColor: artist.secondary_color}} className='show-page-background'>
         <div className='show-page-container'>
-          <section className='show-page-header'>
+          <img className='show-page-header' src="https://images.unsplash.com/photo-1416273567255-8abe875affcd?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1075&h=175&fit=crop&s=5ac1ddc0957392dd2e020618b9feabf9"></img>
             <main className='album-player'>
               <section className='song-player-column'>
                 <div className='name-section'>
@@ -87,7 +110,7 @@ class AlbumShow extends React.Component {
                         <tr>
                           <td className='progress-bar-cell'>
                             <div className='progress-bar'>
-                              <div className='track-progress-square'></div>
+                              <div style={{marginLeft: this.state.playheadPosition}} id='playhead' className='track-progress-square'></div>
                             </div>
                           </td>
                           <td className='prev-track-cell'>
@@ -106,7 +129,46 @@ class AlbumShow extends React.Component {
                     </tbody>
                   </table>
                 </div>
-                <div className="description-section">{this.state.currentAlbum.description}.</div>
+                <div className='description-section'>{this.state.currentAlbum.description}.</div>
+
+
+                <audio id='music' className='music-player' controls='controls'>
+                  <source src="http://res.cloudinary.com/adrianlobdill/video/upload/v1484618676/01._The_Pharcyde_-_4_Better_or_4_Worse_Interlude_btksow.mp3" type='audio/mp3'/>
+                  <source src="http://res.cloudinary.com/adrianlobdill/video/upload/v1484619225/1-01_Flatline_uky8wq.mp3" type='audio/mp3'/>
+                </audio>
+
+                <div className='inline-player'>
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td className='play-cell' onClick={() => this.playAudio()} rowSpan="2">
+                              <img className='play-button' src={pauseOrPlayLarge}></img>
+                        </td>
+                        <td className='player-track-cell' colSpan="3">
+                          <div className='player-track-info'>
+                            <span className='title-section'>{tracks[0].name}</span>
+                            <span className='time'>00:00 / 03:34</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className='progress-bar-cell'>
+                          <div className='progress-bar'>
+                            <div className='track-progress-square'></div>
+                          </div>
+                        </td>
+                        <td className='prev-track-cell'>
+                          <img className='prev-track-button' src="http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,o_20,w_23/v1484611361/noun_121425_cc_jt8gzd.png"></img>
+                        </td>
+                        <td className='next-track-cell'>
+                          <img className='next-track-button' src="http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,w_23/v1484611457/noun_121427_cc_luesuz.png"></img>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+
               </section>
               <div className='album-art'>
                 <img className='album-image' src={`${this.state.currentAlbum.image_url}`}></img>
@@ -114,8 +176,8 @@ class AlbumShow extends React.Component {
             </main>
             <aside className='album-artist-info-sidebar'>
               <span className='artist-title'>{artist.username}</span>
+              <span className='discography'>discography</span>
             </aside>
-          </section>
         </div>
       </div>
     );

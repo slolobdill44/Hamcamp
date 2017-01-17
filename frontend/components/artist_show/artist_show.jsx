@@ -49,7 +49,7 @@ class ArtistShow extends React.Component {
     return (
       <div style={{backgroundColor: this.state.artist.secondary_color}}  className="show-page-background">
         <div style={{backgroundColor: this.state.artist.primary_color}} className="show-page-container">
-          <section className="show-page-header"></section>
+          <img className="show-page-header" src="http://source.unsplash.com/collection/1068/1075x175"></img>
           <section className="album-list"></section>
           <aside className="artist-info-sidebar">
             <span className="artist-title">{this.state.artist.username}</span>

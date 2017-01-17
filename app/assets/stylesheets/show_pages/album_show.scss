@@ -2,7 +2,7 @@
   height: 100%;
   width: 748px;
   position: absolute;
-  margin-top: 172px;
+  margin-top: 40px;
   left: 30px;
 }
 
@@ -126,7 +126,7 @@ tr {
   border-color: rgba(0,0,0,.15);
   border-radius: 1px;
   position: relative;
-  width: auto;
+  width: 230px;
   height: 8px;
   overflow: visible;
 }
@@ -263,12 +263,20 @@ tr {
 }
 
 .album-artist-info-sidebar {
-  margin-top: 135px;
+  margin-top: 4px;
   height: 100%;
   width: 120px;
   padding: 45px 0 0 0;
   float: right;
   position: absolute;
   right: 30px;
+}
 
+.discography {
+  position: relative;
+  display: inline-block;
+  margin-top: 30px;
+  margin-left: 11px;
+  bottom: 12px;
+  font: 13px/1.2307692308 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
