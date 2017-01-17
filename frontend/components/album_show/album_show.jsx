@@ -41,7 +41,7 @@ class AlbumShow extends React.Component {
       return (
         <tr key={track.album_track_number} className='track-row'>
           <td className='track-row-play-col'>
-            <a className='track-play-link'></a>
+            <img className='track-play-link' src="http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,w_20/v1484614687/play_button.png"></img>
           </td>
           <td className='track-row-number-col'>
             <div className='track-number-info'>{track.album_track_number}.</div>
@@ -75,7 +75,7 @@ class AlbumShow extends React.Component {
                       <tbody>
                         <tr>
                           <td className='play-cell' rowSpan="2">
-                            <a className='play-button'></a>
+                            <img className='play-button' src="http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,w_54/v1484614687/play_button.png"></img>
                           </td>
                           <td className='player-track-cell' colSpan="3">
                             <div className='player-track-info'>
@@ -91,10 +91,10 @@ class AlbumShow extends React.Component {
                             </div>
                           </td>
                           <td className='prev-track-cell'>
-                            <a className='prev-track-button'></a>
+                            <img className='prev-track-button' src="http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,o_20,w_23/v1484611361/noun_121425_cc_jt8gzd.png"></img>
                           </td>
                           <td className='next-track-cell'>
-                            <a className='next-track-button'></a>
+                            <img className='next-track-button' src="http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,w_23/v1484611457/noun_121427_cc_luesuz.png"></img>
                           </td>
                         </tr>
                       </tbody>
