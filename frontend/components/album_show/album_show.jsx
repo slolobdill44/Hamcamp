@@ -19,12 +19,25 @@ class AlbumShow extends React.Component {
       playheadPosition: "0%"
     };
     this.playAudio = this.playAudio.bind(this);
+    this.setState = this.setState.bind(this);
   }
 
   componentWillMount() {
     this.props.fetchAlbum(this.props.params.albumId).then(() => {
       this.setState({currentAlbum: this.props.currentAlbum});
     });
+  }
+
+  componentDidMount() {
+    const music = document.getElementById('music');
+    const playhead = document.getElementById('playhead');
+
+    function timeUpdate() {
+      const percentage = 100 * (Math.floor(music.currentTime) / Math.floor(music.duration));
+      playhead.style.marginLeft = percentage + '%';
+    }
+
+    music.addEventListener('timeupdate', timeUpdate, false);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -38,18 +51,12 @@ class AlbumShow extends React.Component {
 
   playAudio() {
     const music = document.getElementById('music');
-    const playHead = document.getElementById('playhead');
       if (this.state.musicPlaying) {
         music.pause();
         this.setState({musicPlaying: false});
   	} else {
         music.play();
         this.setState({musicPlaying: true});
-        this.setState({currentTime: music.currentTime});
-        const percentage = 100 * (music.currentTime / music.duration);
-        this.setState({playheadPosition: percentage});
-        console.log(music.currentTime);
-        console.log(music.duration);
   	}
   }
 
@@ -133,8 +140,7 @@ class AlbumShow extends React.Component {
 
 
                 <audio id='music' className='music-player' controls='controls'>
-                  <source src="http://res.cloudinary.com/adrianlobdill/video/upload/v1484618676/01._The_Pharcyde_-_4_Better_or_4_Worse_Interlude_btksow.mp3" type='audio/mp3'/>
-                  <source src="http://res.cloudinary.com/adrianlobdill/video/upload/v1484619225/1-01_Flatline_uky8wq.mp3" type='audio/mp3'/>
+                  <source src="http://res.cloudinary.com/adrianlobdill/video/upload/q_29/v1484619225/1-01_Flatline_uky8wq.mp3" type='audio/mp3'/>
                 </audio>
 
                 <div className='inline-player'>
@@ -154,7 +160,7 @@ class AlbumShow extends React.Component {
                       <tr>
                         <td className='progress-bar-cell'>
                           <div className='progress-bar'>
-                            <div className='track-progress-square'></div>
+                            <div id='playhead' className='track-progress-square'></div>
                           </div>
                         </td>
                         <td className='prev-track-cell'>
