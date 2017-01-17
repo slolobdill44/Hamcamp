@@ -1,6 +1,6 @@
 import React from 'react';
 import AuthModalContainer from './auth_modal_container';
-import { Link, withRouter } from 'react-router';
+import { Link, withRouter, hashHistory } from 'react-router';
 
 class AuthModal extends React.Component {
   constructor(props) {
@@ -36,7 +36,11 @@ class AuthModal extends React.Component {
   	handleSubmit(e) {
   		e.preventDefault();
   		const user = this.state;
-  		this.props.processForm({user});
+  		this.props.processForm({user})
+        .then((res) => {
+          console.log(res);
+          hashHistory.push(`/artists/${res.currentUser.id}`);
+        });
   	}
 
   	navLink() {

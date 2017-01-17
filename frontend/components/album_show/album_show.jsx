@@ -6,6 +6,12 @@ class AlbumShow extends React.Component {
     super(props);
 
     this.state = {
+      currentTrack: {
+        albumTrackNo: 1,
+        name: null,
+        url: null,
+        length: 0
+      },
       currentAlbum: {
         artist: {
           username: null
@@ -15,8 +21,7 @@ class AlbumShow extends React.Component {
         ]
       },
       musicPlaying: false,
-      currentTime: 0,
-      playheadPosition: "0%"
+      trackLength: "00:00"
     };
     this.playAudio = this.playAudio.bind(this);
     this.setState = this.setState.bind(this);
@@ -24,7 +29,9 @@ class AlbumShow extends React.Component {
 
   componentWillMount() {
     this.props.fetchAlbum(this.props.params.albumId).then(() => {
-      this.setState({currentAlbum: this.props.currentAlbum});
+      this.setState({
+        currentAlbum: this.props.currentAlbum,
+        currentTrack: this.props.currentAlbum.tracks[0]});
     });
   }
 
@@ -57,7 +64,36 @@ class AlbumShow extends React.Component {
   	} else {
         music.play();
         this.setState({musicPlaying: true});
+
+        let minutes = Math.floor(music.duration / 60);
+        if (minutes < 10) {
+          minutes = "0" + minutes
+        } else {
+          minutes = minutes.toString();
+        }
+        let seconds = Math.floor(music.duration % 60);
+        if (seconds < 10) {
+          seconds = "0" + seconds;
+        } else {
+          seconds = seconds.toString();
+        }
+        const trackTime = minutes + ":" + seconds;
+        debugger;
+        this.setState({trackLength: trackTime});
   	}
+  }
+
+  setDuration() {
+    const music = document.getElementById('music');
+    this.setState({trackLength: music.duration});
+  }
+
+  nextTrack(trackId) {
+
+  }
+
+  prevTrack(trackId) {
+
   }
 
   render () {
@@ -117,7 +153,7 @@ class AlbumShow extends React.Component {
                         <tr>
                           <td className='progress-bar-cell'>
                             <div className='progress-bar'>
-                              <div style={{marginLeft: this.state.playheadPosition}} id='playhead' className='track-progress-square'></div>
+                              <div className='track-progress-square'></div>
                             </div>
                           </td>
                           <td className='prev-track-cell'>
@@ -153,7 +189,7 @@ class AlbumShow extends React.Component {
                         <td className='player-track-cell' colSpan="3">
                           <div className='player-track-info'>
                             <span className='title-section'>{tracks[0].name}</span>
-                            <span className='time'>00:00 / 03:34</span>
+                            <span className='time'>00:00 / {this.state.trackLength}</span>
                           </div>
                         </td>
                       </tr>

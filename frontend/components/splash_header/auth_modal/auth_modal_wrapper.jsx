@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import AuthModalContainer from './auth_modal_container';
+import { hashHistory } from 'react-router';
 
 class AuthModalWrapper extends React.Component {
   constructor(props) {

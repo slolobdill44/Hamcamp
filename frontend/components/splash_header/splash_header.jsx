@@ -1,6 +1,6 @@
 import React from 'react';
 import AccountInfo from './account_info';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 
 class SplashHeader extends React.Component {
 
