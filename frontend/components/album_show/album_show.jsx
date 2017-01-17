@@ -48,10 +48,11 @@ class AlbumShow extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    debugger;
     if (this.props.params.albumId !== nextProps.params.albumId ) {
 
       this.props.fetchAlbum(nextProps.params.albumId).then(() => {
-        this.setState({currentAlbum: this.props.album});
+        this.setState({currentAlbum: this.props.currentAlbum});
       });
     }
   }
