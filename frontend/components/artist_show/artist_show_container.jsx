@@ -6,7 +6,7 @@ import ArtistShow from './artist_show';
 const mapStateToProps = ({ artist }, ownProps) => {
     return {
       artistId: ownProps.params.artistId,
-      artist
+      artist: artist.currentArtist
   };
 };
 

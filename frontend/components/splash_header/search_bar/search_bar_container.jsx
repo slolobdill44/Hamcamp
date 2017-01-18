@@ -7,9 +7,9 @@ const mapStateToProps = ({ session }) => ({
 
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch, ownProps) => ({
 
-};
+});
 
 export default connect(
   mapStateToProps,

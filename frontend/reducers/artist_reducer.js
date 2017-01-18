@@ -1,16 +1,25 @@
-import { RECEIVE_ARTIST } from '../actions/artist_actions';
+import { RECEIVE_ARTIST,
+        RECEIVE_ARTIST_SEARCH} from '../actions/artist_actions';
 import merge from 'lodash/merge';
 
-const defaultArtist = {
-  id: null,
-  username: null
+const defaultState = {
+  searchResults: null,
+  currentArtist: null
 };
 
-const ArtistReducer = (state = defaultArtist, action) => {
+const ArtistReducer = (state = defaultState, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_ARTIST:
-      return action.artist;
+      const currentArtist = action.artist;
+      return merge({}, defaultState, {
+        currentArtist
+      });
+    case RECEIVE_ARTIST_SEARCH:
+      const searchResults = action.results;
+      return merge({}, defaultState, {
+        searchResults
+      });
     default:
       return state;
   }
