@@ -1,15 +1,17 @@
 import { connect } from 'react-redux';
-import {  } from '../../../actions/session_actions';
+import { searchArtists } from '../../../actions/artist_actions';
 import SearchBar from './search_bar';
 
 
-const mapStateToProps = ({ session }) => ({
-
+const mapStateToProps = ({ searchResults }) => ({
+  searchResults
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-
-});
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    searchArtists: query => dispatch(searchArtists(query))
+  };
+};
 
 export default connect(
   mapStateToProps,

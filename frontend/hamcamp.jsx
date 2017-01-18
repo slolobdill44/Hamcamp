@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import Modal from 'react-modal';
 import configureStore from './store/store';
-import { fetchAlbum } from './actions/album_actions';
+import { searchArtists } from './actions/artist_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
 
-  window.fetchAlbum = fetchAlbum;
+  window.searchArtists = searchArtists;
 
   if (window.currentUser) {
     const preloadedState = { session: { currentUser: window.currentUser }};

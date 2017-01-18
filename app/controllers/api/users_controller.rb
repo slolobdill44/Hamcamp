@@ -14,6 +14,19 @@ class Api::UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def index
+    if params[:query]
+      @users = User.where("username ~ ?", params[:query])
+    else
+      @users = none
+    end
+
+    respond_to do |format|
+      format.html { render :search }
+      format.json { render :search }
+    end
+  end
+
   def user_params
     params.require(:user).permit(:username, :password)
   end

@@ -9,7 +9,7 @@ export const fetchArtist = id => (
 export const searchArtists = query => (
   $.ajax({
     method: 'GET',
-    url: 'api/users/search',
+    url: 'api/users',
     dataType: 'json',
     data: { query }
   })

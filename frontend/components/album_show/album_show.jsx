@@ -20,7 +20,9 @@ class AlbumShow extends React.Component {
           { name: "" }
         ]
       },
+      isScrubbing: false,
       musicPlaying: false,
+      trackPosition: "00:00",
       trackLength: "00:00"
     };
     this.playAudio = this.playAudio.bind(this);
@@ -42,17 +44,23 @@ class AlbumShow extends React.Component {
   componentDidMount() {
     const music = document.getElementById('music');
     music.addEventListener('timeupdate', this.timeUpdate, false);
+    music.addEventListener('loadeddata', this.setDuration, false);
 
     const playhead = document.getElementById('playhead');
     const progressBar = document.getElementById('progress-bar');
     const progressBarWidth = (progressBar.offsetWidth - playhead.offsetWidth - 15);
-    // playhead.addEventListener('mousedown', mouseDown, false);
 
-    playhead.onmousedown = function(e1) {
-      document.onmouseup = function() {
+    playhead.onmousedown = () => {
+
+      this.setState({isScrubbing: true});
+
+      document.onmouseup = () => {
         document.onmousemove = null;
+
+        this.setState({isScrubbing: false});
+
       };
-      document.onmousemove = function(drag) {
+      document.onmousemove = (drag) => {
         const newMarginLeft = drag.clientX - 198 - progressBar.offsetLeft;
 
         if (newMarginLeft >= 0 && newMarginLeft < progressBarWidth) {
@@ -64,14 +72,16 @@ class AlbumShow extends React.Component {
         }
 
         const playbackPercent = (newMarginLeft / progressBarWidth);
-        music.currentTime = playbackPercent * music.duration;
+
+        const newTrackPosition = playbackPercent * music.duration;
+        this.setState({currentTrackPosition: newTrackPosition});
+        music.currentTime = newTrackPosition;
 
         console.log('mousemove');
         console.log(progressBar.offsetLeft);
       };
     };
 
-    setTimeout(this.setDuration, 800);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -84,13 +94,17 @@ class AlbumShow extends React.Component {
   }
 
   timeUpdate() {
-    const music = document.getElementById('music');
-    const playhead = document.getElementById('playhead');
-    const currentTrackPosition = document.getElementById('track-time');
 
-    const percentage = 100 * (Math.floor(music.currentTime) / Math.floor(music.duration));
-    playhead.style.marginLeft = percentage + '%';
-    currentTrackPosition.innerHTML = this.trackTime();
+    if (this.state.isScrubbing === false) {
+      const music = document.getElementById('music');
+      const playhead = document.getElementById('playhead');
+      const currentTrackPosition = document.getElementById('track-time');
+
+      const percentage = 100 * (Math.floor(music.currentTime) / Math.floor(music.duration));
+      playhead.style.marginLeft = percentage + '%';
+      currentTrackPosition.innerHTML = this.trackTime();
+    }
+
   }
 
   setDuration() {
@@ -110,7 +124,7 @@ class AlbumShow extends React.Component {
     }
 
     let trackLength = minutes + ":" + seconds;
-
+    console.log(music.duration);
     this.setState({trackLength: trackLength});
   }
 
