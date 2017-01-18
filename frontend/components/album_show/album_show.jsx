@@ -49,14 +49,11 @@ class AlbumShow extends React.Component {
     // playhead.addEventListener('mousedown', mouseDown, false);
 
     playhead.onmousedown = function(e1) {
-      const startPoint = e1.clientX;
-      let change = 0;
-
       document.onmouseup = function() {
         document.onmousemove = null;
       };
       document.onmousemove = function(drag) {
-        const newMarginLeft = drag.clientX - 367 - progressBar.offsetLeft;
+        const newMarginLeft = drag.clientX - 198 - progressBar.offsetLeft;
 
         if (newMarginLeft >= 0 && newMarginLeft < progressBarWidth) {
           playhead.style.marginLeft = newMarginLeft + 'px';
