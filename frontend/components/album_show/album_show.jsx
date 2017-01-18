@@ -25,30 +25,59 @@ class AlbumShow extends React.Component {
     };
     this.playAudio = this.playAudio.bind(this);
     this.setState = this.setState.bind(this);
+    this.trackTime = this.trackTime.bind(this);
+    this.timeUpdate = this.timeUpdate.bind(this);
+    this.setDuration = this.setDuration.bind(this);
   }
 
   componentWillMount() {
-    this.props.fetchAlbum(this.props.params.albumId).then(() => {
-      this.setState({
-        currentAlbum: this.props.currentAlbum,
-        currentTrack: this.props.currentAlbum.tracks[0]});
-    });
+    this.props.fetchAlbum(this.props.params.albumId)
+      .then(() => {
+        this.setState({
+          currentAlbum: this.props.currentAlbum,
+          currentTrack: this.props.currentAlbum.tracks[0]});
+      });
   }
 
   componentDidMount() {
     const music = document.getElementById('music');
+    music.addEventListener('timeupdate', this.timeUpdate, false);
+
     const playhead = document.getElementById('playhead');
+    const progressBar = document.getElementById('progress-bar');
+    const progressBarWidth = (progressBar.offsetWidth - playhead.offsetWidth - 15);
+    // playhead.addEventListener('mousedown', mouseDown, false);
 
-    function timeUpdate() {
-      const percentage = 100 * (Math.floor(music.currentTime) / Math.floor(music.duration));
-      playhead.style.marginLeft = percentage + '%';
-    }
+    playhead.onmousedown = function(e1) {
+      const startPoint = e1.clientX;
+      let change = 0;
 
-    music.addEventListener('timeupdate', timeUpdate, false);
+      document.onmouseup = function() {
+        document.onmousemove = null;
+      };
+      document.onmousemove = function(drag) {
+        const newMarginLeft = drag.clientX - 367 - progressBar.offsetLeft;
+
+        if (newMarginLeft >= 0 && newMarginLeft < progressBarWidth) {
+          playhead.style.marginLeft = newMarginLeft + 'px';
+        } else if (newMarginLeft < 0) {
+          playhead.style.marginLeft = '0px';
+        } else if (newMarginLeft > progressBarWidth) {
+          playhead.style.marginLeft = progressBarWidth + 'px';
+        }
+
+        const playbackPercent = (newMarginLeft / progressBarWidth);
+        music.currentTime = playbackPercent * music.duration;
+
+        console.log('mousemove');
+        console.log(progressBar.offsetLeft);
+      };
+    };
+
+    setTimeout(this.setDuration, 800);
   }
 
   componentWillReceiveProps(nextProps) {
-    debugger;
     if (this.props.params.albumId !== nextProps.params.albumId ) {
 
       this.props.fetchAlbum(nextProps.params.albumId).then(() => {
@@ -57,36 +86,67 @@ class AlbumShow extends React.Component {
     }
   }
 
-  playAudio() {
+  timeUpdate() {
     const music = document.getElementById('music');
-      if (this.state.musicPlaying) {
-        music.pause();
-        this.setState({musicPlaying: false});
-  	} else {
-        music.play();
-        this.setState({musicPlaying: true});
+    const playhead = document.getElementById('playhead');
+    const currentTrackPosition = document.getElementById('track-time');
 
-        let minutes = Math.floor(music.duration / 60);
-        if (minutes < 10) {
-          minutes = "0" + minutes
-        } else {
-          minutes = minutes.toString();
-        }
-        let seconds = Math.floor(music.duration % 60);
-        if (seconds < 10) {
-          seconds = "0" + seconds;
-        } else {
-          seconds = seconds.toString();
-        }
-        const trackTime = minutes + ":" + seconds;
-        debugger;
-        this.setState({trackLength: trackTime});
-  	}
+    const percentage = 100 * (Math.floor(music.currentTime) / Math.floor(music.duration));
+    playhead.style.marginLeft = percentage + '%';
+    currentTrackPosition.innerHTML = this.trackTime();
   }
 
   setDuration() {
     const music = document.getElementById('music');
-    this.setState({trackLength: music.duration});
+
+    let minutes = Math.floor(music.duration / 60);
+    if (minutes < 10) {
+      minutes = "0" + minutes;
+    } else {
+      minutes = minutes.toString();
+    }
+    let seconds = Math.floor(music.duration % 60);
+    if (seconds < 10) {
+      seconds = "0" + seconds;
+    } else {
+      seconds = seconds.toString();
+    }
+
+    let trackLength = minutes + ":" + seconds;
+
+    this.setState({trackLength: trackLength});
+  }
+
+  trackTime() {
+    const music = document.getElementById('music');
+    let minutes = Math.floor(music.currentTime / 60);
+    if (minutes < 10) {
+      minutes = "0" + minutes;
+    } else {
+      minutes = minutes.toString();
+    }
+    let seconds = Math.floor(music.currentTime % 60);
+    if (seconds < 10) {
+      seconds = "0" + seconds;
+    } else {
+      seconds = seconds.toString();
+    }
+    const trackTime = minutes + ":" + seconds;
+
+    return trackTime;
+  }
+
+  playAudio() {
+    const music = document.getElementById('music');
+    if (this.state.musicPlaying) {
+      music.pause();
+      this.setState({musicPlaying: false});
+  	} else {
+      music.play();
+      this.setState({musicPlaying: true});
+      this.trackTime();
+      this.setDuration();
+  	}
   }
 
   nextTrack(trackId) {
@@ -104,9 +164,9 @@ class AlbumShow extends React.Component {
 
     const tracks = this.state.currentAlbum.tracks;
 
-    const trackList = this.state.currentAlbum.tracks.map(track => {
+    const trackList = this.state.currentAlbum.tracks.map((track, idx) => {
       return (
-        <tr key={track.album_track_number} className='track-row'>
+        <tr key={idx} className='track-row'>
           <td className='track-row-play-col'>
             <img className='track-play-link' src="http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,w_20/v1484614687/play_button.png"></img>
           </td>
@@ -137,24 +197,31 @@ class AlbumShow extends React.Component {
                   </h3>
                 </div>
                 <div className='track-listing'>
+                  <br />
+                  <br />
+
+                  <audio id='music' className='music-player' controls='controls'>
+                    <source src="http://res.cloudinary.com/adrianlobdill/video/upload/q_18/v1484619225/1-01_Flatline_uky8wq.mp3" type='audio/mp3'/>
+                  </audio>
+
                   <div className='inline-player'>
                     <table>
                       <tbody>
                         <tr>
-                          <td className='play-cell' rowSpan="2">
-                            <img className='play-button' src="http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,w_54/v1484614687/play_button.png"></img>
+                          <td className='play-cell' onClick={this.playAudio} rowSpan="2">
+                                <img className='play-button' src={pauseOrPlayLarge}></img>
                           </td>
                           <td className='player-track-cell' colSpan="3">
                             <div className='player-track-info'>
                               <span className='title-section'>{tracks[0].name}</span>
-                              <span className='time'>00:00 / 03:34</span>
+                              <span className='time'><span id='track-time'>00:00</span> / {this.state.trackLength}</span>
                             </div>
                           </td>
                         </tr>
                         <tr>
                           <td className='progress-bar-cell'>
-                            <div className='progress-bar'>
-                              <div className='track-progress-square'></div>
+                            <div id='progress-bar' className='progress-bar'>
+                              <div id='playhead' className='track-progress-square'></div>
                             </div>
                           </td>
                           <td className='prev-track-cell'>
@@ -167,6 +234,8 @@ class AlbumShow extends React.Component {
                       </tbody>
                     </table>
                   </div>
+
+
                   <table>
                     <tbody>
                       { trackList }
@@ -176,40 +245,7 @@ class AlbumShow extends React.Component {
                 <div className='description-section'>{this.state.currentAlbum.description}.</div>
 
 
-                <audio id='music' className='music-player' controls='controls'>
-                  <source src="http://res.cloudinary.com/adrianlobdill/video/upload/q_29/v1484619225/1-01_Flatline_uky8wq.mp3" type='audio/mp3'/>
-                </audio>
 
-                <div className='inline-player'>
-                  <table>
-                    <tbody>
-                      <tr>
-                        <td className='play-cell' onClick={() => this.playAudio()} rowSpan="2">
-                              <img className='play-button' src={pauseOrPlayLarge}></img>
-                        </td>
-                        <td className='player-track-cell' colSpan="3">
-                          <div className='player-track-info'>
-                            <span className='title-section'>{tracks[0].name}</span>
-                            <span className='time'>00:00 / {this.state.trackLength}</span>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className='progress-bar-cell'>
-                          <div className='progress-bar'>
-                            <div id='playhead' className='track-progress-square'></div>
-                          </div>
-                        </td>
-                        <td className='prev-track-cell'>
-                          <img className='prev-track-button' src="http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,o_20,w_23/v1484611361/noun_121425_cc_jt8gzd.png"></img>
-                        </td>
-                        <td className='next-track-cell'>
-                          <img className='next-track-button' src="http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,w_23/v1484611457/noun_121427_cc_luesuz.png"></img>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
 
 
               </section>
