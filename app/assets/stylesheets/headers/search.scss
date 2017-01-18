@@ -1,0 +1,38 @@
+.search-bar {
+  border: 1px solid #bebebe;
+  float: right;
+  margin-right: 15%;
+  margin-top: 27px;
+  height: 22px;
+  width: 210px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+.search-text {
+  padding: 5px 1px 0px 7px;
+  font: 12px/14px 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  width: 166px;
+}
+
+.magnifying-glass {
+  height: 16px;
+  width: 16px;
+  float: right;
+  margin-top: 3px;
+  margin-right: 10px;
+}
+
+.search-result-box {
+  border: 1px solid #bebebe;
+  border-radius: 2px;
+  margin-top: 4px;
+  background: whitesmoke;
+  position: absolute;
+}
+
+.search-result-item {
+  border-bottom: 1px solid #bebebe;
+  height: 60px;
+  width: 206px;
+}
