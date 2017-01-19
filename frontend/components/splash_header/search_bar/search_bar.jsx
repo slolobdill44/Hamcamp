@@ -27,7 +27,6 @@ class SearchBar extends React.Component {
   }
 
   render() {
-    console.log(this.props.searchResults);
 
       const resultList = this.props.searchResults.slice(0,4).map(result => {
         return (
