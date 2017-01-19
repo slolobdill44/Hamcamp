@@ -3,6 +3,13 @@
   position: absolute;;
   width: 100%;
   height: 90px;
+  display: flex;
+  justify-content: center;
+}
+
+.splash-left {
+  width: 40%;
+  display: flex;
 }
 
 .splash-logo {
@@ -14,12 +21,11 @@
 }
 
 .splash-title {
-  position: relative;
-  display: inline-block;
-  margin-left: 11px;
-  bottom: 12px;
   font: 28px/1.2307692308 'Helvetica Neue',Helvetica,Arial,sans-serif;
   font-weight: bold;
+  vertical-align: bottom;
+  line-height: 2;
+  margin-left: 20px;
 }
 
 .splash-right {
@@ -27,7 +33,7 @@
   float: right;
   margin-right: 15%;
   height: 170px;
-  width: 480px;
+  width: 50%;
 }
 
 .session-links {
