@@ -1,3 +1,7 @@
+.music-player {
+  display: none;
+}
+
 .album-player {
   height: 100%;
   width: 748px;
@@ -19,7 +23,7 @@
   float: left;
 }
 
-.album-title {
+.album-show-album-title {
   font: normal 28px/1em 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: -4px 30px 8px 0;
 }
@@ -34,6 +38,14 @@
   cursor: pointer;
 }
 
+.album-edit-link {
+  border: 1px solid #bebebe;
+  border-radius: 2px;
+  width: 95px;
+  height: 25px;
+  padding: 10px;
+}
+
 .track-listing {
 
 }
@@ -45,6 +57,10 @@
   width: 100%;
   margin: 24px 0 17px;
   height: 50px;
+}
+
+.inline-player tbody {
+  width: 100%;
 }
 
 table {
@@ -191,8 +207,8 @@ tr {
 .track-play-link {
   border: 1px solid #d9d9d9;
   border-radius: 2px;
-  min-height: 16px;
-  min-width: 17px;
+  height: 16px;
+  width: 17px;
   display: block;
 }
 

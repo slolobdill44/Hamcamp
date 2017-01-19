@@ -5,6 +5,7 @@
   position: relative;
   width: 100%;
   height: 44px;
+  z-index: 2;
 }
 
 .main-logo {
@@ -26,14 +27,35 @@
 }
 
 .main-nav-right {
-  display: inline-block;
+  display: flex;
   float: right;
   margin-right: 15%;
   height: 100%;
-  width: 480px;
+  width: 39%;
+}
+
+.main-nav-right .search-bar {
+  margin-top: 10px;
+}
+
+.main-nav-right .search-bar .search-text {
+  width: 250px;
+}
+
+.main-nav-right .magnifying-glass {
+  margin-top: 3px;
+  margin-right: 4px;
+  position: relative;
+  bottom: 20px;
 }
 
 .main-nav-right .session-links div {
+  display: flex;
+  justify-content: space-around;
+  width: 230px;
+}
+
+.main-nav-right .splash-session-links div {
   display: flex;
   justify-content: space-around;
   width: 230px;

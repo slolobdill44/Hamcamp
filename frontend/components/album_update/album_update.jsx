@@ -71,9 +71,6 @@ class AlbumUpdateForm extends React.Component {
             <input type='submit' value='Update Album' />
           </form>
         </section>
-        <section className='track-form-info'>
-          <h2 className='album-form-headers'>Edit/Add Tracks</h2>
-        </section>
       </div>
     );
   }

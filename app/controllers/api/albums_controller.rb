@@ -5,6 +5,7 @@ class Api::AlbumsController < ApplicationController
 
   def create
     @album = Album.new(album_params)
+    @album.artist_id = current_user.id
 
     if @album.save
       render 'api/albums/show'
@@ -35,6 +36,6 @@ class Api::AlbumsController < ApplicationController
   end
 
   def album_params
-    params.require(:album).permit(:title, :artist_id, :image_url)
+    params.require(:album).permit(:title, :artist_id, :image)
   end
 end

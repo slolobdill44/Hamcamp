@@ -56,6 +56,11 @@ class ArtistShow extends React.Component {
           </aside>
           <ul className="album-container">
               { albumList }
+              <li className="album-list-item">
+                <Link to={'album/new'}>
+                  <button>Add New Album</button>
+                </Link>
+              </li>
           </ul>
         </div>
       </div>

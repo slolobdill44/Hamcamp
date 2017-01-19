@@ -6,7 +6,7 @@
 .album-form-info {
   border: 1px solid black;
   height: 450px;
-  width: 42%;
+  width: 60%;
 }
 
 .album-form-headers {
@@ -21,13 +21,7 @@
   justify-content: space-around;
 }
 
-.album-form-info input {
-  border: 1px solid black;
-  height: 20px;
-  width: 200px;
-}
-
-.album-form-info button {
+.album-title {
   border: 1px solid black;
   height: 20px;
   width: 200px;
@@ -43,4 +37,18 @@
   border: 1px solid black;
   height: 300px;
   width: 37%;
+}
+
+.album-submit-button {
+  border: 1px solid black;
+  border-radius: 11px;
+  height: 40px;
+  width: 120px;
+  margin-bottom: 18px;
+  text-align: center;
+  transition: background 0.35s linear;
+}
+
+.album-submit-button:hover {
+  background-color: #3FA34D;
 }

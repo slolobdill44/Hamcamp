@@ -3,9 +3,9 @@ import { createAlbum } from '../../actions/album_actions';
 import AlbumCreateForm from './album_create';
 
 
-const mapStateToProps = ({currentUser}) => {
+const mapStateToProps = ({session}) => {
   return{
-    currentUser
+    currentUser: session.currentUser
   };
 };
 

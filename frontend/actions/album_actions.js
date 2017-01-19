@@ -12,13 +12,13 @@ export const fetchAlbum = albumId => dispatch => {
 
 export const createAlbum = album => dispatch => (
   APIUtil.createAlbum(album)
-    .then(newAlbum => {dispatch(receiveAlbum(newAlbum));
+    .then(newAlbum => {dispatch(receiveCurrentAlbum(newAlbum));
 	}).fail(err => dispatch(receiveErrors(err.responseJSON)))
 );
 
 export const updateAlbum = album => dispatch => (
   APIUtil.updateAlbum(album)
-    .then(album => dispatch(receiveAlbum(album)),
+    .then(album => dispatch(receiveCurrentAlbum(album)),
     err => dispatch(receiveErrors(err.responseJSON)))
 );
 

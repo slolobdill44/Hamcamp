@@ -8,7 +8,6 @@
 
 COLORS = [
   #lighter, darker
-  ['#77141F', '#3F0F14'], #red
   [ '#7C784A', '#3A3710'], #green
   [ '#ADD7F6', '#87CDFF'], #light blue
   [ '#0C7C59', '#2B4162'], #green/blue

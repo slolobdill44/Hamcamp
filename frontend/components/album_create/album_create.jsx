@@ -7,20 +7,44 @@ class AlbumCreateForm extends React.Component {
 
     this.state = {
       title: "",
-      image_url: null,
+      imageFile: null,
       description: ""
     };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateFile = this.updateFile.bind(this);
+    this.update = this.update.bind(this);
   }
 
   update(field) {
-  return (e) => {
-    this.setState({[field]: e.target.value});
+    return (e) => {
+      this.setState({[field]: e.target.value});
     };
+  }
+
+  updateFile(e) {
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+
+    fileReader.onloadend = () => {
+      this.setState({ imageFile: file });
+    };
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createAlbum(this.state)
+
+    const formData = new FormData();
+
+    formData.append("album[title]", this.state.title);
+    formData.append("album[description]", this.state.description);
+    formData.append("album[image]", this.state.imageFile);
+
+    this.props.createAlbum(formData)
       .then((res) => {
         hashHistory.push(`/artists/${this.props.currentUser.id}`);
       });
@@ -31,9 +55,11 @@ class AlbumCreateForm extends React.Component {
     return (
       <div className='album-form-container'>
         <section className='album-form-info'>
-          <h2 className='album-form-headers'>Create Album</h2>
+
 
           <form className='album-form' onSubmit={this.handleSubmit}>
+            <h2 className='album-form-headers'>Create Album</h2>
+
             <label>Title:
               <input
                 className='album-title'
@@ -42,11 +68,11 @@ class AlbumCreateForm extends React.Component {
                 onChange={this.update('title')} />
             </label>
 
-            <label>Album Art:
-              <button
-                className='album-art-upload'
-                value='Upload Image'>Upload Image</button>
+            <label className='album-art-upload'>Album Art:
+              <input type='file' onChange={this.updateFile} />
             </label>
+
+            <img src={this.state.imageUrl} />
 
             <label>Description:
               <textarea
@@ -56,11 +82,8 @@ class AlbumCreateForm extends React.Component {
                 onChange={this.update('description')} />
             </label>
 
-            <input type='submit' value='Create Album' />
+            <input className='album-submit-button' type='submit' value='Create Album' />
           </form>
-        </section>
-        <section className='track-form-info'>
-          <h2 className='album-form-headers'>Add Tracks</h2>
         </section>
       </div>
     );

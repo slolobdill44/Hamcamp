@@ -27,7 +27,7 @@ class Api::UsersController < ApplicationController
 
   def index
     if params[:query]
-      @users = User.where("username ~ ?", params[:query])
+      @users = User.where("LOWER(username) ~ LOWER(?)", params[:query])
     else
       @users = none
     end
