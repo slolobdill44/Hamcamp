@@ -1,0 +1,46 @@
+.album-form-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.album-form-info {
+  border: 1px solid black;
+  height: 450px;
+  width: 42%;
+}
+
+.album-form-headers {
+  margin-left: 18%;
+  font: 28px/1.2307692308 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-weight: bold;
+}
+
+.album-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.album-form-info input {
+  border: 1px solid black;
+  height: 20px;
+  width: 200px;
+}
+
+.album-form-info button {
+  border: 1px solid black;
+  height: 20px;
+  width: 200px;
+}
+
+.album-form-info textarea {
+  border: 1px solid black;
+  height: 90px;
+  width: 200px;
+}
+
+.track-form-info {
+  border: 1px solid black;
+  height: 300px;
+  width: 37%;
+}

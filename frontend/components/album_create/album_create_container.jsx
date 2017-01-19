@@ -1,15 +1,17 @@
 import { connect } from 'react-redux';
-import { fetchAlbum } from '../../actions/album_actions';
+import { createAlbum } from '../../actions/album_actions';
 import AlbumCreateForm from './album_create';
 
 
-const mapStateToProps = (state) => {
-
+const mapStateToProps = ({currentUser}) => {
+  return{
+    currentUser
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchAlbum: (albumId) => dispatch(fetchAlbum(albumId))
+    createAlbum: album => dispatch(createAlbum(album))
   };
 };
 

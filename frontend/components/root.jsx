@@ -28,7 +28,7 @@ const Root = ({ store }) => {
             <Route path="artists/:artistId" component={ ArtistShowContainer } />
             <Route path="albums/:albumId" component={ AlbumShowContainer } />
             <Route path="albums/:albumId/edit" component={ AlbumUpdateContainer } />
-            <Route path="albums/new" component={ AlbumCreateContainer } />
+            <Route path="album/new" component={ AlbumCreateContainer } />
           </Route>
       </Router>
     </Provider>
