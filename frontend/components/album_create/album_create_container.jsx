@@ -3,14 +3,11 @@ import { fetchAlbum } from '../../actions/album_actions';
 import AlbumCreateForm from './album_create';
 
 
-const mapStateToProps = ({ currentAlbum }, ownProps) => {
-    return {
-      albumId: ownProps.params.albumId,
-      currentAlbum
-  };
+const mapStateToProps = (state) => {
+
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     fetchAlbum: (albumId) => dispatch(fetchAlbum(albumId))
   };

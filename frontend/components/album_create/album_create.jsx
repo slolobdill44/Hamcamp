@@ -20,3 +20,5 @@ class AlbumCreateForm extends React.Component {
       });
   }
 }
+
+export default AlbumCreateForm;

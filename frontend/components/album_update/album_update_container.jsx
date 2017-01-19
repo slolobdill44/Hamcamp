@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchAlbum, updateAlbum } from '../../actions/album_actions';
-import AlbumUpdateForm from './album_form';
+import AlbumUpdateForm from './album_update';
 
 const mapStateToProps = (state, ownProps) => ({
   currentAlbum: state.currentAlbum,
