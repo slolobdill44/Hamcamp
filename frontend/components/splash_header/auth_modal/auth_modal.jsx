@@ -56,9 +56,12 @@ class AuthModal extends React.Component {
   		return(
   			<ul>
   				{this.props.errors.map((error, i) => (
-  					<li className="login-error" key={`error-${i}`}>
-  						{error}
-  					</li>
+            <div>
+              <li className="login-error" key={`error-${i}`}>
+                {error}
+              </li>
+              <br></br>
+            </div>
   				))}
   			</ul>
   		);
@@ -102,7 +105,7 @@ class AuthModal extends React.Component {
                 <input type="text"
                   value={this.state.username}
                   onChange={this.update("username")}
-                  className="login-input" />
+                  className="username-login-input" />
               </label>
 
               <br/>

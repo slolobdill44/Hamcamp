@@ -14,12 +14,13 @@ class Api::AlbumsController < ApplicationController
   end
 
   def update
-    @album = current_user.albums.find(params[:id])
+    # UPDATE TO CURRENT_USER.albums.find(params[:id]) so that users can't edit other albums
+    @album = albums.find(params[:id])
 
     if @album.update_attributes(album_params)
       render 'api/albums/show'
     else
-      render json: ["Invalid new album parameters"], status: 401
+      render json: ["Invalid album update parameters"], status: 401
     end
   end
 

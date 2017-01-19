@@ -1,6 +1,7 @@
 class Api::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
+    @user.band_name = @user.username
 
     if @user.save
       login!(@user)
@@ -12,6 +13,16 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+  end
+
+  def update
+    @user = current_user
+
+    if @user.update_attributes(user_params)
+      render 'api/users/show'
+    else
+      render json: ["Invalid user update parameters"], status: 401
+    end
   end
 
   def index

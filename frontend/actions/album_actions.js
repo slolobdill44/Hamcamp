@@ -1,5 +1,6 @@
 export const RECEIVE_ALBUM = "RECEIVE_ALBUM";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+export const CREATE_ALBUM = "CREATE_ALBUM";
 import * as APIUtil from '../util/album_api_util';
 
 
@@ -8,6 +9,18 @@ export const fetchAlbum = albumId => dispatch => {
     .then(res => dispatch(receiveCurrentAlbum(res)),
     err => dispatch(receiveErrors(err.responseJSON)));
 };
+
+export const createAlbum = album => dispatch => (
+  APIUtil.createAlbum(album)
+    .then(newAlbum => {dispatch(receiveAlbum(newAlbum));
+	}).fail(err => dispatch(receiveErrors(err.responseJSON)))
+);
+
+export const updateAlbum = album => dispatch => (
+  APIUtil.updateAlbum(album)
+    .then(album => dispatch(receiveAlbum(album)),
+    err => dispatch(receiveErrors(err.responseJSON)))
+);
 
 export const receiveCurrentAlbum = currentAlbum => ({
   type: RECEIVE_ALBUM,
