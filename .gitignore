@@ -21,3 +21,5 @@ npm-debug.log
 
 # Ignore application configuration
 /config/application.yml
+
+/app/assets/tracks
