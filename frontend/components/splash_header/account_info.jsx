@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 import AuthModalWrapperContainer from './auth_modal/auth_modal_wrapper_container';
 
 const sessionLinks = ( login ) => (
-  <nav className="session-links">
+  <nav className="splash-session-links">
     <AuthModalWrapperContainer />
   </nav>
 );
@@ -11,7 +11,7 @@ const sessionLinks = ( login ) => (
 const userInfo = ( user, logout ) => (
   <nav className="session-links">
     <a className="session-greeting">Hello, {user.username}</a>
-    <a className="log-out-link"  onClick={() => logout()}>Log Out</a >
+    <a className="log-out-link"  onClick={() => logout().then(() => hashHistory.push('/'))}>Log Out</a >
   </nav>
 );
 
