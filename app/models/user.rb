@@ -18,6 +18,15 @@ class User < ActiveRecord::Base
   validates :session_token, presence: true, uniqueness: true
   validates :username, presence: true, uniqueness: true
 
+
+  #default should be specific unsplash of right dimensions
+  has_attached_file :header_image, default_url: 'https://images.unsplash.com/photo-1416273567255-8abe875affcd?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1075&h=175&fit=crop&s=5ac1ddc0957392dd2e020618b9feabf9'
+  validates_attachment_content_type :header_image, content_type: /\Aimage\/.*\Z/
+
+  has_attached_file :profile_image, styles: {thumb: "50x50#", full: "200x200#"}, default_url: 'http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,w_50/v1484852877/noun_497207_cc_khq2sm.png'
+  validates_attachment_content_type :profile_image, content_type: /\Aimage\/.*\Z/
+
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170119181503) do
+ActiveRecord::Schema.define(version: 20170119185915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,11 +49,11 @@ ActiveRecord::Schema.define(version: 20170119181503) do
   add_index "tracks", ["name"], name: "index_tracks_on_name", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "username",                  null: false
+    t.string   "username",                   null: false
     t.string   "password_digest"
     t.string   "session_token"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.string   "primary_color"
     t.string   "secondary_color"
     t.string   "description"
@@ -62,6 +62,10 @@ ActiveRecord::Schema.define(version: 20170119181503) do
     t.string   "header_image_content_type"
     t.integer  "header_image_file_size"
     t.datetime "header_image_updated_at"
+    t.string   "profile_image_file_name"
+    t.string   "profile_image_content_type"
+    t.integer  "profile_image_file_size"
+    t.datetime "profile_image_updated_at"
   end
 
   add_index "users", ["username"], name: "index_users_on_username", using: :btree
