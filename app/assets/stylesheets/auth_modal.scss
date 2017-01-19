@@ -3,7 +3,7 @@
   margin: 0 auto;
   text-align: center;
   width: 375px;
-  height: 310px;
+  height: 360px;
   border: 1px solid black;
   border-radius: 5px;
   background-color: white;
@@ -42,8 +42,18 @@
   border-radius: 11px;
   height: 40px;
   width: 190px;
-  margin: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+  transition: background 0.35s linear;
+}
+
+.guest-login-button {
+  border: 1px solid black;
+  border-radius: 11px;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #CDD2CD;
+  height: 40px;
+  width: 190px;
   transition: background 0.35s linear;
 }
 

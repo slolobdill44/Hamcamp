@@ -64,10 +64,29 @@ class AuthModal extends React.Component {
   		);
   	}
 
+    renderGuestLoginButton() {
+      return(
+        <button className="login-button" onClick={() => this.guestLogin()}>Guest Login</button>
+      );
+    }
+
+    guestLogin() {
+      const user = { username:"Guest", password:"guestpassword"};
+  		this.props.processForm({user})
+        .then((res) => {
+          console.log(res);
+          hashHistory.push(`/artists/${res.currentUser.id}`);
+        });
+    }
+
   render() {
-    const text = this.state.formType === 'login' ? 'Log in' : 'Create Account';
+    const guestLoginButton = ( <button className="guest-login-button" onClick={() => this.guestLogin()}>Guest Login</button>);
+
+    const text = this.state.formType === 'login' ? 'Log In' : 'Create Account';
     const flavorText = this.state.formType  === 'login' ? 'Don\'t have an account?' : 'Already have an account?';
     const otherFormType = this.state.formType === 'login' ? 'Create an account' : 'Login';
+    const guestLogin = this.state.formType === 'login' ? guestLoginButton : null;
+    const loginSpace = this.state.formType === 'login' ? <br /> : null;
 
     return (
       <div className="login-form-container">
@@ -101,8 +120,10 @@ class AuthModal extends React.Component {
 						<input className="login-button" type="submit" value={text} />
 					</div>
 				</form>
-
-        {flavorText} <a className="login-link" onClick={() => this.navLink()}>{otherFormType} instead</a>
+        {guestLogin}
+        {loginSpace}
+        <br />
+        {flavorText} <a className="login-link" onClick={() => this.navLink()}>{otherFormType} instead!</a>
 			</div>
     );
   }

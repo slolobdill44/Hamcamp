@@ -127,7 +127,6 @@ class AlbumShow extends React.Component {
     }
 
     let trackLength = minutes + ":" + seconds;
-    console.log(music.duration);
     this.setState({trackLength: trackLength});
   }
 

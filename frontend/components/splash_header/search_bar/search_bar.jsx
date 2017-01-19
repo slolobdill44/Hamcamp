@@ -6,7 +6,8 @@ class SearchBar extends React.Component {
     super(props);
 
     this.state = {
-        searchQuery: ""
+        searchQuery: "",
+        display: "none"
     };
   }
 
@@ -16,6 +17,8 @@ class SearchBar extends React.Component {
       this.props.searchArtists(e.target.value);
     };
   }
+
+
 
   componentWillUpdate(nextProps, nextState) {
     const searchResultBox = document.getElementById('search-result-box');
@@ -31,7 +34,7 @@ class SearchBar extends React.Component {
       const resultList = this.props.searchResults.slice(0,4).map(result => {
         return (
           <li key={result.id} className='search-result-item'>
-            <Link to={`/artists/${result.id}`}>
+            <Link className='search-result-link' to={`/artists/${result.id}`}>
               <div className='result-art'></div>
               <div className='result-text'>
                 <div className='result-name'>{result.username}</div>
@@ -42,22 +45,14 @@ class SearchBar extends React.Component {
         );
       });
 
-
-      // const searchResultBox = document.getElementById('search-result-box');
-      // if (resultList === []) {
-      //   searchResultBox.style.display = "none";
-      // } else {
-      //   searchResultBox.style.display = "block";
-      // }
-
-
     const searchResultList = () => {
       const searchResultBox = document.getElementById('search-result-box');
 
       if (this.props.resultList === []) {
-        searchResultBox.style.display = "none";
+        this.setState({display: "none"});
       } else {
-        searchResultBox.style.display = "block";
+        this.setState({display: "block"});
+
       }
 
       return resultList;
@@ -71,7 +66,7 @@ class SearchBar extends React.Component {
           placeholder='Search'
           onChange={this.update()} />
         <img className='magnifying-glass' src='http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,w_20/v1484759695/magnifying_glass_jbea4e.png'></img>
-        <div id='search-result-box' className='search-result-box'>
+        <div style={{display: this.state.display}} id='search-result-box' className='search-result-box'>
           <ul className='search-results'>
             {resultList}
           </ul>

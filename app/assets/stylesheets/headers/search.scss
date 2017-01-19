@@ -4,7 +4,7 @@
   margin-right: 15%;
   margin-top: 27px;
   height: 22px;
-  width: 210px;
+  width: 266px;
   background-color: white;
   border-radius: 2px;
 }
@@ -36,19 +36,28 @@
 .search-result-item {
   border-bottom: 1px solid #bebebe;
   height: 60px;
-  width: 206px;
+  width: 215px;
 }
 
 .search-result-item:hover {
-  background-color: grey;
+  background-color: #edf1f2;
+}
+
+.search-result-link {
+  display: flex;
 }
 
 .result-art {
   outline: 1px solid #DFE7E7;
   height: 50px;
   width: 50px;
-  margin-top: 8px;
+  margin-top: 5px;
   margin-left: 5px;
+}
+
+.result-text {
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 .result-name {
@@ -58,4 +67,5 @@
 
 .result-type {
   font: 12px/13px 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  margin-top: 9px;
 }

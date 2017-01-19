@@ -2,7 +2,6 @@
   background-color: #9BC1BC;
   position: absolute;
   margin-top: 90px;
-  height: 100%;
   width: 100%;
   z-index: -1;
 }
@@ -10,14 +9,13 @@
 .splash-image {
   display: block;
   margin: 0 auto;
-  width: 1000px;
-  height: 340px;
+  width: 80%;
 }
 
 .featured-artists {
   background-color: #E6EBE0;
   display: block;
   margin: 0 auto;;
-  width: 1000px;
+  width: 80%;
   height: 400px;
 }
