@@ -3,7 +3,7 @@ import { RECEIVE_ARTIST,
 import merge from 'lodash/merge';
 
 const defaultState = {
-  searchResults: null,
+  searchResults: [],
   currentArtist: null
 };
 

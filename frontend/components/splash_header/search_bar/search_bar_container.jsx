@@ -3,8 +3,8 @@ import { searchArtists } from '../../../actions/artist_actions';
 import SearchBar from './search_bar';
 
 
-const mapStateToProps = ({ searchResults }) => ({
-  searchResults
+const mapStateToProps = ({ artist }) => ({
+  searchResults: artist.searchResults
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => {

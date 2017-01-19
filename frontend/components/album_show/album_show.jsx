@@ -77,6 +77,9 @@ class AlbumShow extends React.Component {
         this.setState({currentTrackPosition: newTrackPosition});
         music.currentTime = newTrackPosition;
 
+        const currentTrackPosition = document.getElementById('track-time');
+        currentTrackPosition.innerHTML = this.trackTime();
+
         console.log('mousemove');
         console.log(progressBar.offsetLeft);
       };

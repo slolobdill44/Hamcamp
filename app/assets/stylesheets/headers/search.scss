@@ -29,6 +29,8 @@
   margin-top: 4px;
   background: whitesmoke;
   position: absolute;
+  display: block;
+  margin: 0;
 }
 
 .search-result-item {
@@ -37,10 +39,23 @@
   width: 206px;
 }
 
+.search-result-item:hover {
+  background-color: grey;
+}
+
 .result-art {
   outline: 1px solid #DFE7E7;
   height: 50px;
   width: 50px;
   margin-top: 8px;
   margin-left: 5px;
+}
+
+.result-name {
+  font: 14px/15px 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-weight: 800;
+}
+
+.result-type {
+  font: 12px/13px 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
