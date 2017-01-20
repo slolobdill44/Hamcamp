@@ -12,10 +12,11 @@ class AlbumShow extends React.Component {
           username: null
         },
         tracks: [
-          { name: "" }
+          { name: "",
+          track_url: "" }
         ]
       },
-      currentTrack: null
+      currentTrack: ""
     };
 
   }
@@ -24,8 +25,7 @@ class AlbumShow extends React.Component {
     this.props.fetchAlbum(this.props.params.albumId)
       .then(() => {
         this.setState({
-          currentAlbum: this.props.currentAlbum,
-          currentTrack: this.props.currentAlbum.tracks[0].track_url});
+          currentAlbum: this.props.currentAlbum});
       });
   }
 
@@ -49,6 +49,11 @@ class AlbumShow extends React.Component {
         <Link to={`albums/${album.id}/track/new`} >Add Your First Track!</Link>
       </div>
     );
+
+    const addTracks = (
+      <Link to={`albums/${this.state.currentAlbum.id}/track/new`} >Add Track</Link>
+    );
+
     return (
       <div style={{backgroundColor: artist.secondary_color}} className='show-page-background'>
         <div className='show-page-container'>
@@ -66,9 +71,15 @@ class AlbumShow extends React.Component {
                   <br />
                   <Link className='album-edit-link' to={`albums/${album.id}/edit`}>Edit Album</Link>
                   <br />
-
                 </div>
-                {<AudioPlayer tracks={album.tracks} />}
+
+                {album.tracks.length === 0 ? noTracks : <AudioPlayer tracks={album.tracks} />}
+
+                <br />
+                <br />
+                {album.tracks.length === 0 ? null : addTracks }
+
+
                 <div className='description-section'>{album.description}.</div>
               </section>
               <div className='album-art'>
@@ -77,7 +88,7 @@ class AlbumShow extends React.Component {
             </main>
             <aside className='album-artist-info-sidebar'>
               <span className='artist-title'>{artist.username}</span>
-              <span className='discography'>discography</span>
+              <span className='discography'></span>
             </aside>
         </div>
       </div>

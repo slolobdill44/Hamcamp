@@ -51,8 +51,6 @@ class AlbumUpdateForm extends React.Component {
     }
     formData.append("album[description]", this.state.description);
 
-    debugger;
-
     this.props.updateAlbum(formData, this.props.albumId)
       .then((res) => {
         hashHistory.push(`/albums/${this.props.albumId}`);

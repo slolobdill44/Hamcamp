@@ -47,7 +47,6 @@ class TrackCreateForm extends React.Component {
     formData.append("track[track_url]", this.state.trackFile);
     formData.append("track[album_id]", this.props.albumId);
 
-    debugger;
     this.props.createTrack(formData)
       .then((res) => {
         hashHistory.push(`/albums/${this.props.albumId}`);

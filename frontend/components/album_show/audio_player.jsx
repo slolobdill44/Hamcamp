@@ -182,7 +182,7 @@ class AudioPlayer extends React.Component {
     return(
       <div>
         <audio id='music' className='music-player' controls='controls'>
-          <source id='audio-source' src={`${this.state.currentTrack}`}/>
+          <source id='audio-source' src=''/>
         </audio>
 
         <div className='inline-player'>
@@ -221,10 +221,6 @@ class AudioPlayer extends React.Component {
             { trackList }
           </tbody>
         </table>
-        <br />
-        <br />
-
-        <button>Add Track</button>
       </div>
     );
   }
