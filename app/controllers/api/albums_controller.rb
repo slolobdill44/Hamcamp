@@ -16,7 +16,7 @@ class Api::AlbumsController < ApplicationController
 
   def update
     # UPDATE TO CURRENT_USER.albums.find(params[:id]) so that users can't edit other albums
-    @album = albums.find(params[:id])
+    @album = Album.find(params[:id])
 
     if @album.update_attributes(album_params)
       render 'api/albums/show'
@@ -36,6 +36,6 @@ class Api::AlbumsController < ApplicationController
   end
 
   def album_params
-    params.require(:album).permit(:title, :artist_id, :image)
+    params.require(:album).permit(:title, :artist_id, :image, :description)
   end
 end

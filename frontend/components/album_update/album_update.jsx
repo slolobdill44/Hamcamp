@@ -7,32 +7,53 @@ class AlbumUpdateForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      currentAlbum: {
-        title: "",
-        description: ""
-      }
-    };
+    this.state = this.props.currentAlbum;
+
+    this.update = this.update.bind(this);
+    this.updateFile = this.updateFile.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentWillMount() {
     this.props.fetchAlbum(this.props.params.albumId)
       .then(() => {
-        this.setState({
-          currentAlbum: this.props.currentAlbum,
-        });
+        this.setState(this.props.currentAlbum);
       });
   }
 
   update(field) {
-  return (e) => {
-    this.setState({[field]: e.target.value});
+    return (e) => {
+      this.setState({[field]: e.target.value});
     };
+  }
+
+  updateFile(e) {
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+
+    fileReader.onloadend = () => {
+      this.setState({ image: file });
+    };
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.updateAlbum(this.state)
+
+    const formData = new FormData();
+
+    formData.append("album[title]", this.state.title);
+    if (this.state.image !== this.props.currentAlbum.image) {
+      formData.append("album[image]", this.state.image);
+    }
+    formData.append("album[description]", this.state.description);
+
+    debugger;
+
+    this.props.updateAlbum(formData, this.props.albumId)
       .then((res) => {
         hashHistory.push(`/albums/${this.props.albumId}`);
       });
@@ -50,21 +71,19 @@ class AlbumUpdateForm extends React.Component {
               <input
                 className='album-title'
                 type="text"
-                value={this.state.currentAlbum.title}
+                value={this.state.title}
                 onChange={this.update('title')} />
             </label>
 
-            <label>Album Art:
-              <button
-                className='album-art-upload'
-                value='Upload Image'>Upload Image</button>
+            <label className='album-art-upload'>Album Art:
+              <input type='file' onChange={this.updateFile} />
             </label>
 
             <label>Description:
               <textarea
                 className='album-description'
                 type='text'
-                value={this.state.currentAlbum.description}
+                value={this.state.description}
                 onChange={this.update('description')} />
             </label>
 

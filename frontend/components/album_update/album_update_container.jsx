@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchAlbum: albumId => dispatch(fetchAlbum(albumId)),
-	updateAlbum: album => dispatch(updateAlbum(album))
+	updateAlbum: (album, id) => dispatch(updateAlbum(album, id))
 });
 
 

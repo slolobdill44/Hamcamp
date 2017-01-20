@@ -23,8 +23,8 @@ export const createAlbum = album => dispatch => (
 	}).fail(err => dispatch(receiveErrors(err.responseJSON)))
 );
 
-export const updateAlbum = album => dispatch => (
-  APIUtil.updateAlbum(album)
+export const updateAlbum = (album, id) => dispatch => (
+  APIUtil.updateAlbum(album, id)
     .then(album => dispatch(receiveCurrentAlbum(album)),
     err => dispatch(receiveErrors(err.responseJSON)))
 );
