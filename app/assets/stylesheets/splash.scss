@@ -12,7 +12,7 @@
   width: 80%;
 }
 
-.featured-artists-header {
+.featured-albums-header {
   font: 28px/1.2307692308 'Helvetica Neue',Helvetica,Arial,sans-serif;
   font-weight: bold;
   vertical-align: bottom;
@@ -21,10 +21,57 @@
   padding: 26px;
 }
 
-.featured-artists {
+.featured-albums {
   background-color: #E6EBE0;
   display: block;
-  margin: 0 auto;;
+  margin: 0 auto;
+  /* margin-bottom: 66px; */
+  padding-bottom: 90px;
   width: 80%;
-  height: 400px;
+}
+
+.featured-albums-list {
+  list-style: none;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.featured-album-list-item {
+  position: relative;
+  display: inline-block;
+  margin: 14px 45px 45px 0;
+  width: 195px;
+  height: 195px;
+  vertical-align: top;
+}
+
+.featured-album-list-item:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.featured-search-result-box {
+
+}
+
+.featured-album-list-link {
+  font: 12px/1.2307692308 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  width: 100%;
+  font-weight: bold;
+  font-size: 83%;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  margin-top: 7px;
+  margin-left: 3px;
+}
+
+.featured-album-artist {
+  font: 11px/12px 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  width: 100%;
+  font-size: 83%;
+  text-overflow: ellipsis;
+  display: block;
+  margin-top: 2px;
+  margin-left: 3px;
 }

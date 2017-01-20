@@ -5,4 +5,5 @@ end
 json.array!(@albums) do |album|
   json.(album, *Album.column_names)
   json.image_url asset_path(album.image.url(:full))
+  json.artist album.artist.username
 end
