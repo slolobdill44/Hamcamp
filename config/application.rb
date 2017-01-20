@@ -33,6 +33,7 @@ module HamcampsApp
       :region => 'us-west-1',
       :s3_region => 'us-west-1',
       s3_host_name: 's3-us-west-1.amazonaws.com',
+      :bucket => 'hamcamp',
       :s3_credentials => {
         :bucket => ENV["s3_bucket"],
         :access_key_id => ENV["s3_access_key_id"],
