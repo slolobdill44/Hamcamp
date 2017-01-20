@@ -50,7 +50,7 @@ class AuthModalWrapper extends React.Component {
     };
 
     return (
-      <div>
+      <div className="modal-login-links">
         <a className="header-login-link" onClick={this.openModal('login')}>log in</a>
 
         <a className="header-login-link" onClick={this.openModal('signup')}>sign up</a>

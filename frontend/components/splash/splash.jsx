@@ -9,19 +9,22 @@ class Splash extends React.Component {
     super(props);
 
     this.state = {
-      searchQuery: "a"
+      searchQuery: "a",
+      searchResults: []
     };
+
+    this.setState = this.setState.bind(this);
   }
 
   componentWillMount() {
-    this.props.searchArtists(this.state.searchQuery);
+    this.props.searchArtists(this.state.searchQuery)
+      .then(() => this.setState({searchResults: this.props.searchResults}));
   }
 
   render() {
-    const featuredAlbumList = this.props.searchResults.map(result => {
+    const featuredAlbumList = this.state.searchResults.map(result => {
       //if result is an album (has a title)
       if (result.title) {
-        console.log(result);
         return (
           <li key={result.id} className='featured-album-list-item'>
             <Link className='featured-search-result-box' to={`/albums/${result.id}`}>

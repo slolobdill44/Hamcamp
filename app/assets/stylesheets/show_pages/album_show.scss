@@ -38,14 +38,6 @@
   cursor: pointer;
 }
 
-.album-edit-link {
-  border: 1px solid #bebebe;
-  border-radius: 2px;
-  width: 95px;
-  height: 25px;
-  padding: 10px;
-}
-
 .track-listing {
 
 }
@@ -284,6 +276,20 @@ tr {
   float: right;
   position: absolute;
   right: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.album-edit-link {
+  border: 1px solid #bebebe;
+  border-radius: 2px;
+  width: 76px;
+  height: 19px;
+  padding: 10px;
+}
+
+.artist-title:hover {
+  text-decoration: underline;
 }
 
 .discography {

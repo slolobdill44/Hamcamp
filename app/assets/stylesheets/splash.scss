@@ -31,6 +31,11 @@
 }
 
 .featured-albums-list {
+  display: flex;
+  flex-basis: 33%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
   list-style: none;
   width: 80%;
   margin: 0 auto;

@@ -3,7 +3,7 @@ import { Link, hashHistory } from 'react-router';
 import AuthModalWrapperContainer from './auth_modal/auth_modal_wrapper_container';
 
 const sessionLinks = ( login ) => (
-  <nav className="splash-session-links">
+  <nav>
     <AuthModalWrapperContainer />
   </nav>
 );

@@ -78,6 +78,12 @@ Album.create!(
   image: "https://i.scdn.co/image/efe62f5490706f1f3c1c80fc1e25009eb6b927a9",
   description: "Seventh studio album released by the Black Lips in 2014"
 )
+Album.create!(
+  title: "Tidal",
+  artist_id: User.find_by_username('Black Lips').id,
+  image: File.new("#{Rails.root}/app/assets/albums/Catastrophe.jpg"),
+  description: "First EP by Kayin"
+)
 
 Track.destroy_all
 Track.create!(

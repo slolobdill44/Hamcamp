@@ -10,8 +10,10 @@ class SplashHeader extends React.Component {
       <div className="splash-header">
         <section className="splash-left">
           <img className="splash-logo" src="http://res.cloudinary.com/adrianlobdill/image/upload/v1484161674/ham_rw5azp.png" />
-          <h2 className="splash-title">hamcamp</h2>
-          <h4 className="splash-tagline">Discover incredible music and directly support the artists who make it.</h4>
+          <div className="splash-left-text">
+            <h2 className="splash-title">hamcamp</h2>
+            <h4 className="splash-tagline">Discover quality cuts and the artists who slice them.</h4>
+          </div>
         </section>
         <section className="splash-right">
           <SearchBarContainer />

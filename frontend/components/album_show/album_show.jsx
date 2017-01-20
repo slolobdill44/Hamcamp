@@ -85,9 +85,14 @@ class AlbumShow extends React.Component {
               </div>
             </main>
             <aside className='album-artist-info-sidebar'>
-              <span className='artist-title'>{artist.username}</span>
-                <Link className='album-edit-link' to={`albums/${album.id}/edit`}>Edit Album</Link>
+              <span className='artist-title'>
+                <Link to={`artists/${artist.id}`}>
+                  {artist.username}
+                </Link>
+              </span>
               <span className='discography'></span>
+              <br />
+              <Link className='album-edit-link' to={`albums/${album.id}/edit`}>Edit Album</Link>
             </aside>
         </div>
       </div>
