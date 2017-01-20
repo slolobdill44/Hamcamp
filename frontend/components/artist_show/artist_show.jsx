@@ -14,6 +14,7 @@ class ArtistShow extends React.Component {
 
   componentWillMount() {
     this.props.fetchArtist(this.props.params.artistId).then(() => {
+      console.log(this.props.artist);
       this.setState({artist: this.props.artist});
     });
   }
@@ -30,10 +31,11 @@ class ArtistShow extends React.Component {
 
   render () {
     const albumList = this.state.artist.albums.map(album => {
+
       return (
         <li key={album.id} className="album-list-item">
           <Link to={`/albums/${album.id}`}>
-            <img src={`${album.image_url}`}></img>
+            <img src={album.image_url}></img>
             <div className="album-list-link">{album.title}</div>
           </Link>
         </li>

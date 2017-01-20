@@ -1,4 +1,5 @@
-import { RECEIVE_ALBUM } from '../actions/album_actions';
+import { RECEIVE_ALBUM,
+          RECEIVE_ALL_ALBUMS } from '../actions/album_actions';
 import merge from 'lodash/merge';
 
 const currentAlbum = {
@@ -11,6 +12,8 @@ const AlbumReducer = (state = currentAlbum, action) => {
   switch (action.type) {
     case RECEIVE_ALBUM:
       return action.currentAlbum;
+    case RECEIVE_ALL_ALBUMS:
+      return action.albums;
     default:
       return state;
   }

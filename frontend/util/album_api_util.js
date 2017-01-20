@@ -1,3 +1,12 @@
+export const fetchAll = artistId => {
+  return $.ajax({
+    method: "GET",
+    url: 'api/albums',
+    data: { id: artistId }
+  });
+};
+
+
 export const fetchAlbum = id => (
   $.ajax({
     method: 'GET',
