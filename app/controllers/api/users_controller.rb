@@ -28,14 +28,12 @@ class Api::UsersController < ApplicationController
   def index
     if params[:query]
       @users = User.where("LOWER(username) ~ LOWER(?)", params[:query])
+      @albums = Album.where("LOWER(title) ~ LOWER(?)", params[:query])
     else
       @users = none
     end
 
-    respond_to do |format|
-      format.html { render :search }
-      format.json { render :search }
-    end
+    render :search
   end
 
   def user_params

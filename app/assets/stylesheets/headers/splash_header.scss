@@ -26,8 +26,17 @@
   font: 28px/1.2307692308 'Helvetica Neue',Helvetica,Arial,sans-serif;
   font-weight: bold;
   vertical-align: bottom;
-  line-height: 2;
+  line-height: 0.75;
   margin-left: 20px;
+}
+
+.splash-tagline {
+  font: 14px/15px 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-weight: bold;
+  vertical-align: bottom;
+  margin-left: 7.2%;
+  margin-top: 62px;
+  position: absolute;
 }
 
 .splash-right {

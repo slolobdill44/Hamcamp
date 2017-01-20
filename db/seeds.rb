@@ -16,7 +16,7 @@ COLORS = [
 
 User.destroy_all
 User.create!(username: "Adrian", password: "adrian", primary_color: '#0C7489', secondary_color: '#499F68' );
-User.create!(username: "Guest", password: "guestpassword", primary_color: '#77141F', secondary_color: '#3F0F14');
+User.create!(username: "Guest", password: "guestpassword", primary_color: '#F7E3AF', secondary_color: '#C08497');
 User.create!(username: "Pharcyde", password: "pharcyde", primary_color: '#7C784A', secondary_color: '#3A3710');
 User.create!(username: "Black Lips", password: "blacklips", primary_color: '#ADD7F6', secondary_color: '#87CDFF');
 User.create!(username: "Jacques Greene", password: "jacquesgreene", primary_color: '#465362', secondary_color: '#011936' );

@@ -1,22 +1,58 @@
 import React from 'react';
 import SplashHeaderContainer from '../splash_header/splash_header_container';
+import { Link } from 'react-router';
 import Footer from '../footer/footer';
 
 
-const Splash = () => {
-  return (
-    <div>
-      <SplashHeaderContainer />
-      <main className="splash-body">
-        <img className="splash-image" src="https://images.unsplash.com/35/hKViPxgDRGuiGns6wv5S_IMG_5317.jpeg?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1200&h=440&fit=crop&s=3f3e3ecedf5a02438e09668be306b025" />
-        <section className="featured-artists">
+class Splash extends React.Component {
+  constructor(props) {
+    super(props);
 
-        </section>
-      </main>
-      <Footer />
-    </div>
+    this.state = {
+      searchQuery: "a"
+    };
+  }
 
-  );
-};
+  componentWillMount() {
+    this.props.searchArtists(this.state.searchQuery);
+  }
+
+  render() {
+    const featuredAlbumList = this.props.searchResults.map(result => {
+      //if result is an album (has a title)
+      if (result.title) {
+        return (
+          <li key={result.id} className='album-list-item'>
+            <Link className='search-result-link' to={`/albums/${result.id}`}>
+              <img src={result.image_url}></img>
+              <div className="album-list-link">{result.title}</div>
+            </Link>
+          </li>
+        );
+      }
+    });
+
+    const trimmedList = featuredAlbumList.filter(n => {
+      return n !== "undefined";
+    });
+
+    return (
+      <div>
+        <SplashHeaderContainer />
+        <main className="splash-body">
+          <img className="splash-image" src="http://res.cloudinary.com/adrianlobdill/image/upload/v1484936572/newsplashheader_k3906u.png" />
+          <section className="featured-artists">
+            <h3 className="featured-artists-header">Our Featured Albums</h3>
+            <ul>
+              { trimmedList }
+            </ul>
+          </section>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+}
+
 
 export default Splash;

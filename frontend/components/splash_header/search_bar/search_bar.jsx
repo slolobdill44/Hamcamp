@@ -32,17 +32,31 @@ class SearchBar extends React.Component {
   render() {
 
       const resultList = this.props.searchResults.slice(0,4).map(result => {
-        return (
-          <li key={result.id} className='search-result-item'>
-            <Link className='search-result-link' to={`/artists/${result.id}`}>
-              <div className='result-art'></div>
-              <div className='result-text'>
-                <div className='result-name'>{result.username}</div>
-                <div className='result-type'>Artist</div>
-              </div>
-            </Link>
-          </li>
-        );
+        if (result.username) {
+          return(
+            <li key={result.id} className='search-result-item'>
+              <Link className='search-result-link' to={`/artists/${result.id}`}>
+                <div className='result-art'></div>
+                <div className='result-text'>
+                  <div className='result-name'>{result.username}</div>
+                  <div className='result-type'>Artist</div>
+                </div>
+              </Link>
+            </li>
+          );
+        } else {
+          return (
+            <li key={result.id} className='search-result-item'>
+              <Link className='search-result-link' to={`/albums/${result.id}`}>
+                <div className='result-art'></div>
+                <div className='result-text'>
+                  <div className='result-name'>{result.title}</div>
+                  <div className='result-type'>Album</div>
+                </div>
+              </Link>
+            </li>
+          );
+        }
       });
 
     const searchResultList = () => {

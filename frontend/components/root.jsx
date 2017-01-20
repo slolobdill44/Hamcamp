@@ -7,7 +7,7 @@ import AlbumCreateContainer from './album_create/album_create_container';
 import AlbumUpdateContainer from './album_update/album_update_container';
 import TrackCreateContainer from './track_create/track_create_container';
 
-import Splash from './splash/splash';
+import SplashContainer from './splash/splash_container';
 import App from './app';
 
 
@@ -24,7 +24,7 @@ const Root = ({ store }) => {
   return (
     <Provider store={store}>
       <Router history={ hashHistory }>
-        <Route path="/" component={ Splash } />
+        <Route path="/" component={ SplashContainer } />
           <Route component={ App }>
             <Route path="artists/:artistId" component={ ArtistShowContainer } />
             <Route path="albums/:albumId" component={ AlbumShowContainer } />

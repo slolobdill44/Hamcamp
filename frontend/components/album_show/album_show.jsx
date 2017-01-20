@@ -65,13 +65,11 @@ class AlbumShow extends React.Component {
                   <h3 className='album-artist-name'>by <Link
                       to={`artists/${artist.id}`}
                       className='album-artist-name-link'>{artist.username}</Link>
+
                   </h3>
                 </div>
-                <div className='track-listing'>
                   <br />
-                  <Link className='album-edit-link' to={`albums/${album.id}/edit`}>Edit Album</Link>
                   <br />
-                </div>
 
                 {album.tracks.length === 0 ? noTracks : <AudioPlayer tracks={album.tracks} />}
 
@@ -88,6 +86,7 @@ class AlbumShow extends React.Component {
             </main>
             <aside className='album-artist-info-sidebar'>
               <span className='artist-title'>{artist.username}</span>
+                <Link className='album-edit-link' to={`albums/${album.id}/edit`}>Edit Album</Link>
               <span className='discography'></span>
             </aside>
         </div>
