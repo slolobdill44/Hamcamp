@@ -49,6 +49,8 @@ class AlbumShow extends React.Component {
       </div>
     );
 
+
+    console.log(album.image_url);
     return (
       <div style={{backgroundColor: artist.secondary_color}} className='show-page-background'>
         <div className='show-page-container'>
@@ -72,7 +74,7 @@ class AlbumShow extends React.Component {
                 <div className='description-section'>{album.description}.</div>
               </section>
               <div className='album-art'>
-                <img className='album-image' src={`${album.image_url}`}></img>
+                <img className='album-image' src={album.image_url}></img>
               </div>
             </main>
             <aside className='album-artist-info-sidebar'>
