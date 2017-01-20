@@ -30,7 +30,8 @@ module HamcampsApp
     # config.i18n.default_locale = :de
     config.paperclip_defaults = {
       :storage => :s3,
-      :s3_region => ENV["s3_region"],
+      :region => 'us-west-1',
+      :s3_region => 'us-west-1',
       s3_host_name: 's3-us-west-1.amazonaws.com',
       :s3_credentials => {
         :bucket => ENV["s3_bucket"],

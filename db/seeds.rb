@@ -19,8 +19,8 @@ User.create!(username: "Adrian", password: "adrian", primary_color: '#0C7489', s
 User.create!(username: "Guest", password: "guestpassword", primary_color: '#77141F', secondary_color: '#3F0F14');
 User.create!(username: "Pharcyde", password: "pharcyde", primary_color: '#7C784A', secondary_color: '#3A3710');
 User.create!(username: "Black Lips", password: "blacklips", primary_color: '#ADD7F6', secondary_color: '#87CDFF');
-User.create!(username: "Jacques Greene", password: "jacquesgreene", primary_color: '#465362', secondary_color: '#011936' )
-User.create!(username: "Vanessa", password: "vanessa", primary_color: '#0C7489', secondary_color: '#499F68')
+User.create!(username: "Jacques Greene", password: "jacquesgreene", primary_color: '#465362', secondary_color: '#011936' );
+User.create!(username: "Vanessa", password: "vanessa", primary_color: '#0C7489', secondary_color: '#499F68');
 
 def new_faker_user
   pallete = rand(0..3)
@@ -80,166 +80,166 @@ Album.create!(
 )
 
 Track.destroy_all
-# Track.create!(
-#   name: "4 Better or 4 Worse (interlude)",
-#   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
-#   album_track_number: 1
-# )
-# Track.create!(
-#   name: "Oh Shit",
-#   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
-#   album_track_number: 2
-# )
-# Track.create!(
-#   name: "It's Jigaboo Time (skit)",
-#   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
-#   album_track_number: 3
-# )
-# Track.create!(
-#   name: "4 Better or 4 Worse",
-#   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
-#   album_track_number: 4
-# )
-# Track.create!(
-#   name: "I'm That Type of Nigga",
-#   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
-#   album_track_number: 5
-# )
-# Track.create!(
-#   name: "If I Were President (skit)",
-#   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
-#   album_track_number: 6
-# )
-# Track.create!(
-#   name: "Soul Flower (remix)",
-#   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
-#   album_track_number: 7
-# )
-# Track.create!(
-#   name: "On the DL",
-#   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
-#   album_track_number: 8
-# )
-# Track.create!(
-#   name: "Pack the Pipe (interlude)",
-#   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
-#   album_track_number: 9
-# )
-# Track.create!(
-#   name: "Officer",
-#   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
-#   album_track_number: 10
-# )
-# Track.create!(
-#   name: "Ya Mama",
-#   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
-#   album_track_number: 11
-# )
-# Track.create!(
-#   name: "Passing Me By",
-#   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
-#   album_track_number: 12
-# )
-# Track.create!(
-#   name: "Otha Fish",
-#   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
-#   album_track_number: 13
-# )
-# Track.create!(
-#   name: "Quinton's on the Way(skit)",
-#   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
-#   album_track_number: 14
-# )
-# Track.create!(
-#   name: "Pack the Pipe",
-#   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
-#   album_track_number: 15
-# )
-# Track.create!(
-#   name: "Return of the B-boy",
-#   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
-#   album_track_number: 16
-# )
-#
-# Track.create!(
-#   name: "Flatline",
-#   album_id: Album.find_by_title('Concealer').id,
-#   album_track_number: 1
-# )
-# Track.create!(
-#   name: "These Days",
-#   album_id: Album.find_by_title('Concealer').id,
-#   album_track_number: 2
-# )
-# Track.create!(
-#   name: "Clark",
-#   album_id: Album.find_by_title('Concealer').id,
-#   album_track_number: 3
-# )
-# Track.create!(
-#   name: "Arrow",
-#   album_id: Album.find_by_title('Concealer').id,
-#   album_track_number: 4
-# )
-#
-#
-# Track.create!(
-#   name: "Drive By Buddy",
-#   album_id: Album.find_by_title('Underneath the Rainbow').id,
-#   album_track_number: 1
-# )
-# Track.create!(
-#   name: "Smiling",
-#   album_id: Album.find_by_title('Underneath the Rainbow').id,
-#   album_track_number: 2
-# )
-# Track.create!(
-#   name: "Make You Mine",
-#   album_id: Album.find_by_title('Underneath the Rainbow').id,
-#   album_track_number: 3
-# )
-# Track.create!(
-#   name: "Funny",
-#   album_id: Album.find_by_title('Underneath the Rainbow').id,
-#   album_track_number: 4
-# )
-# Track.create!(
-#   name: "Dorner Party",
-#   album_id: Album.find_by_title('Underneath the Rainbow').id,
-#   album_track_number: 5
-# )
-# Track.create!(
-#   name: "Justice After All",
-#   album_id: Album.find_by_title('Underneath the Rainbow').id,
-#   album_track_number: 6
-# )
-# Track.create!(
-#   name: "Boys in the Wood",
-#   album_id: Album.find_by_title('Underneath the Rainbow').id,
-#   album_track_number: 7
-# )
-# Track.create!(
-#   name: "Waiting",
-#   album_id: Album.find_by_title('Underneath the Rainbow').id,
-#   album_track_number: 8
-# )
-# Track.create!(
-#   name: "Do the Vibrate",
-#   album_id: Album.find_by_title('Underneath the Rainbow').id,
-#   album_track_number: 9
-# )
-# Track.create!(
-#   name: "I Don't Wanna Go Home",
-#   album_id: Album.find_by_title('Underneath the Rainbow').id,
-#   album_track_number: 10
-# )
-# Track.create!(
-#   name: "Dandelion Dust",
-#   album_id: Album.find_by_title('Underneath the Rainbow').id,
-#   album_track_number: 11
-# )
-# Track.create!(
-#   name: "Dog Years",
-#   album_id: Album.find_by_title('Underneath the Rainbow').id,
-#   album_track_number: 12
-# )
+Track.create!(
+  name: "4 Better or 4 Worse (interlude)",
+  album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
+  album_track_number: 1
+)
+Track.create!(
+  name: "Oh Shit",
+  album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
+  album_track_number: 2
+)
+Track.create!(
+  name: "It's Jigaboo Time (skit)",
+  album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
+  album_track_number: 3
+)
+Track.create!(
+  name: "4 Better or 4 Worse",
+  album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
+  album_track_number: 4
+)
+Track.create!(
+  name: "I'm That Type of Nigga",
+  album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
+  album_track_number: 5
+)
+Track.create!(
+  name: "If I Were President (skit)",
+  album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
+  album_track_number: 6
+)
+Track.create!(
+  name: "Soul Flower (remix)",
+  album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
+  album_track_number: 7
+)
+Track.create!(
+  name: "On the DL",
+  album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
+  album_track_number: 8
+)
+Track.create!(
+  name: "Pack the Pipe (interlude)",
+  album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
+  album_track_number: 9
+)
+Track.create!(
+  name: "Officer",
+  album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
+  album_track_number: 10
+)
+Track.create!(
+  name: "Ya Mama",
+  album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
+  album_track_number: 11
+)
+Track.create!(
+  name: "Passing Me By",
+  album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
+  album_track_number: 12
+)
+Track.create!(
+  name: "Otha Fish",
+  album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
+  album_track_number: 13
+)
+Track.create!(
+  name: "Quinton's on the Way(skit)",
+  album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
+  album_track_number: 14
+)
+Track.create!(
+  name: "Pack the Pipe",
+  album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
+  album_track_number: 15
+)
+Track.create!(
+  name: "Return of the B-boy",
+  album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
+  album_track_number: 16
+)
+
+Track.create!(
+  name: "Flatline",
+  album_id: Album.find_by_title('Concealer').id,
+  album_track_number: 1
+)
+Track.create!(
+  name: "These Days",
+  album_id: Album.find_by_title('Concealer').id,
+  album_track_number: 2
+)
+Track.create!(
+  name: "Clark",
+  album_id: Album.find_by_title('Concealer').id,
+  album_track_number: 3
+)
+Track.create!(
+  name: "Arrow",
+  album_id: Album.find_by_title('Concealer').id,
+  album_track_number: 4
+)
+
+
+Track.create!(
+  name: "Drive By Buddy",
+  album_id: Album.find_by_title('Underneath the Rainbow').id,
+  album_track_number: 1
+)
+Track.create!(
+  name: "Smiling",
+  album_id: Album.find_by_title('Underneath the Rainbow').id,
+  album_track_number: 2
+)
+Track.create!(
+  name: "Make You Mine",
+  album_id: Album.find_by_title('Underneath the Rainbow').id,
+  album_track_number: 3
+)
+Track.create!(
+  name: "Funny",
+  album_id: Album.find_by_title('Underneath the Rainbow').id,
+  album_track_number: 4
+)
+Track.create!(
+  name: "Dorner Party",
+  album_id: Album.find_by_title('Underneath the Rainbow').id,
+  album_track_number: 5
+)
+Track.create!(
+  name: "Justice After All",
+  album_id: Album.find_by_title('Underneath the Rainbow').id,
+  album_track_number: 6
+)
+Track.create!(
+  name: "Boys in the Wood",
+  album_id: Album.find_by_title('Underneath the Rainbow').id,
+  album_track_number: 7
+)
+Track.create!(
+  name: "Waiting",
+  album_id: Album.find_by_title('Underneath the Rainbow').id,
+  album_track_number: 8
+)
+Track.create!(
+  name: "Do the Vibrate",
+  album_id: Album.find_by_title('Underneath the Rainbow').id,
+  album_track_number: 9
+)
+Track.create!(
+  name: "I Don't Wanna Go Home",
+  album_id: Album.find_by_title('Underneath the Rainbow').id,
+  album_track_number: 10
+)
+Track.create!(
+  name: "Dandelion Dust",
+  album_id: Album.find_by_title('Underneath the Rainbow').id,
+  album_track_number: 11
+)
+Track.create!(
+  name: "Dog Years",
+  album_id: Album.find_by_title('Underneath the Rainbow').id,
+  album_track_number: 12
+)
