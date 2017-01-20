@@ -1,5 +1,5 @@
 class Track < ActiveRecord::Base
-  validates :name, :album, presence: true
+  validates :name, :album, :album_track_number, presence: true
 
   has_attached_file :track_url, default_url: "http://res.cloudinary.com/adrianlobdill/video/upload/q_36/v1484618676/01._The_Pharcyde_-_4_Better_or_4_Worse_Interlude_btksow.mp3"
   validates_attachment_content_type :track_url, content_type: [

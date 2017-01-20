@@ -44,6 +44,8 @@ class AlbumCreateForm extends React.Component {
     formData.append("album[description]", this.state.description);
     formData.append("album[image]", this.state.imageFile);
 
+    debugger;
+
     this.props.createAlbum(formData)
       .then((res) => {
         hashHistory.push(`/artists/${this.props.currentUser.id}`);

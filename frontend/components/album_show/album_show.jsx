@@ -14,7 +14,8 @@ class AlbumShow extends React.Component {
         tracks: [
           { name: "" }
         ]
-      }
+      },
+      currentTrack: null
     };
 
   }
@@ -24,7 +25,7 @@ class AlbumShow extends React.Component {
       .then(() => {
         this.setState({
           currentAlbum: this.props.currentAlbum,
-          currentTrack: this.props.currentAlbum.tracks[0]});
+          currentTrack: this.props.currentAlbum.tracks[0].track_url});
       });
   }
 
@@ -45,12 +46,9 @@ class AlbumShow extends React.Component {
       <div>
         <br />
         <p>Your album doesn't have any tracks!</p>
-        <button>Add Your First Track!</button>
+        <Link to={`albums/${album.id}/track/new`} >Add Your First Track!</Link>
       </div>
     );
-
-
-    console.log(album.image_url);
     return (
       <div style={{backgroundColor: artist.secondary_color}} className='show-page-background'>
         <div className='show-page-container'>
@@ -70,7 +68,7 @@ class AlbumShow extends React.Component {
                   <br />
 
                 </div>
-                {album.tracks === [] ? <AudioPlayer tracks={album.tracks} /> : noTracks}
+                {<AudioPlayer tracks={album.tracks} />}
                 <div className='description-section'>{album.description}.</div>
               </section>
               <div className='album-art'>

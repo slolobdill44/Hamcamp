@@ -5,7 +5,7 @@ class AudioPlayer extends React.Component {
     super(props);
 
     this.state = {
-      currentTrack: this.props.tracks[0],
+      currentTrack: "",
       isScrubbing: false,
       musicPlaying: false,
       trackPosition: "00:00",
@@ -17,6 +17,20 @@ class AudioPlayer extends React.Component {
     this.trackTime = this.trackTime.bind(this);
     this.timeUpdate = this.timeUpdate.bind(this);
     this.setDuration = this.setDuration.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.tracks !== nextProps.tracks ) {
+      const track = nextProps.tracks[0].track_url;
+      this.setState({currentTrack: track});
+
+      const music = document.getElementById('music');
+      const source = document.getElementById('audio-source');
+
+      source.src = track;
+
+      music.load();
+    }
   }
 
   componentDidMount() {
@@ -144,6 +158,8 @@ class AudioPlayer extends React.Component {
 
     const tracks = this.props.tracks;
 
+
+
     const trackList = tracks.map((track, idx) => {
       return (
         <tr key={idx} className='track-row'>
@@ -166,7 +182,7 @@ class AudioPlayer extends React.Component {
     return(
       <div>
         <audio id='music' className='music-player' controls='controls'>
-          <source src="http://res.cloudinary.com/adrianlobdill/video/upload/q_30/v1484618676/01._The_Pharcyde_-_4_Better_or_4_Worse_Interlude_btksow.mp3" type='audio/mp3'/>
+          <source id='audio-source' src={`${this.state.currentTrack}`}/>
         </audio>
 
         <div className='inline-player'>
