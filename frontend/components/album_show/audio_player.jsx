@@ -167,7 +167,7 @@ class AudioPlayer extends React.Component {
             <img className='track-play-link' src="http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,w_20/v1484614687/play_button.png"></img>
           </td>
           <td className='track-row-number-col'>
-            <div className='track-number-info'>{track.album_track_number}.</div>
+            <div className='track-number-info'>{track.track_number}.</div>
           </td>
           <td className='track-title-col'>
             <div className='track-title-info'>{track.name}</div>
