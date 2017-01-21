@@ -14,7 +14,6 @@ class ArtistShow extends React.Component {
 
   componentWillMount() {
     this.props.fetchArtist(this.props.params.artistId).then(() => {
-      console.log(this.props.artist);
       this.setState({artist: this.props.artist});
     });
   }

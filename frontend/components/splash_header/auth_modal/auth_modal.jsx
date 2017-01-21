@@ -76,7 +76,6 @@ class AuthModal extends React.Component {
       const user = { username:"Guest", password:"guestpassword"};
   		this.props.processForm({user})
         .then((res) => {
-          console.log(res);
           hashHistory.push(`/artists/${res.currentUser.id}`);
         });
     }

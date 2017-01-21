@@ -20,7 +20,6 @@ class AudioPlayer extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps.tracks);
     if (this.props.tracks !== nextProps.tracks ) {
       const track = nextProps.tracks[0].track_url;
       this.setState({currentTrack: track});
@@ -73,8 +72,6 @@ class AudioPlayer extends React.Component {
         const currentTrackPosition = document.getElementById('track-time');
         currentTrackPosition.innerHTML = this.trackTime();
 
-        // console.log('mousemove');
-        // console.log(progressBar.offsetLeft);
       };
     };
   }
