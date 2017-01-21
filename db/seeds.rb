@@ -118,7 +118,7 @@ Track.create!(
   name: "4 Better or 4 Worse (interlude)",
   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
   album_track_number: 1,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/bizarre_ride/014Betteror4Worse(Interlude)(1).mp3")
+  track_url: "http://s3-us-west-1.amazonaws.com/hamcamp/tracks/track_urls/000/000/021/original/01Ready%281%29.mp3?1484956663"
 )
 Track.create!(
   name: "Oh Shit",

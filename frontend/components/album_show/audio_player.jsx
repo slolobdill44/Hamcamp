@@ -20,6 +20,7 @@ class AudioPlayer extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    console.log(nextProps.tracks);
     if (this.props.tracks !== nextProps.tracks ) {
       const track = nextProps.tracks[0].track_url;
       this.setState({currentTrack: track});
