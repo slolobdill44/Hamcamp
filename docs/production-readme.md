@@ -1,10 +1,14 @@
 # Hamcamp
 
-[Live App]
+[Live App][live]
+
+[live]: https://hamcamp.co
 
 Hamcamp is a full-stack web application that was inspired by the desire to bring a Facebook music-sharing group to a wider audience.
 
-This app takes most of its inspiration from [Bandcamp]https://bandcamp.com/.
+This app takes most of its inspiration from [Bandcamp][bandcamp]
+
+[bandcamp]: https://bandcamp.com/
 
 Backend: Ruby on Rails
 Database: PostgreSQL
@@ -16,26 +20,9 @@ Frontend: React.js with a Redux architecture
 
 Music is organized in the database by Artists, Albums, and Tracks.
 
-Artists (all users are artists) have a:
-* id
-* name
-
-Albums have a:
-* id
-* title
-* artist_id
-* image_url
-* description
-
-Tracks have a:
-* id
-* name
-* album_id
-* length
-* url
+Every user on Hamcamp is a musician, and albums can be created right from a user's profile page. After creating an album, tracks can be uploaded using a track upload form.
 
 Each artist page lists out an artists' `albums`.
-
 
 ## Song Player
 
