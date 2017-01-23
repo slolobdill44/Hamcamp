@@ -78,7 +78,7 @@ class AlbumShow extends React.Component {
                 {album.tracks.length === 0 ? null : addTracks }
 
 
-                <div className='description-section'>{album.description}.</div>
+                <div className='description-section'>{album.description}</div>
               </section>
               <div className='album-art'>
                 <img className='album-image' src={album.image_url}></img>

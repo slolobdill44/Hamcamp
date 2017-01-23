@@ -5,7 +5,7 @@ class AudioPlayer extends React.Component {
     super(props);
 
     this.state = {
-      currentTrack: "",
+      currentTrack: 0,
       isScrubbing: false,
       musicPlaying: false,
       trackPosition: "00:00",
@@ -17,12 +17,16 @@ class AudioPlayer extends React.Component {
     this.trackTime = this.trackTime.bind(this);
     this.timeUpdate = this.timeUpdate.bind(this);
     this.setDuration = this.setDuration.bind(this);
+    this.changeTrack = this.changeTrack.bind(this);
+    this.nextTrack = this.nextTrack.bind(this);
+    this.prevTrack = this.prevTrack.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps, nextState) {
     if (this.props.tracks !== nextProps.tracks ) {
-      const track = nextProps.tracks[0].track_url;
-      this.setState({currentTrack: track});
+      const trackNumber = this.state.currentTrack;
+
+      const track = nextProps.tracks[trackNumber].track_url;
 
       const music = document.getElementById('music');
       const source = document.getElementById('audio-source');
@@ -74,6 +78,22 @@ class AudioPlayer extends React.Component {
 
       };
     };
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    if (this.state.currentTrack !== nextState.currentTrack ) {
+      const trackNumber = nextState.currentTrack;
+
+      const track = nextProps.tracks[trackNumber].track_url;
+
+      const music = document.getElementById('music');
+      const source = document.getElementById('audio-source');
+
+      source.src = track;
+
+      music.load();
+      music.play();
+    }
   }
 
   timeUpdate() {
@@ -142,26 +162,45 @@ class AudioPlayer extends React.Component {
   	}
   }
 
-  nextTrack(trackId) {
-
+  changeTrack(newTrack) {
+    this.setState({currentTrack: newTrack});
+    this.setState({musicPlaying: true});
   }
 
-  prevTrack(trackId) {
+  nextTrack() {
+    if (this.state.currentTrack < (this.props.tracks.length - 1)) {
+      const nextTrackNum = (this.state.currentTrack + 1);
+      this.setState({currentTrack: nextTrackNum});
+    }
+    if (!this.state.musicPlaying) {
+      this.setState({musicPlaying: true});
+    }
+  }
 
+  prevTrack() {
+    if (this.state.currentTrack > 0) {
+      const nextTrackNum = (this.state.currentTrack - 1);
+      this.setState({currentTrack: nextTrackNum});
+    }
   }
 
   render() {
 
-    const pauseOrPlayLarge = this.state.musicPlaying === true ? "http://res.cloudinary.com/adrianlobdill/image/upload/v1484616436/pause_button.png" : "http://res.cloudinary.com/adrianlobdill/image/upload/v1484614687/play_button.png"
+    const pauseOrPlayLarge = this.state.musicPlaying === true ? "http://res.cloudinary.com/adrianlobdill/image/upload/v1484616436/pause_button.png" : "http://res.cloudinary.com/adrianlobdill/image/upload/v1484614687/play_button.png";
 
     const tracks = this.props.tracks;
 
+    const currentTrackNum = this.state.currentTrack;
+
+    const prevTrackButtonStyle = currentTrackNum === 0 ? "http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,o_20,w_23/v1484611361/noun_121425_cc_jt8gzd.png" : "http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,w_23/v1484611361/noun_121425_cc_jt8gzd.png";
+
+    const nextTrackButtonStyle = currentTrackNum === (tracks.length - 1) ? "http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,o_20,w_23/v1484611457/noun_121427_cc_luesuz.png" : "http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,w_23/v1484611457/noun_121427_cc_luesuz.png";
 
 
     const trackList = tracks.map((track, idx) => {
       return (
         <tr key={idx} className='track-row'>
-          <td className='track-row-play-col'>
+          <td className='track-row-play-col' onClick={() => this.changeTrack(idx)}>
             <img className='track-play-link' src="http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,w_20/v1484614687/play_button.png"></img>
           </td>
           <td className='track-row-number-col'>
@@ -192,7 +231,7 @@ class AudioPlayer extends React.Component {
                 </td>
                 <td className='player-track-cell' colSpan="3">
                   <div className='player-track-info'>
-                    <span className='title-section'>{tracks[0].name}</span>
+                    <span className='title-section'>{tracks[currentTrackNum].name}</span>
                     <span className='time'><span id='track-time'>00:00</span> / {this.state.trackLength}</span>
                   </div>
                 </td>
@@ -203,11 +242,11 @@ class AudioPlayer extends React.Component {
                     <div id='playhead' className='track-progress-square'></div>
                   </div>
                 </td>
-                <td className='prev-track-cell'>
-                  <img className='prev-track-button' src="http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,o_20,w_23/v1484611361/noun_121425_cc_jt8gzd.png"></img>
+                <td className='prev-track-cell' onClick={() => this.prevTrack()}>
+                  <img className='prev-track-button' src={prevTrackButtonStyle}></img>
                 </td>
-                <td className='next-track-cell'>
-                  <img className='next-track-button' src="http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,w_23/v1484611457/noun_121427_cc_luesuz.png"></img>
+                <td className='next-track-cell' onClick={() => this.nextTrack()}>
+                  <img className='next-track-button' src={nextTrackButtonStyle}></img>
                 </td>
               </tr>
             </tbody>
