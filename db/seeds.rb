@@ -15,12 +15,12 @@ COLORS = [
 ]
 
 User.destroy_all
-User.create!(username: "Adrian", password: "adrian", primary_color: '#0C7489', secondary_color: '#499F68' );
+# User.create!(username: "Adrian", password: "adrian", primary_color: '#0C7489', secondary_color: '#499F68' );
 User.create!(username: "Guest", password: "guestpassword", primary_color: '#F7E3AF', secondary_color: '#C08497');
 User.create!(username: "Pharcyde", password: "pharcyde", primary_color: '#7C784A', secondary_color: '#3A3710');
 User.create!(username: "Black Lips", password: "blacklips", primary_color: '#ADD7F6', secondary_color: '#87CDFF');
 User.create!(username: "Jacques Greene", password: "jacquesgreene", primary_color: '#465362', secondary_color: '#011936' );
-User.create!(username: "Vanessa", password: "vanessa", primary_color: '#0C7489', secondary_color: '#499F68');
+# User.create!(username: "Vanessa", password: "vanessa", primary_color: '#0C7489', secondary_color: '#499F68');
 User.create!(username: "Kayin", password: "kayin1", primary_color: '#F7E3AF', secondary_color: '#C08497');
 
 # def new_faker_user
@@ -43,12 +43,12 @@ Album.create!(
   image: "https://i.scdn.co/image/84bd913b1da2604f17e0c124dbbd9e44b5ab9528",
   description: "First album by The Pharcyde. Released in 1993."
 )
-Album.create!(
-  title: "Labcabincalifornia",
-  artist_id: User.find_by_username('Pharcyde').id,
-  image: "https://i.scdn.co/image/a5446cbeaa5911d9850c72aeaa3bf81250ecc44a",
-  description: "Second album by The Pharcyde. Released in 1995."
-)
+# Album.create!(
+#   title: "Labcabincalifornia",
+#   artist_id: User.find_by_username('Pharcyde').id,
+#   image: "https://i.scdn.co/image/a5446cbeaa5911d9850c72aeaa3bf81250ecc44a",
+#   description: "Second album by The Pharcyde. Released in 1995."
+# )
 Album.create!(
   title: "Concealer",
   artist_id: User.find_by_username('Jacques Greene').id,
@@ -82,33 +82,33 @@ Album.create!(
 Album.create!(
   title: "Catastrophe",
   artist_id: User.find_by_username('Guest').id,
-  image: File.new("http://s3-us-west-1.amazonaws.com/hamcamp/albums/images/000/000/008/full/Catastrophe.jpg?1484956624"),
-  description: "First EP by Kayin."
-)
-Album.create!(
-  title: "Crevices of the Mind",
-  artist_id: User.find_by_username('Kayin').id,
-  image: File.new("http://s3-us-west-1.amazonaws.com/hamcamp/albums/images/000/000/009/full/Crevices.jpg?1484956629"),
-  description: "First EP by Kayin."
+  image: "http://res.cloudinary.com/adrianlobdill/image/upload/v1485159282/Cover_fud5xo.jpg",
+  description: "The first album by Guest"
 )
 Album.create!(
   title: "Moon Safari",
   artist_id: User.find_by_username('Guest').id,
-  image: File.new("http://s3-us-west-1.amazonaws.com/hamcamp/albums/images/000/000/010/full/02.jpg?1484956632"),
-  description: "First album by the world famous Guest."
+  image: "http://res.cloudinary.com/adrianlobdill/image/upload/v1485159361/02_pohfwf.jpg",
+  description: "Second album by the dynamic artist known as Guest."
+)
+Album.create!(
+title: "Crevices of the Mind",
+artist_id: User.find_by_username('Kayin').id,
+image: "http://res.cloudinary.com/adrianlobdill/image/upload/v1485159424/Catastrophe_xqaryc.jpg",
+description: "First EP by Kayin."
 )
 Album.create!(
   title: "Bricolage",
   artist_id: User.find_by_username('Kayin').id,
-  image: File.new("http://s3-us-west-1.amazonaws.com/hamcamp/albums/images/000/000/011/full/03.jpg?1484956633"),
-  description: "The second album by Guest."
+  image: "http://res.cloudinary.com/adrianlobdill/image/upload/v1485159430/03_qgfpuv.jpg",
+  description: "The second album by Kayin."
 )
-Album.create!(
-  title: "Good Things",
-  artist_id: User.find_by_username('Adrian').id,
-  image: File.new("http://s3-us-west-1.amazonaws.com/hamcamp/albums/images/000/000/012/full/01.png?1484956634"),
-  description: "The second album by Guest."
-)
+# Album.create!(
+#   title: "Good Things",
+#   artist_id: User.find_by_username('Adrian').id,
+#   image: File.new("http://s3-us-west-1.amazonaws.com/hamcamp/albums/images/000/000/012/full/01.png?1484956634"),
+#   description: "The second album by Guest."
+# )
 
 # #################################################
 # #################################################
