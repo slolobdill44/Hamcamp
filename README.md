@@ -1,5 +1,8 @@
 # Hamcamp
 
+![hamcamp-logo]
+[hamcamp-logo]: ./app/assets/images/hamcamp_logo_200px_V2.png
+
 [Live App][live]
 
 [live]: https://www.hamcamp.co
