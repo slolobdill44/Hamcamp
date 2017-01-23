@@ -11,7 +11,7 @@ class MainHeader extends React.Component {
     return (
       <div className="main-header">
         <Link to={logoLink}>
-          <img className="main-logo" src="http://res.cloudinary.com/adrianlobdill/image/upload/v1484161674/ham_rw5azp.png" />
+          <img className="main-logo" src="http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,h_37/v1485154475/hamcamp_logo_100px_V2_drto1u.png" />
           <h2 className="main-title">hc</h2>
         </Link>
         <section className="main-nav-right">

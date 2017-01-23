@@ -11,6 +11,10 @@ class SearchBar extends React.Component {
     };
   }
 
+  componentWillMount() {
+    this.setState({searchQuery: ""});
+  }
+
   update() {
     return (e) => {
       this.setState({searchQuery: e.target.value});

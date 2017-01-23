@@ -52,8 +52,8 @@ class Splash extends React.Component {
               { trimmedList }
             </ul>
           </section>
+          <footer></footer>
         </main>
-        <Footer />
       </div>
     );
   }

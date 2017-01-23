@@ -15,17 +15,17 @@
 }
 
 .splash-logo {
-  margin-top: 15px;
+  margin-top: 24px;
   display: inline-block;
-  width: 75px;
-  height: 61px;
+  width: 100px;
+  height: 55px;
 }
 
 .splash-left-text {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  margin-left: 3%;
+  margin-left: 3.5%;
 }
 
 .splash-title {
@@ -91,14 +91,17 @@
 
 .splash-session-links:hover {
   cursor: pointer;
+  text-decoration: underline;
 }
-
-
 
 .header-login-link {
   margin: 10px;
   font: 16px/1.2307692308 'Helvetica Neue',Helvetica,Arial,sans-serif;
   font-weight: bold;
+}
+
+.header-login-link:hover {
+  text-decoration: underline;
 }
 
 .guest-account {
@@ -108,6 +111,7 @@
 
 .login-link:hover {
   cursor: pointer;
+  text-decoration: underline;
 }
 
 .session-greeting {
@@ -119,4 +123,8 @@
 
 .log-out-link {
   font-size: 15px;
+}
+
+.log-out-link:hover {
+  text-decoration: underline;
 }
