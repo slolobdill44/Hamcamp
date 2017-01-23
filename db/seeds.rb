@@ -82,25 +82,25 @@ Album.create!(
 Album.create!(
   title: "Catastrophe",
   artist_id: User.find_by_username('Guest').id,
-  image: "http://res.cloudinary.com/adrianlobdill/image/upload/v1485159282/Cover_fud5xo.jpg",
+  image: "https://res.cloudinary.com/adrianlobdill/image/upload/v1485159282/Cover_fud5xo.jpg",
   description: "The first album by Guest"
 )
 Album.create!(
   title: "Moon Safari",
   artist_id: User.find_by_username('Guest').id,
-  image: "http://res.cloudinary.com/adrianlobdill/image/upload/v1485159361/02_pohfwf.jpg",
+  image: "https://res.cloudinary.com/adrianlobdill/image/upload/v1485159361/02_pohfwf.jpg",
   description: "Second album by the dynamic artist known as Guest."
 )
 Album.create!(
 title: "Crevices of the Mind",
 artist_id: User.find_by_username('Kayin').id,
-image: "http://res.cloudinary.com/adrianlobdill/image/upload/v1485159424/Catastrophe_xqaryc.jpg",
+image: "https://res.cloudinary.com/adrianlobdill/image/upload/v1485159424/Catastrophe_xqaryc.jpg",
 description: "First EP by Kayin."
 )
 Album.create!(
   title: "Bricolage",
   artist_id: User.find_by_username('Kayin').id,
-  image: "http://res.cloudinary.com/adrianlobdill/image/upload/v1485159430/03_qgfpuv.jpg",
+  image: "https://res.cloudinary.com/adrianlobdill/image/upload/v1485159430/03_qgfpuv.jpgs",
   description: "The second album by Kayin."
 )
 # Album.create!(
