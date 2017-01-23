@@ -210,7 +210,7 @@ class AudioPlayer extends React.Component {
             <div className='track-title-info'>{track.name}</div>
           </td>
           <td className='track-download-col'>
-            <a className='track-download-link'>download</a>
+            <a className='track-download-link'></a>
           </td>
         </tr>
       );
