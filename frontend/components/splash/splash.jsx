@@ -9,7 +9,7 @@ class Splash extends React.Component {
     super(props);
 
     this.state = {
-      searchQuery: "a",
+      searchQuery: "e",
       searchResults: []
     };
 
