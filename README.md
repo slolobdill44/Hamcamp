@@ -2,7 +2,7 @@
 
 [Live App][live]
 
-[live]: https://hamcamp.co
+[live]: https://www.hamcamp.co
 
 Hamcamp is a full-stack web application that was inspired by the desire to bring a Facebook music-sharing group to a wider audience.
 
