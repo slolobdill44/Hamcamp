@@ -42,17 +42,17 @@ class AlbumShow extends React.Component {
     const album = this.state.currentAlbum;
     const artist = this.state.currentAlbum.artist;
 
-    const noTracks = (
+    const noTracks = this.props.currentUser ? (
       <div>
         <br />
         <p>Your album doesn't have any tracks!</p>
         <Link to={`albums/${album.id}/track/new`} >Add Your First Track!</Link>
       </div>
-    );
+    ): "";
 
-    const addTracks = (
-      <Link to={`albums/${this.state.currentAlbum.id}/track/new`} >Add Track</Link>
-    );
+    const addTracks = this.props.currentUser ? <Link to={`albums/${this.state.currentAlbum.id}/track/new`} >Add Track</Link> : "";
+
+    const editButton = this.props.currentUser ? <Link className='album-edit-link' to={`albums/${album.id}/edit`}>Edit Album</Link> : "";
 
     return (
       <div style={{backgroundColor: artist.secondary_color}} className='show-page-background'>
@@ -71,11 +71,11 @@ class AlbumShow extends React.Component {
                   <br />
                   <br />
 
-                {album.tracks.length === 0 ? noTracks : <AudioPlayer tracks={album.tracks} />}
+                { album.tracks.length === 0 ? noTracks : <AudioPlayer tracks={album.tracks} /> }
 
                 <br />
                 <br />
-                {album.tracks.length === 0 ? null : addTracks }
+                { album.tracks.length === 0 ? null : addTracks }
 
 
                 <div className='description-section'>{album.description}</div>
@@ -92,7 +92,7 @@ class AlbumShow extends React.Component {
               </span>
               <span className='discography'></span>
               <br />
-              <Link className='album-edit-link' to={`albums/${album.id}/edit`}>Edit Album</Link>
+              { editButton }
             </aside>
         </div>
       </div>

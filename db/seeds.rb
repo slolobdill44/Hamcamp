@@ -82,31 +82,31 @@ Album.create!(
 Album.create!(
   title: "Catastrophe",
   artist_id: User.find_by_username('Guest').id,
-  image: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/albums/Catastrophe.jpg"),
+  image: File.new("http://s3-us-west-1.amazonaws.com/hamcamp/albums/images/000/000/008/full/Catastrophe.jpg?1484956624"),
   description: "First EP by Kayin."
 )
 Album.create!(
   title: "Crevices of the Mind",
   artist_id: User.find_by_username('Kayin').id,
-  image: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/albums/Crevices.jpg"),
+  image: File.new("http://s3-us-west-1.amazonaws.com/hamcamp/albums/images/000/000/009/full/Crevices.jpg?1484956629"),
   description: "First EP by Kayin."
 )
 Album.create!(
   title: "Moon Safari",
   artist_id: User.find_by_username('Guest').id,
-  image: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/albums/02.jpg"),
+  image: File.new("http://s3-us-west-1.amazonaws.com/hamcamp/albums/images/000/000/010/full/02.jpg?1484956632"),
   description: "First album by the world famous Guest."
 )
 Album.create!(
   title: "Bricolage",
   artist_id: User.find_by_username('Kayin').id,
-  image: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/albums/03.jpg"),
+  image: File.new("http://s3-us-west-1.amazonaws.com/hamcamp/albums/images/000/000/011/full/03.jpg?1484956633"),
   description: "The second album by Guest."
 )
 Album.create!(
   title: "Good Things",
   artist_id: User.find_by_username('Adrian').id,
-  image: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/albums/01.png"),
+  image: File.new("http://s3-us-west-1.amazonaws.com/hamcamp/albums/images/000/000/012/full/01.png?1484956634"),
   description: "The second album by Guest."
 )
 

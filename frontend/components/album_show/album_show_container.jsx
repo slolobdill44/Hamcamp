@@ -3,10 +3,11 @@ import { fetchAlbum } from '../../actions/album_actions';
 import AlbumShow from './album_show';
 
 
-const mapStateToProps = ({ currentAlbum }, ownProps) => {
+const mapStateToProps = (state, ownProps) => {
     return {
       albumId: ownProps.params.albumId,
-      currentAlbum
+      currentAlbum: state.currentAlbum,
+      currentUser: state.session.currentUser
   };
 };
 
