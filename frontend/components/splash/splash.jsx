@@ -52,7 +52,9 @@ class Splash extends React.Component {
               { trimmedList }
             </ul>
           </section>
-          <footer></footer>
+          <footer>
+            <div className='footer-text'>Logo by KC Roeyer</div>
+          </footer>
         </main>
       </div>
     );
