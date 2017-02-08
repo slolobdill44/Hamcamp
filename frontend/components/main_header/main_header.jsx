@@ -10,17 +10,19 @@ class MainHeader extends React.Component {
 
     return (
       <div className="main-header">
-        <Link to={logoLink}>
-          <img className="main-logo" src="http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,h_37/v1485154475/hamcamp_logo_100px_V2_drto1u.png" />
-          <h2 className="main-title">hc</h2>
-        </Link>
-        <section className="main-nav-right">
+        <div className="main-nav-left">
+          <Link to={logoLink}>
+            <img className="main-logo" src="http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,h_37/v1485154475/hamcamp_logo_100px_V2_drto1u.png" />
+            <h2 className="main-title">hc</h2>
+          </Link>
+        </div>
+        <div className="main-nav-right">
           <SearchBarContainer />
           <AccountInfo
             user={this.props.user}
             login={this.props.login}
             logout={this.props.logout} />
-        </section>
+        </div>
       </div>
     );
   }

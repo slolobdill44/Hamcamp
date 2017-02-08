@@ -16,6 +16,16 @@ class AlbumCreateForm extends React.Component {
     this.update = this.update.bind(this);
   }
 
+  //   $( document ).ajaxStart(function() {
+  //   $(".spinner").show();
+  //   $(".sidebar").hide();
+  // });
+  //
+  // $( document ).ajaxComplete(function() {
+  //   $(".spinner").hide();
+  //   $(".sidebar").show();
+  // });
+
   update(field) {
     return (e) => {
       this.setState({[field]: e.target.value});
