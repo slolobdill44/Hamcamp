@@ -29,6 +29,29 @@
   cursor: pointer;
 }
 
+.add-album-link {
+  border: 4px dashed black;
+  border-radius: 12px;
+  position: relative;
+  display: inline-block;
+  margin: 14px 45px 30px 0;
+  width: 187px;
+  height: 188px;
+  vertical-align: top;
+}
+
+.add-album-text {
+  font: 16px/1.2307692308 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  position: absolute;
+  left: 34px;
+  top: 68px;
+}
+
+.album-list-item:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .album-list-link {
   font: 12px/1.2307692308 'Helvetica Neue',Helvetica,Arial,sans-serif;
   width: 100%;

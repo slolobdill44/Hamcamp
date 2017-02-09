@@ -75,11 +75,11 @@ class ArtistShow extends React.Component {
           <ul className="album-container">
               { albumList }
               { this.checkIfUserIsArtist() &&
-                <li className="album-list-item">
-                  <Link to={'album/new'}>
-                    <button>Add New Album</button>
-                  </Link>
-                </li>
+                <Link to={'album/new'}>
+                  <li className="add-album-link">
+                      <p className="add-album-text">Add New Album</p>
+                  </li>
+                </Link>
               }
           </ul>
         </div>
