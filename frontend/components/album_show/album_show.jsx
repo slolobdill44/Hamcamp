@@ -45,12 +45,12 @@ class AlbumShow extends React.Component {
     const noTracks = this.props.currentUser ? (
       <div>
         <br />
-        <p>Your album doesn't have any tracks!</p>
-        <Link to={`albums/${album.id}/track/new`} >Add Your First Track!</Link>
+        <p className='no-tracks-text'>Your album doesn't have any tracks!</p>
+        <Link className='first-track-add-link' to={`albums/${album.id}/track/new`} >Add Your First Track!</Link>
       </div>
     ): "";
 
-    const addTracks = this.props.currentUser ? <Link to={`albums/${this.state.currentAlbum.id}/track/new`} >Add Track</Link> : "";
+    const addTracks = this.props.currentUser ? <Link className='track-add-link' to={`albums/${this.state.currentAlbum.id}/track/new`} >Add Track</Link> : "";
 
     const editButton = this.props.currentUser ? <Link className='album-edit-link' to={`albums/${album.id}/edit`}>Edit Album</Link> : "";
 
