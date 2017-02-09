@@ -6,10 +6,13 @@ class ArtistShow extends React.Component {
     super(props);
 
     this.state = {
+      currentUserId: null,
       artist: {
         albums: []
       }
     };
+
+    this.checkIfUserIsArtist = this.checkIfUserIsArtist.bind(this);
   }
 
   componentWillMount() {
@@ -24,6 +27,20 @@ class ArtistShow extends React.Component {
       this.props.fetchArtist(nextProps.params.artistId).then(() => {
         this.setState({artist: this.props.artist});
       });
+    }
+  }
+
+  checkIfUserIsArtist() {
+    if (this.props.currentUser === null) {
+      return false;
+    } else if (parseInt(this.props.currentUser.id) !== parseInt(this.props.params.artistId)) {
+      console.log("not same artist");
+      console.log(this.props.currentUser.id);
+      console.log(this.props.params.artistId);
+      return false;
+    } else {
+      console.log("is artist!");
+      return true;
     }
   }
 
@@ -57,11 +74,13 @@ class ArtistShow extends React.Component {
           </aside>
           <ul className="album-container">
               { albumList }
-              <li className="album-list-item">
-                <Link to={'album/new'}>
-                  <button>Add New Album</button>
-                </Link>
-              </li>
+              { this.checkIfUserIsArtist() &&
+                <li className="album-list-item">
+                  <Link to={'album/new'}>
+                    <button>Add New Album</button>
+                  </Link>
+                </li>
+              }
           </ul>
         </div>
       </div>
