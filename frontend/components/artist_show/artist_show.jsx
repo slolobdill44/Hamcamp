@@ -34,12 +34,8 @@ class ArtistShow extends React.Component {
     if (this.props.currentUser === null) {
       return false;
     } else if (parseInt(this.props.currentUser.id) !== parseInt(this.props.params.artistId)) {
-      console.log("not same artist");
-      console.log(this.props.currentUser.id);
-      console.log(this.props.params.artistId);
       return false;
     } else {
-      console.log("is artist!");
       return true;
     }
   }
