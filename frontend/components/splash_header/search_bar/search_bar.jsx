@@ -22,14 +22,20 @@ class SearchBar extends React.Component {
     };
   }
 
-
-
   componentWillUpdate(nextProps, nextState) {
     const searchResultBox = document.getElementById('search-result-box');
+    const searchInput = document.getElementById('search-input');
     if (nextState.searchQuery === "") {
       searchResultBox.style.display = "none";
     } else {
       searchResultBox.style.display = "block";
+      searchInput.addEventListener("blur", () => {
+        searchResultBox.style.display = "none";
+      });
+      searchInput.addEventListener("focus", () => {
+        console.log("tried to focus");
+        searchResultBox.style.display = "block";
+      });
     }
   }
 
@@ -84,6 +90,7 @@ class SearchBar extends React.Component {
       <div className='search-bar'>
         <input
           className='search-text'
+          id='search-input'
           type='text'
           placeholder='Search'
           onChange={this.update()} />
