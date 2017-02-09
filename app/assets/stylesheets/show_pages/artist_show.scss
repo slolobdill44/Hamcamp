@@ -40,11 +40,19 @@
   vertical-align: top;
 }
 
+.plus-image {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 39%;
+  top: 29%;
+}
+
 .add-album-text {
   font: 16px/1.2307692308 'Helvetica Neue',Helvetica,Arial,sans-serif;
   position: absolute;
-  left: 34px;
-  top: 68px;
+  left: 37px;
+  top: 102px;
 }
 
 .album-list-item:hover {

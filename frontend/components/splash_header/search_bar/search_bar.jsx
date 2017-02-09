@@ -40,7 +40,9 @@ class SearchBar extends React.Component {
           return(
             <li key={result.username} className='search-result-item'>
               <Link className='search-result-link' to={`/artists/${result.id}`}>
-                <div className='result-art'></div>
+                <div className='result-art'>
+                  <img className='search-result-user-image' src="http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,w_50/v1484852877/noun_497207_cc_khq2sm.png" />
+                </div>
                 <div className='result-text'>
                   <div className='result-name'>{result.username}</div>
                   <div className='result-type'>Artist</div>

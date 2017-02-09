@@ -73,7 +73,8 @@ class ArtistShow extends React.Component {
               { this.checkIfUserIsArtist() &&
                 <Link to={'album/new'}>
                   <li className="add-album-link">
-                      <p className="add-album-text">Add New Album</p>
+                    <img className="plus-image" src="http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,w_64/v1486663610/plus_sign_c9i6vk.png" />
+                    <p className="add-album-text">Add New Album</p>
                   </li>
                 </Link>
               }
