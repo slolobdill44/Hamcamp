@@ -55,7 +55,7 @@ class AuthModal extends React.Component {
   		return(
   			<ul>
   				{this.props.errors.map((error, i) => (
-            <div>
+            <div key={i}>
               <li className="login-error" key={`error-${i}`}>
                 {error}
               </li>
@@ -124,7 +124,9 @@ class AuthModal extends React.Component {
         {guestLogin}
         {loginSpace}
         <br />
-        {flavorText} <a className="login-link" onClick={() => this.navLink()}>{otherFormType} instead!</a>
+        <div className='login-change-text'>
+          {flavorText} <a className="login-link" onClick={() => this.navLink()}>{otherFormType} instead!</a>
+        </div>
 			</div>
     );
   }

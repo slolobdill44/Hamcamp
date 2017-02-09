@@ -38,7 +38,7 @@ class SearchBar extends React.Component {
       const resultList = this.props.searchResults.slice(0,4).map(result => {
         if (result.username) {
           return(
-            <li key={result.id} className='search-result-item'>
+            <li key={result.username} className='search-result-item'>
               <Link className='search-result-link' to={`/artists/${result.id}`}>
                 <div className='result-art'></div>
                 <div className='result-text'>
@@ -50,9 +50,11 @@ class SearchBar extends React.Component {
           );
         } else {
           return (
-            <li key={result.id} className='search-result-item'>
+            <li key={result.title} className='search-result-item'>
               <Link className='search-result-link' to={`/albums/${result.id}`}>
-                <div className='result-art'></div>
+                <div className='result-art'>
+                  <img className='search-result-album-image' src={`${result.image_url}`} />
+                </div>
                 <div className='result-text'>
                   <div className='result-name'>{result.title}</div>
                   <div className='result-type'>Album</div>
