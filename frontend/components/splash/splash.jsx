@@ -37,9 +37,7 @@ class Splash extends React.Component {
       }
     });
 
-    const trimmedList = featuredAlbumList.filter(n => {
-      return n !== "undefined";
-    });
+    const trimmedList = featuredAlbumList.slice(0,10);
 
     return (
       <div>
@@ -53,7 +51,7 @@ class Splash extends React.Component {
             </ul>
           </section>
           <footer>
-            <div className='footer-text'>logo by KC Roeyer</div>
+            <div className='footer-text'>logo & loading spinner by KC Roeyer</div>
           </footer>
         </main>
       </div>
