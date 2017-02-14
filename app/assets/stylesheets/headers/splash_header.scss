@@ -1,9 +1,9 @@
 .splash-header {
   background-color: #E6EBE0;
-  position: absolute;;
+  position: absolute;
   width: 80%;
-  height: 90px;
-  padding: 0 10%;
+  height: 85px;
+  padding: 0px 10%;
   display: flex;
   justify-content: center;
 }
@@ -15,7 +15,7 @@
 }
 
 .splash-logo {
-  margin-top: 24px;
+  margin-top: 17px;
   display: inline-block;
   width: 100px;
   height: 55px;
@@ -29,16 +29,19 @@
 }
 
 .splash-title {
-  font: 28px/1.2307692308 'Helvetica Neue',Helvetica,Arial,sans-serif;
-  font-weight: bold;
+  font-size: 34px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 800;
   vertical-align: bottom;
-  line-height: 0.75;
-  margin-left: 3%;
+  line-height: 0.53;
+  margin-left: 8.5px;
   margin-bottom: 0;
+  margin-top: 20px;
 }
 
 .splash-tagline {
-  font: 14px/15px 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  font-family: 'Muli', sans-serif;
   font-weight: bold;
   vertical-align: bottom;
   width: 100%;
@@ -68,7 +71,8 @@
   display: flex;
   margin-top: 14px;
   margin-right: 15%;
-  font: 16px/1.2307692308 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-family: 'Muli', sans-serif;
   font-weight: bold;
   margin-bottom: 0px;
 }
@@ -84,7 +88,8 @@
   display: flex;
   margin-top: 8px;
   margin-right: 15%;
-  font: 16px/1.2307692308 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-family: 'Muli', sans-serif;
   font-weight: bold;
   margin-bottom: 0px;
 }
@@ -95,13 +100,20 @@
 }
 
 .header-login-link {
-  margin: 10px;
-  font: 16px/1.2307692308 'Helvetica Neue',Helvetica,Arial,sans-serif;
-  font-weight: bold;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 9px;
+  font-size: 15px;
+  font-family: 'Muli', sans-serif;
+  font-weight: 800;
 }
 
 .header-login-link:hover {
   text-decoration: underline;
+}
+
+#login-link {
+  margin-right: 0;
 }
 
 .guest-account {

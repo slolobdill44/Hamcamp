@@ -11,7 +11,7 @@ class SplashHeader extends React.Component {
         <section className="splash-left">
           <img className="splash-logo" src="http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,w_100/v1485153364/hamcamp_logo_200px_V2_jeifyy.png" />
           <div className="splash-left-text">
-            <h2 className="splash-title">hamcamp</h2>
+            <h2 className="splash-title">Hamcamp</h2>
             <h4 className="splash-tagline">Discover quality cuts and the artists who slice them.</h4>
           </div>
         </section>

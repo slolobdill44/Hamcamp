@@ -53,7 +53,7 @@ class Splash extends React.Component {
             </ul>
           </section>
           <footer>
-            <div className='footer-text'>Logo by KC Roeyer</div>
+            <div className='footer-text'>logo by KC Roeyer</div>
           </footer>
         </main>
       </div>

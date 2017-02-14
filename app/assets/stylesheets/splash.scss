@@ -1,7 +1,7 @@
 .splash-body {
   background-color: #9BC1BC;
   position: absolute;
-  margin-top: 90px;
+  margin-top: 85px;
   width: 100%;
   z-index: -1;
 }
@@ -13,12 +13,15 @@
 }
 
 .featured-albums-header {
-  font: 28px/1.2307692308 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-size: 28px;
+  font-family: 'Lato', sans-serif;
   font-weight: bold;
   vertical-align: bottom;
   line-height: 0.75;
   margin: 0 auto;
-  padding: 26px;
+  padding-left: 31px;
+  padding-top: 26px;
+  padding-bottom: 16px;
 }
 
 .featured-albums {
@@ -44,7 +47,7 @@
 .featured-album-list-item {
   position: relative;
   display: inline-block;
-  margin: 14px 45px 45px 0;
+  margin: 14px 2px 45px 2px;
   width: 195px;
   height: 195px;
   vertical-align: top;
@@ -60,7 +63,8 @@
 }
 
 .featured-album-list-link {
-  font: 12px/1.2307692308 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-size: 12px;
+  font-family: 'Lato', sans-serif;
   width: 100%;
   font-weight: bold;
   font-size: 83%;
@@ -72,7 +76,8 @@
 }
 
 .featured-album-artist {
-  font: 11px/12px 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-size: 11px;
+  font-family: 'Lato', sans-serif;
   width: 100%;
   font-size: 83%;
   text-overflow: ellipsis;

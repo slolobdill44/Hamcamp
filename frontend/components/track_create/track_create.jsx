@@ -57,7 +57,6 @@ class TrackCreateForm extends React.Component {
   render () {
 
     if (this.props.loading.isLoading) {
-      console.log("attempting loading");
       return <section className='album-form-container'><LoadingSpinner /></section>;
     }
 
