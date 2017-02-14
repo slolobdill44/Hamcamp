@@ -21,10 +21,9 @@
     "url": "https://github.com/slolobdill44/quality-meat/issues"
   },
   "engines": {
-
-  "node": "6.2.1",
-  "npm": "3.9.3"
-},
+    "node": "6.2.1",
+    "npm": "3.9.3"
+  },
   "homepage": "https://github.com/slolobdill44/quality-meat#readme",
   "dependencies": {
     "babel-core": "^6.21.0",
@@ -33,6 +32,7 @@
     "babel-preset-react": "^6.16.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-helmet": "^4.0.0",
     "react-modal": "^1.6.5",
     "react-redux": "^5.0.1",
     "react-router": "^3.0.0",
