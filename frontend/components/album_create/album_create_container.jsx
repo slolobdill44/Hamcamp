@@ -3,9 +3,10 @@ import { createAlbum } from '../../actions/album_actions';
 import AlbumCreateForm from './album_create';
 
 
-const mapStateToProps = ({session}) => {
+const mapStateToProps = (state) => {
   return{
-    currentUser: session.currentUser
+    currentUser: state.session.currentUser,
+    loading: state.isLoading
   };
 };
 

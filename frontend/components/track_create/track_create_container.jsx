@@ -8,7 +8,8 @@ const mapStateToProps = (state, ownProps) => {
     currentAlbum: state.currentAlbum,
     currentUser: state.session.currentUser,
     albumId: ownProps.params.albumId,
-    errors: state.errors
+    errors: state.errors,
+    loading: state.isLoading
   };
 };
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import LoadingSpinner from '../loading_spinner';
 import { hashHistory } from 'react-router';
 
 //give form props from edit button
@@ -58,6 +59,10 @@ class AlbumUpdateForm extends React.Component {
   }
 
   render () {
+
+    if (this.props.loading.isLoading) {
+      return <section className='album-form-container'><LoadingSpinner /></section>;
+    }
 
     return (
       <div className='album-form-container'>

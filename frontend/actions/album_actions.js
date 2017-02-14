@@ -1,3 +1,4 @@
+export const START_ALBUM_AJAX = "START_ALBUM_AJAX";
 export const RECEIVE_ALBUM = "RECEIVE_ALBUM";
 export const RECEIVE_ALL_ALBUMS = "RECEIVE_ALL_ALBUMS";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
@@ -17,17 +18,23 @@ export const fetchAllAlbums = artistId => dispatch => {
     err => dispatch(receiveErrors(err.responseJSON)));
 };
 
-export const createAlbum = album => dispatch => (
-  APIUtil.createAlbum(album)
+export const createAlbum = album => dispatch => {
+  dispatch(startAlbumAjax());
+  return APIUtil.createAlbum(album)
     .then(newAlbum => {dispatch(receiveCurrentAlbum(newAlbum));
-	}).fail(err => dispatch(receiveErrors(err.responseJSON)))
-);
+	}).fail(err => dispatch(receiveErrors(err.responseJSON)));
+};
 
-export const updateAlbum = (album, id) => dispatch => (
-  APIUtil.updateAlbum(album, id)
+export const updateAlbum = (album, id) => dispatch => {
+  dispatch(startAlbumAjax());
+  return APIUtil.updateAlbum(album, id)
     .then(album => dispatch(receiveCurrentAlbum(album)),
-    err => dispatch(receiveErrors(err.responseJSON)))
-);
+    err => dispatch(receiveErrors(err.responseJSON)));
+};
+
+export const startAlbumAjax = () => ({
+  type: START_ALBUM_AJAX
+});
 
 export const receiveCurrentAlbum = currentAlbum => ({
   type: RECEIVE_ALBUM,

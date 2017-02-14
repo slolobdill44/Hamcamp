@@ -1,4 +1,5 @@
 import React from 'react';
+import LoadingSpinner from '../loading_spinner';
 import { hashHistory } from 'react-router';
 
 class AlbumCreateForm extends React.Component {
@@ -15,16 +16,6 @@ class AlbumCreateForm extends React.Component {
     this.updateFile = this.updateFile.bind(this);
     this.update = this.update.bind(this);
   }
-
-  //   $( document ).ajaxStart(function() {
-  //   $(".spinner").show();
-  //   $(".sidebar").hide();
-  // });
-  //
-  // $( document ).ajaxComplete(function() {
-  //   $(".spinner").hide();
-  //   $(".sidebar").show();
-  // });
 
   update(field) {
     return (e) => {
@@ -54,8 +45,6 @@ class AlbumCreateForm extends React.Component {
     formData.append("album[description]", this.state.description);
     formData.append("album[image]", this.state.imageFile);
 
-    debugger;
-
     this.props.createAlbum(formData)
       .then((res) => {
         hashHistory.push(`/artists/${this.props.currentUser.id}`);
@@ -63,6 +52,10 @@ class AlbumCreateForm extends React.Component {
   }
 
   render () {
+
+    if (this.props.loading.isLoading) {
+      return <section className='album-form-container'><LoadingSpinner /></section>;
+    }
 
     return (
       <div className='album-form-container'>

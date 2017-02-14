@@ -5,7 +5,8 @@ import AlbumUpdateForm from './album_update';
 const mapStateToProps = (state, ownProps) => ({
   currentAlbum: state.currentAlbum,
   albumId: ownProps.params.albumId,
-  errors: state.errors
+  errors: state.errors,
+  loading: state.isLoading
 });
 
 const mapDispatchToProps = dispatch => ({

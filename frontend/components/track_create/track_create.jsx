@@ -1,4 +1,5 @@
 import React from 'react';
+import LoadingSpinner from '../loading_spinner';
 import { hashHistory } from 'react-router';
 
 class TrackCreateForm extends React.Component {
@@ -54,6 +55,11 @@ class TrackCreateForm extends React.Component {
   }
 
   render () {
+
+    if (this.props.loading.isLoading) {
+      console.log("attempting loading");
+      return <section className='album-form-container'><LoadingSpinner /></section>;
+    }
 
     return (
       <div className='album-form-container'>
