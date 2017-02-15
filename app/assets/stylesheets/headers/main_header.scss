@@ -1,5 +1,5 @@
 .main-header {
-  border-top: 5px solid grey;
+  border-top: 3.5px solid grey;
   border-bottom: 1px dotted grey;
   background-color: #E6EBE0;
   position: relative;
@@ -25,11 +25,11 @@
 .main-title {
   position: relative;
   display: inline-block;
-  margin-left: 18px;
-  bottom: 20px;
-  font-size: 13px;
-  font-family: 'Cabin', sans-serif;
-  font-weight: bold;
+  margin-left: 20px;
+  bottom: 19px;
+  font-size: 17px;
+  font-family: 'Muli', sans-serif;
+  font-weight: 700;
 }
 
 .main-title:hover {
@@ -41,8 +41,8 @@
   height: 100%;
 }
 
-.main-nav-right .main-nav-session-links {
-  margin-top: 4px;
+.main-nav-right .session-links {
+  margin-top: 14px;
 }
 
 .main-nav-right .search-bar {
@@ -80,7 +80,7 @@
   margin-right: 15%;
   margin-bottom: 0px;
   font-size: 13px;
-  font-family: 'Cabin', sans-serif;
-  font-weight: bold;
+  font-family: 'Muli', sans-serif;
+  font-weight: 700;
   width: 170px;
 }

@@ -25,11 +25,14 @@ class SearchBar extends React.Component {
   componentWillUpdate(nextProps, nextState) {
     const searchResultBox = document.getElementById('search-result-box');
     const searchInput = document.getElementById('search-input');
+    const searchContainer = document.getElementById('search-container');
+
     if (nextState.searchQuery === "") {
       searchResultBox.style.display = "none";
     } else {
       searchResultBox.style.display = "block";
       searchInput.addEventListener("blur", () => {
+
         searchResultBox.style.display = "none";
       });
       searchInput.addEventListener("focus", () => {
@@ -73,20 +76,17 @@ class SearchBar extends React.Component {
     });
 
     const searchResultList = () => {
-      const searchResultBox = document.getElementById('search-result-box');
 
       if (this.props.resultList === []) {
         this.setState({display: "none"});
       } else {
         this.setState({display: "block"});
-
       }
-
       return resultList;
     };
 
     return (
-      <div className='search-bar'>
+      <div id='search-container' className='search-bar'>
         <input
           className='search-text'
           id='search-input'
@@ -101,8 +101,7 @@ class SearchBar extends React.Component {
                 <div className='search-result-link'>
                   <div className='result-art'>
                   </div>
-                  <div className='result-text'>
-                    <div className='result-type'>Album</div>
+                  <div className='result-text'>Sorry, no results were found for that search!
                   </div>
                 </div>
               </li>}
