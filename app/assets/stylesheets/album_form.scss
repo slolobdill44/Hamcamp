@@ -1,41 +1,76 @@
 #loading-bacon {
-  height: 100px;
-  width: 100px;
+  height: 300px;
+  width: 300px;
+  background-color: inherit;
+}
+
+#loading-text {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  font: 34px/1.2307692308 'Lato', sans-serif;
 }
 
 .album-form-container {
   display: flex;
   justify-content: space-around;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+  height: 700px;
+  background-color: #9BC1BC;
 }
 
 .album-form-info {
-  border: 1px solid black;
-  height: 450px;
+  height: 100%;
   width: 60%;
-}
-
-.album-form-headers {
-  margin-left: 18%;
-  font: 28px/1.2307692308 'Lato', sans-serif;
-  font-weight: bold;
+  min-width: 330px;
+  background-color: #F3F5F0;
 }
 
 .album-form {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  min-width: 320px;
+}
+
+.album-form-headers {
+  text-align: center;
+  font: 28px/1.2307692308 'Lato', sans-serif;
+  font-weight: 400;
+}
+
+.album-form-inputs {
+  height: 310px;
+  min-width: 320px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.form-data-type {
+  padding-bottom: 4px;
+  font-weight: 700;
 }
 
 .album-title {
-  border: 1px solid black;
-  height: 20px;
-  width: 200px;
+  border-bottom: 1px solid black;
+  font-size: 25px;
+  height: 40px;
+  width: 316px;
+}
+
+.album-art-upload input {
+  font-weight: normal;
 }
 
 .album-form-info textarea {
+  box-sizing: border-box;
   border: 1px solid black;
-  height: 90px;
-  width: 200px;
+  height: 112px;
+  width: 316px;
+  background-color: white;
 }
 
 .track-form-info {
@@ -46,11 +81,13 @@
 
 .album-submit-button {
   border: 1px solid black;
-  border-radius: 11px;
+  border-radius: 4px;
   height: 40px;
   width: 120px;
-  margin-bottom: 18px;
+  margin: 0 auto;
+  margin-top: 35px;
   text-align: center;
+  background-color: #BBBCBD;
   transition: background 0.35s linear;
 }
 
