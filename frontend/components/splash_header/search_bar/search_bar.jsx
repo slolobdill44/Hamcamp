@@ -8,7 +8,8 @@ class SearchBar extends React.Component {
     super(props);
 
     this.state = {
-      searchQuery: ""
+      searchQuery: "",
+      display: "none"
     };
 
     this.artistResultLink = this.artistResultLink.bind(this);

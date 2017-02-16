@@ -110,7 +110,7 @@ class AlbumCreateForm extends React.Component {
               </div>
             </div>
 
-              <input className='album-submit-button' type='submit' value='Create Album' />
+              <input className='album-submit-button' type='submit' value='Create' />
           </form>
         </section>
       </div>
