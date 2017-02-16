@@ -54,7 +54,11 @@ class AlbumCreateForm extends React.Component {
   render () {
 
     if (this.props.loading.isLoading) {
-      return <section className='album-form-container'><LoadingSpinner /></section>;
+      return <section className='album-form-container'>
+              <div className='album-form-info'>
+                <LoadingSpinner />
+              </div>
+            </section>;
     }
 
     return (

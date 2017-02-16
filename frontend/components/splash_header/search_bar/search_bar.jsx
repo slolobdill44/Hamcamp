@@ -1,14 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { hashHistory } from 'react-router';
+
 
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-        searchQuery: "",
-        display: "none"
+      searchQuery: ""
     };
+
+    this.artistResultLink = this.artistResultLink.bind(this);
+    this.albumResultLink = this.albumResultLink.bind(this);
   }
 
   componentWillMount() {
@@ -41,13 +45,21 @@ class SearchBar extends React.Component {
     }
   }
 
+  artistResultLink(id) {
+    hashHistory.push(`/artists/${id}`);
+  }
+
+  albumResultLink(id) {
+    hashHistory.push(`/albums/${id}`);
+  }
+
   render() {
 
     const resultList = this.props.searchResults.slice(0,4).map(result => {
       if (result.username) {
         return(
           <li key={result.username} className='search-result-item'>
-            <Link className='search-result-link' to={`/artists/${result.id}`}>
+            <div className='search-result-link' onMouseDown={() => this.artistResultLink(result.id)}>
               <div className='result-art'>
                 <img className='search-result-user-image' src="http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,w_50/v1484852877/noun_497207_cc_khq2sm.png" />
               </div>
@@ -55,13 +67,13 @@ class SearchBar extends React.Component {
                 <div className='result-name'>{result.username}</div>
                 <div className='result-type'>Artist</div>
               </div>
-            </Link>
+            </div>
           </li>
         );
       } else {
         return (
           <li key={result.title} className='search-result-item'>
-            <Link className='search-result-link' to={`/albums/${result.id}`}>
+            <div className='search-result-link' onMouseDown={() => this.albumResultLink(result.id)}>
               <div className='result-art'>
                 <img className='search-result-album-image' src={`${result.image_url}`} />
               </div>
@@ -69,7 +81,7 @@ class SearchBar extends React.Component {
                 <div className='result-name'>{result.title}</div>
                 <div className='result-type'>Album</div>
               </div>
-            </Link>
+            </div>
           </li>
         );
       }
