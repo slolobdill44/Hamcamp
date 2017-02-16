@@ -67,30 +67,53 @@ class AlbumUpdateForm extends React.Component {
     return (
       <div className='album-form-container'>
         <section className='album-form-info'>
-          <h2 className='album-form-headers'>Edit Album</h2>
+
 
           <form className='album-form' onSubmit={this.handleSubmit}>
-            <label>Title:
-              <input
-                className='album-title'
-                type="text"
-                value={this.state.title}
-                onChange={this.update('title')} />
-            </label>
+            <h2 className='album-form-headers'>Edit Album</h2>
 
-            <label className='album-art-upload'>Album Art:
-              <input type='file' onChange={this.updateFile} />
-            </label>
+            <div className='album-form-inputs'>
+              <div>
+                <div  className='form-data-type'>
+                  Title:
+                </div>
+                <label>
+                  <input
+                    className='album-title'
+                    type="text"
+                    value={this.state.title}
+                    onChange={this.update('title')}
+                    placeholder="Album Title" />
+                </label>
+              </div>
+              <br />
 
-            <label>Description:
-              <textarea
-                className='album-description'
-                type='text'
-                value={this.state.description}
-                onChange={this.update('description')} />
-            </label>
+              <div>
+                <div className='form-data-type'>
+                  Album Art:
+                </div>
+                <label className='album-art-upload'>
+                  <input type='file' onChange={this.updateFile} />
+                </label>
+                <img src={this.state.imageUrl} />
+              </div>
 
-            <input type='submit' value='Update Album' />
+              <div>
+                <div className='form-data-type'>
+                  Description:
+                </div>
+                <label>
+                  <textarea
+                    className='album-description'
+                    type='text'
+                    value={this.state.description}
+                    onChange={this.update('description')}
+                    placeholder="(optional)" />
+                </label>
+              </div>
+            </div>
+
+              <input className='album-submit-button' type='submit' value='Update' />
           </form>
         </section>
       </div>

@@ -57,7 +57,11 @@ class TrackCreateForm extends React.Component {
   render () {
 
     if (this.props.loading.isLoading) {
-      return <section className='album-form-container'><LoadingSpinner /></section>;
+      return <section className='album-form-container'>
+              <div className='album-form-info'>
+                <LoadingSpinner />
+              </div>
+            </section>;
     }
 
     return (
@@ -67,31 +71,42 @@ class TrackCreateForm extends React.Component {
 
           <form className='album-form' onSubmit={this.handleSubmit}>
             <h2 className='album-form-headers'>Create Track</h2>
+              <div className='album-form-inputs'>
+                <div  className='form-data-type'>
+                  Name:
+                </div>
+                <label>
+                  <input
+                    className='album-title'
+                    type="text"
+                    value={this.state.name}
+                    onChange={this.update('name')}
+                    placeholder="Track name"/>
+                </label>
+                <br />
 
-            <label>Name:
-              <input
-                className='album-title'
-                type="text"
-                value={this.state.name}
-                onChange={this.update('name')} />
-            </label>
-            <br />
+                <div className='form-data-type'>
+                  Track Number:
+                </div>
+                <input
+                  className='track-number'
+                  type="text" min="1" pattern="\d*"
+                  value={this.state.trackNumber}
+                  onChange={this.update('trackNumber')} />
+                <br />
 
-            <label>Track Number:</label>
-            <input
-              className='track-number'
-              type="text" min="1" pattern="\d*"
-              value={this.state.trackNumber}
-              onChange={this.update('trackNumber')} />
-            <br />
-
-            <label className='album-art-upload'>Track File:
-              <input type='file' onChange={this.updateFile} />
-            </label>
-            <br />
+                  <div className='form-data-type'>
+                    Track File:
+                  </div>
+                <label className='album-art-upload'>
+                  <input type='file' onChange={this.updateFile} />
+                </label>
+                <br />
 
 
-            <input className='album-submit-button' type='submit' value='Add New Track' />
+                <input className='album-submit-button' type='submit' value='Add New Track' />
+              </div>
+
           </form>
         </section>
       </div>
