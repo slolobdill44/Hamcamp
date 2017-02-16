@@ -13,9 +13,9 @@ class Api::TracksController < ApplicationController
     @track = Album.find(params[:id])
 
     if @track.destroy
-      redirect_to link_url(link)
+      render 'api/users/show'
     else
-      render json: ["Errors occurred. Did not destroy a track"], status: 401
+      render json: ["Errors occurred. Did not destroy that track"], status: 401
     end
   end
 

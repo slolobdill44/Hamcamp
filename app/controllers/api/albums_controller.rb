@@ -29,7 +29,7 @@ class Api::AlbumsController < ApplicationController
     @album = Album.find(params[:id])
 
     if @album.destroy
-      redirect_to link_url(link)
+      render 'api/users/show'
     else
       render json: ["Errors occurred. Did not destroy album"], status: 401
     end
