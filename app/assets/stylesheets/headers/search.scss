@@ -75,3 +75,9 @@
   font: 12px/13px 'Lato', sans-serif;
   margin-top: 9px;
 }
+
+@media (max-width: 760px) {
+  .search-bar {
+    display: none;
+  }
+}

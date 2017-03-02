@@ -84,3 +84,13 @@
   margin-top: 2px;
   margin-left: 3px;
 }
+
+@media (max-width: 760px) {
+  .featured-albums {
+    width: 100%;
+  }
+
+  .splash-image {
+    width: 100%;
+  }
+}
