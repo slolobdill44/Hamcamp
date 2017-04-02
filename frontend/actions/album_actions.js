@@ -1,5 +1,6 @@
 export const START_ALBUM_AJAX = "START_ALBUM_AJAX";
 export const RECEIVE_ALBUM = "RECEIVE_ALBUM";
+export const REMOVE_ALBUM = "REMOVE_ALBUM";
 export const RECEIVE_ALL_ALBUMS = "RECEIVE_ALL_ALBUMS";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 export const CREATE_ALBUM = "CREATE_ALBUM";
@@ -32,6 +33,12 @@ export const updateAlbum = (album, id) => dispatch => {
     err => dispatch(receiveErrors(err.responseJSON)));
 };
 
+export const deleteAlbum = albumId => dispatch => {
+  return APIUtil.deleteAlbum(albumId)
+    .then(res => dispatch(removeCurrentAlbum(res)),
+    err => dispatch(receiveErrors(err.responseJSON)));
+};
+
 export const startAlbumAjax = () => ({
   type: START_ALBUM_AJAX
 });
@@ -41,10 +48,16 @@ export const receiveCurrentAlbum = currentAlbum => ({
   currentAlbum
 });
 
+export const removeCurrentAlbum = currentAlbum => ({
+  type: REMOVE_ALBUM,
+  currentAlbum
+});
+
 export const receiveAllAlbums = albums => ({
   type: RECEIVE_ALL_ALBUMS,
   albums
 });
+
 
 export const receiveErrors = errors => ({
   type: RECEIVE_ERRORS,

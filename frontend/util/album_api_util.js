@@ -36,3 +36,11 @@ export const updateAlbum = (formData, id) => (
     data: formData
   })
 );
+
+export const deleteAlbum = id => (
+  $.ajax({
+    method: 'DELETE',
+    url: `api/albums/${id}`,
+    error: (err) => console.log(err)
+  })
+);

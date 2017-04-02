@@ -13,6 +13,7 @@ class AlbumUpdateForm extends React.Component {
     this.update = this.update.bind(this);
     this.updateFile = this.updateFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentWillMount() {
@@ -58,6 +59,15 @@ class AlbumUpdateForm extends React.Component {
       });
   }
 
+  handleDelete() {
+    const currentUserId = this.props.currentAlbum.artist.id;
+
+    this.props.deleteAlbum(this.props.albumId)
+      .then((res) => {
+        hashHistory.push(`/artists/${currentUserId}`);
+      });
+  }
+
   render () {
 
     if (this.props.loading.isLoading) {
@@ -69,7 +79,7 @@ class AlbumUpdateForm extends React.Component {
         <section className='album-form-info'>
 
 
-          <form className='album-form' onSubmit={this.handleSubmit}>
+          <form className='album-form' onSubmit={() => this.handleSubmit()}>
             <h2 className='album-form-headers'>Edit Album</h2>
 
             <div className='album-form-inputs'>
@@ -113,7 +123,10 @@ class AlbumUpdateForm extends React.Component {
               </div>
             </div>
 
+            <div className='album-update-buttons'>
               <input className='album-submit-button' type='submit' value='Update' />
+              <div className='album-delete-button' onClick={() => this.handleDelete()}>Delete Album</div>
+            </div>
           </form>
         </section>
       </div>

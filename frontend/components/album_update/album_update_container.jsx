@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchAlbum, updateAlbum } from '../../actions/album_actions';
+import { fetchAlbum, updateAlbum, deleteAlbum } from '../../actions/album_actions';
 import AlbumUpdateForm from './album_update';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -11,7 +11,8 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchAlbum: albumId => dispatch(fetchAlbum(albumId)),
-	updateAlbum: (album, id) => dispatch(updateAlbum(album, id))
+	updateAlbum: (album, id) => dispatch(updateAlbum(album, id)),
+  deleteAlbum: albumId => dispatch(deleteAlbum(albumId))
 });
 
 

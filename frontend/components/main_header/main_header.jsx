@@ -6,7 +6,7 @@ import { Link } from 'react-router';
 class MainHeader extends React.Component {
 
   render () {
-    const logoLink = `/`;
+    const logoLink = `/artists/${this.props.user.id}`;
 
     return (
       <div className="main-header">

@@ -90,6 +90,13 @@
   width: 37%;
 }
 
+.album-update-buttons {
+  display: flex;
+  justify-content: space-around;
+  width: 53%;
+  margin: 0 auto;
+}
+
 .album-submit-button {
   border-spacing: 4px;
   border: 1px solid black;
@@ -100,6 +107,20 @@
   margin-top: 35px;
   text-align: center;
   background-color: #F5F6F7;
+  transition: background 0.35s linear;
+}
+
+.album-delete-button {
+  line-height: 2.5;
+  border-spacing: 4px;
+  border: 1px solid black;
+  border-radius: 2px;
+  height: 40px;
+  width: 120px;
+  margin: 0 auto;
+  margin-top: 35px;
+  text-align: center;
+  background-color: red;
   transition: background 0.35s linear;
 }
 

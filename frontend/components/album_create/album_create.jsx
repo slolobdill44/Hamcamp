@@ -66,7 +66,7 @@ class AlbumCreateForm extends React.Component {
         <section className='album-form-info'>
 
 
-          <form className='album-form' onSubmit={this.handleSubmit}>
+          <form className='album-form' onSubmit={() => this.handleSubmit()}>
             <h2 className='album-form-headers'>Create Album</h2>
 
             <div className='album-form-inputs'>
