@@ -14,19 +14,17 @@ class SplashHeader extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props);
 
     let user = {
         "key": "aa0ceb",
         "firstName": "Ernestina"
     };
 
-    let ldclient = ldClient.initialize('58e1714291c11e0962c37215', user);
+    let ldclient = ldClient.initialize('', user);
 
     const that = this;
 
     ldclient.on('ready', function() {
-      console.log("It's now safe to request feature flags");
       let showFeature = ldclient.variation("header-color");
       that.setState({headerBackgroundColor: `${showFeature}`});
     });

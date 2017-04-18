@@ -20,16 +20,13 @@ class MainHeader extends React.Component {
         "key": "aa0ceb",
         "firstName": this.props.user.username
     };
-    console.log(user);
 
-    let ldclient = ldClient.initialize('58e1714291c11e0962c37215', user);
+    let ldclient = ldClient.initialize('', user);
 
     const that = this;
 
     ldclient.on('ready', function() {
-      console.log("It's now safe to request feature flags");
       let showFeature = ldclient.variation("header-color");
-      console.log(showFeature);
       that.setState({headerBackgroundColor: `${showFeature}`});
     });
   }
