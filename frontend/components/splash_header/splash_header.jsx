@@ -15,19 +15,19 @@ class SplashHeader extends React.Component {
 
   componentDidMount() {
 
-    let user = {
-        "key": "aa0ceb",
-        "firstName": "Ernestina"
-    };
+    // let user = {
+    //     "key": "aa0ceb",
+    //     "firstName": "Ernestina"
+    // };
 
-    let ldclient = ldClient.initialize('', user);
+    // let ldclient = ldClient.initialize('', user);
 
-    const that = this;
+    // const that = this;
 
-    ldclient.on('ready', function() {
-      let showFeature = ldclient.variation("header-color");
-      that.setState({headerBackgroundColor: `${showFeature}`});
-    });
+    // ldclient.on('ready', function() {
+    //   let showFeature = ldclient.variation("header-color");
+    //   that.setState({headerBackgroundColor: `${showFeature}`});
+    // });
   }
 
   render () {
