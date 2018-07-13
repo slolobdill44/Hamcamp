@@ -62,7 +62,7 @@ class SearchBar extends React.Component {
           <li key={result.username} className='search-result-item'>
             <div className='search-result-link' onMouseDown={() => this.artistResultLink(result.id)}>
               <div className='result-art'>
-                <img className='search-result-user-image' src="http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,w_50/v1484852877/noun_497207_cc_khq2sm.png" />
+                <img className='search-result-user-image' src="https://res.cloudinary.com/adrianlobdill/image/upload/c_scale,w_50/v1484852877/noun_497207_cc_khq2sm.png" />
               </div>
               <div className='result-text'>
                 <div className='result-name'>{result.username}</div>
@@ -106,7 +106,7 @@ class SearchBar extends React.Component {
           type='text'
           placeholder='Search'
           onChange={this.update()} />
-        <img className='magnifying-glass' src='http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,w_20/v1484759695/magnifying_glass_jbea4e.png'></img>
+        <img className='magnifying-glass' src='https://res.cloudinary.com/adrianlobdill/image/upload/c_scale,w_20/v1484759695/magnifying_glass_jbea4e.png'></img>
         <div style={{display: this.state.display}} id='search-result-box' className='search-result-box'>
           <ul className='search-results'>
             { resultList ? resultList :

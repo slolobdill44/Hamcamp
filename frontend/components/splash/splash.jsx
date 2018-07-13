@@ -43,7 +43,7 @@ class Splash extends React.Component {
       <div>
         <SplashHeaderContainer />
         <main className="splash-body">
-          <img className="splash-image" src="http://res.cloudinary.com/adrianlobdill/image/upload/v1484936572/newsplashheader_k3906u.png" />
+          <img className="splash-image" src="https://res.cloudinary.com/adrianlobdill/image/upload/v1484936572/newsplashheader_k3906u.png" />
           <section className="featured-albums">
             <h3 className="featured-albums-header">Our Featured Albums</h3>
             <ul className="featured-albums-list">

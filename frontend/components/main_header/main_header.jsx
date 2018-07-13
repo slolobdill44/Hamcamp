@@ -40,7 +40,7 @@ class MainHeader extends React.Component {
       <div style={{backgroundColor: this.state.headerBackgroundColor}} className="main-header">
         <div className="main-nav-left">
           <Link to={logoLink}>
-            <img className="main-logo" src="http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,h_37/v1485154475/hamcamp_logo_100px_V2_drto1u.png" />
+            <img className="main-logo" src="https://res.cloudinary.com/adrianlobdill/image/upload/c_scale,h_37/v1485154475/hamcamp_logo_100px_V2_drto1u.png" />
             <h2 className="main-title">hc</h2>
           </Link>
         </div>
