@@ -40,5 +40,8 @@
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
     "webpack": "^1.14.0"
+  },
+  "devDependencies": {
+    "webpack": "^1.15.0"
   }
 }

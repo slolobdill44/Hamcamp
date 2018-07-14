@@ -15,19 +15,19 @@ class SplashHeader extends React.Component {
 
   componentDidMount() {
 
-    let user = {
-        "key": "aa0ceb",
-        "firstName": "Ernestina"
-    };
+    // let user = {
+    //     "key": "aa0ceb",
+    //     "firstName": "Ernestina"
+    // };
 
-    let ldclient = ldClient.initialize('', user);
+    // let ldclient = ldClient.initialize('', user);
 
-    const that = this;
+    // const that = this;
 
-    ldclient.on('ready', function() {
-      let showFeature = ldclient.variation("header-color");
-      that.setState({headerBackgroundColor: `${showFeature}`});
-    });
+    // ldclient.on('ready', function() {
+    //   let showFeature = ldclient.variation("header-color");
+    //   that.setState({headerBackgroundColor: `${showFeature}`});
+    // });
   }
 
   render () {
@@ -35,7 +35,7 @@ class SplashHeader extends React.Component {
     return (
       <div style={{backgroundColor: this.state.headerBackgroundColor}}  className="splash-header">
         <section className="splash-left">
-          <img className="splash-logo" src="http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,w_100/v1485153364/hamcamp_logo_200px_V2_jeifyy.png" />
+          <img className="splash-logo" src="https://res.cloudinary.com/adrianlobdill/image/upload/c_scale,w_100/v1485153364/hamcamp_logo_200px_V2_jeifyy.png" />
           <div className="splash-left-text">
             <h2 className="splash-title">Hamcamp</h2>
             <h4 className="splash-tagline">Discover quality cuts and the artists who slice them.</h4>

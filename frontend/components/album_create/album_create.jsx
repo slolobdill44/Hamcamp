@@ -37,7 +37,7 @@ class AlbumCreateForm extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();
+    // e.preventDefault();
 
     const formData = new FormData();
 

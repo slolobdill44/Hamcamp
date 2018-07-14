@@ -63,7 +63,7 @@ class ArtistShow extends React.Component {
     return (
       <div style={{backgroundColor: this.state.artist.secondary_color}}  className="show-page-background">
         <div style={{backgroundColor: this.state.artist.primary_color}} className="show-page-container">
-          <img className="show-page-header" src="http://source.unsplash.com/collection/1068/1075x175"></img>
+          <img className="show-page-header" src="https://source.unsplash.com/collection/1068/1075x175"></img>
           <section className="album-list"></section>
           <aside className="artist-info-sidebar">
             <span className="artist-title">{this.state.artist.username}</span>
@@ -73,7 +73,7 @@ class ArtistShow extends React.Component {
               { this.checkIfUserIsArtist() &&
                 <Link to={'album/new'}>
                   <li className="add-album-link">
-                    <img className="plus-image" src="http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,w_64/v1486663610/plus_sign_c9i6vk.png" />
+                    <img className="plus-image" src="https://res.cloudinary.com/adrianlobdill/image/upload/c_scale,w_64/v1486663610/plus_sign_c9i6vk.png" />
                     <p className="add-album-text">Add New Album</p>
                   </li>
                 </Link>

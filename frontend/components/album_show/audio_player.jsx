@@ -28,10 +28,14 @@ class AudioPlayer extends React.Component {
 
       const track = nextProps.tracks[trackNumber].track_url;
 
+      const fastlyTrack = track.replace("s3-us-west-1.amazonaws.com/hamcamp", "s3bucket.hamcamp.co");
+
+      console.log(fastlyTrack);
+
       const music = document.getElementById('music');
       const source = document.getElementById('audio-source');
 
-      source.src = track;
+      source.src = fastlyTrack;
 
       music.load();
     }
@@ -186,15 +190,17 @@ class AudioPlayer extends React.Component {
 
   render() {
 
-    const pauseOrPlayLarge = this.state.musicPlaying === true ? "https://res.cloudinary.com/adrianlobdill/image/upload/v1484616436/pause_button.png" : "http://res.cloudinary.com/adrianlobdill/image/upload/v1484614687/play_button.png";
+    const pauseOrPlayLarge = this.state.musicPlaying === true ? "https://res.cloudinary.com/adrianlobdill/image/upload/v1484616436/pause_button.png" : "https://res.cloudinary.com/adrianlobdill/image/upload/v1484614687/play_button.png";
 
     const tracks = this.props.tracks;
 
     const currentTrackNum = this.state.currentTrack;
 
-    const prevTrackButtonStyle = currentTrackNum === 0 ? "https://res.cloudinary.com/adrianlobdill/image/upload/c_scale,o_20,w_23/v1484611361/noun_121425_cc_jt8gzd.png" : "http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,w_23/v1484611361/noun_121425_cc_jt8gzd.png";
 
-    const nextTrackButtonStyle = currentTrackNum === (tracks.length - 1) ? "https://res.cloudinary.com/adrianlobdill/image/upload/c_scale,o_20,w_23/v1484611457/noun_121427_cc_luesuz.png" : "http://res.cloudinary.com/adrianlobdill/image/upload/c_scale,w_23/v1484611457/noun_121427_cc_luesuz.png";
+    const prevTrackButtonStyle = currentTrackNum === 0 ? "https://res.cloudinary.com/adrianlobdill/image/upload/c_scale,o_20,w_23/v1484611361/noun_121425_cc_jt8gzd.png" : "https://res.cloudinary.com/adrianlobdill/image/upload/c_scale,w_23/v1484611361/noun_121425_cc_jt8gzd.png";
+
+    const nextTrackButtonStyle = currentTrackNum === (tracks.length - 1) ? "https://res.cloudinary.com/adrianlobdill/image/upload/c_scale,o_20,w_23/v1484611457/noun_121427_cc_luesuz.png" : "https://res.cloudinary.com/adrianlobdill/image/upload/c_scale,w_23/v1484611457/noun_121427_cc_luesuz.png";
+
 
 
     const trackList = tracks.map((track, idx) => {

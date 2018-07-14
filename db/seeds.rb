@@ -103,364 +103,364 @@ Album.create!(
   image: "https://res.cloudinary.com/adrianlobdill/image/upload/v1485159430/03_qgfpuv.jpgs",
   description: "The second album by Kayin."
 )
-Album.create!(
-  title: "Good Things",
-  artist_id: User.find_by_username('Adrian').id,
-  image: File.new("http://s3-us-west-1.amazonaws.com/hamcamp/albums/images/000/000/012/full/01.png?1484956634"),
-  description: "The second album by Guest."
-)
+# Album.create!(
+#   title: "Good Things",
+#   artist_id: User.find_by_username('Adrian').id,
+#   image: File.new("http://s3-us-west-1.amazonaws.com/hamcamp/albums/images/000/000/012/full/01.png?1484956634"),
+#   description: "The second album by Guest."
+# )
 
 #################################################
 #################################################
 #################################################
 #################################################
 
-Track.destroy_all
+# Track.destroy_all
 
-# #################################################
-# #################################################
+# # #################################################
+# # #################################################
 
-Track.create!(
-  name: "Ready",
-  album_id: Album.find_by_title('Ready EP').id,
-  album_track_number: 1,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/ready/01Ready(1).mp3")
-)
-Track.create!(
-  name: "Prism",
-  album_id: Album.find_by_title('Ready EP').id,
-  album_track_number: 2,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/ready/02Prism(1).mp3")
-)
-Track.create!(
-  name: "Dakou",
-  album_id: Album.find_by_title('Ready EP').id,
-  album_track_number: 3,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/ready/03Dakou(DigitalExclusive)(1).mp3")
-)
+# Track.create!(
+#   name: "Ready",
+#   album_id: Album.find_by_title('Ready EP').id,
+#   album_track_number: 1,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/ready/01Ready(1).mp3")
+# )
+# Track.create!(
+#   name: "Prism",
+#   album_id: Album.find_by_title('Ready EP').id,
+#   album_track_number: 2,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/ready/02Prism(1).mp3")
+# )
+# Track.create!(
+#   name: "Dakou",
+#   album_id: Album.find_by_title('Ready EP').id,
+#   album_track_number: 3,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/ready/03Dakou(DigitalExclusive)(1).mp3")
+# )
 
-# #################################################
-# #################################################
+# # #################################################
+# # #################################################
 
-Track.create!(
-  name: "4 Better or 4 Worse (interlude)",
-  album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
-  album_track_number: 1,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/bizarre_ride/014Betteror4Worse(Interlude)(1).mp3")
-)
-Track.create!(
-  name: "Oh Shit",
-  album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
-  album_track_number: 2,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/bizarre_ride/02.mp3")
-)
-Track.create!(
-  name: "It's Jigaboo Time (skit)",
-  album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
-  album_track_number: 3,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/bizarre_ride/03It'sJiggabooTime(1).mp3")
-)
-Track.create!(
-  name: "4 Better or 4 Worse",
-  album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
-  album_track_number: 4,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/bizarre_ride/044BetterOr4Worse(1).mp3")
-)
-Track.create!(
-  name: "I'm That Type of Nigga",
-  album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
-  album_track_number: 5,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/bizarre_ride/05I'mThatTypeOfNigga(1).mp3")
-)
-Track.create!(
-  name: "If I Were President (skit)",
-  album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
-  album_track_number: 6,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/bizarre_ride/06IfIWerePresident(1).mp3")
-)
-Track.create!(
-  name: "Soul Flower (remix)",
-  album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
-  album_track_number: 7,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/bizarre_ride/07SoulFlower(Remix)(1).mp3")
-)
-Track.create!(
-  name: "On the DL",
-  album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
-  album_track_number: 8,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/bizarre_ride/08OnTheDL(1).mp3")
-)
-Track.create!(
-  name: "Pack the Pipe (interlude)",
-  album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
-  album_track_number: 9,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/bizarre_ride/09PackThePipe(interlude)(1).mp3")
-)
-Track.create!(
-  name: "Officer",
-  album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
-  album_track_number: 10,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/bizarre_ride/10Officer(1).mp3")
-)
-Track.create!(
-  name: "Ya Mama",
-  album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
-  album_track_number: 11,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/bizarre_ride/11YaMama(1).mp3")
-)
-Track.create!(
-  name: "Passing Me By",
-  album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
-  album_track_number: 12,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/bizarre_ride/12PassingMeBy(1).mp3")
-)
-Track.create!(
-  name: "Otha Fish",
-  album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
-  album_track_number: 13,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/bizarre_ride/13OthaFish(1).mp3")
-)
-Track.create!(
-  name: "Quinton's on the Way(skit)",
-  album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
-  album_track_number: 14,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/bizarre_ride/14Quinton'sOntheWay(1).mp3")
-)
-Track.create!(
-  name: "Pack the Pipe",
-  album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
-  album_track_number: 15,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/bizarre_ride/15PackThePipe(1).mp3")
-)
-Track.create!(
-  name: "Return of the B-boy",
-  album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
-  album_track_number: 16,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/bizarre_ride/16ReturnOfTheB-Boy(1).mp3")
-)
+# Track.create!(
+#   name: "4 Better or 4 Worse (interlude)",
+#   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
+#   album_track_number: 1,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/bizarre_ride/014Betteror4Worse(Interlude)(1).mp3")
+# )
+# Track.create!(
+#   name: "Oh Shit",
+#   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
+#   album_track_number: 2,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/bizarre_ride/02.mp3")
+# )
+# Track.create!(
+#   name: "It's Jigaboo Time (skit)",
+#   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
+#   album_track_number: 3,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/bizarre_ride/03It'sJiggabooTime(1).mp3")
+# )
+# Track.create!(
+#   name: "4 Better or 4 Worse",
+#   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
+#   album_track_number: 4,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/bizarre_ride/044BetterOr4Worse(1).mp3")
+# )
+# Track.create!(
+#   name: "I'm That Type of Nigga",
+#   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
+#   album_track_number: 5,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/bizarre_ride/05I'mThatTypeOfNigga(1).mp3")
+# )
+# Track.create!(
+#   name: "If I Were President (skit)",
+#   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
+#   album_track_number: 6,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/bizarre_ride/06IfIWerePresident(1).mp3")
+# )
+# Track.create!(
+#   name: "Soul Flower (remix)",
+#   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
+#   album_track_number: 7,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/bizarre_ride/07SoulFlower(Remix)(1).mp3")
+# )
+# Track.create!(
+#   name: "On the DL",
+#   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
+#   album_track_number: 8,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/bizarre_ride/08OnTheDL(1).mp3")
+# )
+# Track.create!(
+#   name: "Pack the Pipe (interlude)",
+#   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
+#   album_track_number: 9,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/bizarre_ride/09PackThePipe(interlude)(1).mp3")
+# )
+# Track.create!(
+#   name: "Officer",
+#   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
+#   album_track_number: 10,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/bizarre_ride/10Officer(1).mp3")
+# )
+# Track.create!(
+#   name: "Ya Mama",
+#   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
+#   album_track_number: 11,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/bizarre_ride/11YaMama(1).mp3")
+# )
+# Track.create!(
+#   name: "Passing Me By",
+#   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
+#   album_track_number: 12,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/bizarre_ride/12PassingMeBy(1).mp3")
+# )
+# Track.create!(
+#   name: "Otha Fish",
+#   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
+#   album_track_number: 13,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/bizarre_ride/13OthaFish(1).mp3")
+# )
+# Track.create!(
+#   name: "Quinton's on the Way(skit)",
+#   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
+#   album_track_number: 14,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/bizarre_ride/14Quinton'sOntheWay(1).mp3")
+# )
+# Track.create!(
+#   name: "Pack the Pipe",
+#   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
+#   album_track_number: 15,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/bizarre_ride/15PackThePipe(1).mp3")
+# )
+# Track.create!(
+#   name: "Return of the B-boy",
+#   album_id: Album.find_by_title('Bizzare Ride II the Pharcyde').id,
+#   album_track_number: 16,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/bizarre_ride/16ReturnOfTheB-Boy(1).mp3")
+# )
 
-# #################################################
-# #################################################
+# # #################################################
+# # #################################################
 
-Track.create!(
-  name: "Bullshit",
-  album_id: Album.find_by_title('Labcabincalifornia').id,
-  album_track_number: 1,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/labcabin/01Bullshit(1).mp3")
-)
-Track.create!(
-  name: "Pharcyde",
-  album_id: Album.find_by_title('Labcabincalifornia').id,
-  album_track_number: 2,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/labcabin/02Pharcyde(1).mp3")
-)
-Track.create!(
-  name: "Groupie Therapy",
-  album_id: Album.find_by_title('Labcabincalifornia').id,
-  album_track_number: 3,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/labcabin/03GroupieTherapy(1).mp3")
-)
-Track.create!(
-  name: "Runnin",
-  album_id: Album.find_by_title('Labcabincalifornia').id,
-  album_track_number: 4,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/labcabin/04Runnin(1).mp3")
-)
+# Track.create!(
+#   name: "Bullshit",
+#   album_id: Album.find_by_title('Labcabincalifornia').id,
+#   album_track_number: 1,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/labcabin/01Bullshit(1).mp3")
+# )
+# Track.create!(
+#   name: "Pharcyde",
+#   album_id: Album.find_by_title('Labcabincalifornia').id,
+#   album_track_number: 2,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/labcabin/02Pharcyde(1).mp3")
+# )
+# Track.create!(
+#   name: "Groupie Therapy",
+#   album_id: Album.find_by_title('Labcabincalifornia').id,
+#   album_track_number: 3,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/labcabin/03GroupieTherapy(1).mp3")
+# )
+# Track.create!(
+#   name: "Runnin",
+#   album_id: Album.find_by_title('Labcabincalifornia').id,
+#   album_track_number: 4,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/labcabin/04Runnin(1).mp3")
+# )
 
-# #################################################
-# #################################################
+# # #################################################
+# # #################################################
 
-Track.create!(
-  name: "Losing A Whole Year",
-  album_id: Album.find_by_title('On Your Side').id,
-  album_track_number: 1,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/onyourside/01LosingAWholeYear(1).mp3")
-)
-Track.create!(
-  name: "Narcolepsy",
-  album_id: Album.find_by_title('On Your Side').id,
-  album_track_number: 2,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/onyourside/02Narcolepsy(1).mp3")
-)
-Track.create!(
-  name: "Semi-Charmed Life",
-  album_id: Album.find_by_title('On Your Side').id,
-  album_track_number: 3,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/onyourside/03Semi-CharmedLife(1).mp3")
-)
+# Track.create!(
+#   name: "Losing A Whole Year",
+#   album_id: Album.find_by_title('On Your Side').id,
+#   album_track_number: 1,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/onyourside/01LosingAWholeYear(1).mp3")
+# )
+# Track.create!(
+#   name: "Narcolepsy",
+#   album_id: Album.find_by_title('On Your Side').id,
+#   album_track_number: 2,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/onyourside/02Narcolepsy(1).mp3")
+# )
+# Track.create!(
+#   name: "Semi-Charmed Life",
+#   album_id: Album.find_by_title('On Your Side').id,
+#   album_track_number: 3,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/onyourside/03Semi-CharmedLife(1).mp3")
+# )
 
-# #################################################
-# #################################################
+# # #################################################
+# # #################################################
 
 
-Track.create!(
-  name: "Flatline",
-  album_id: Album.find_by_title('Concealer').id,
-  album_track_number: 1,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/concealer/1-01Flatline(1).mp3")
-)
-Track.create!(
-  name: "These Days",
-  album_id: Album.find_by_title('Concealer').id,
-  album_track_number: 2,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/concealer/1-02TheseDays(1).mp3")
-)
-Track.create!(
-  name: "Clark",
-  album_id: Album.find_by_title('Concealer').id,
-  album_track_number: 3,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/concealer/1-03Clark(1).mp3")
-)
-Track.create!(
-  name: "Arrow",
-  album_id: Album.find_by_title('Concealer').id,
-  album_track_number: 4,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/concealer/1-04Arrow(1).mp3")
-)
+# Track.create!(
+#   name: "Flatline",
+#   album_id: Album.find_by_title('Concealer').id,
+#   album_track_number: 1,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/concealer/1-01Flatline(1).mp3")
+# )
+# Track.create!(
+#   name: "These Days",
+#   album_id: Album.find_by_title('Concealer').id,
+#   album_track_number: 2,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/concealer/1-02TheseDays(1).mp3")
+# )
+# Track.create!(
+#   name: "Clark",
+#   album_id: Album.find_by_title('Concealer').id,
+#   album_track_number: 3,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/concealer/1-03Clark(1).mp3")
+# )
+# Track.create!(
+#   name: "Arrow",
+#   album_id: Album.find_by_title('Concealer').id,
+#   album_track_number: 4,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/concealer/1-04Arrow(1).mp3")
+# )
 
-# #################################################
-# #################################################
+# # #################################################
+# # #################################################
 
-Track.create!(
-  name: "No Excuse",
-  album_id: Album.find_by_title('After Life After Party').id,
-  album_track_number: 1,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/afterlifeafterparty/01NoExcuse(1).mp3")
-)
-Track.create!(
-  name: "Feel What",
-  album_id: Album.find_by_title('After Life After Party').id,
-  album_track_number: 2,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/afterlifeafterparty/02FeelWhat(1).mp3")
-)
-Track.create!(
-  name: "Night Tracking",
-  album_id: Album.find_by_title('After Life After Party').id,
-  album_track_number: 3,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/afterlifeafterparty/03NightTracking(1).mp3")
-)
+# Track.create!(
+#   name: "No Excuse",
+#   album_id: Album.find_by_title('After Life After Party').id,
+#   album_track_number: 1,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/afterlifeafterparty/01NoExcuse(1).mp3")
+# )
+# Track.create!(
+#   name: "Feel What",
+#   album_id: Album.find_by_title('After Life After Party').id,
+#   album_track_number: 2,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/afterlifeafterparty/02FeelWhat(1).mp3")
+# )
+# Track.create!(
+#   name: "Night Tracking",
+#   album_id: Album.find_by_title('After Life After Party').id,
+#   album_track_number: 3,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/afterlifeafterparty/03NightTracking(1).mp3")
+# )
 
-# #################################################
-# #################################################
+# # #################################################
+# # #################################################
 
-Track.create!(
-  name: "Drive By Buddy",
-  album_id: Album.find_by_title('Underneath the Rainbow').id,
-  album_track_number: 1,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/underneaththerainbow/01DriveByBuddy(1).mp3")
-)
-Track.create!(
-  name: "Smiling",
-  album_id: Album.find_by_title('Underneath the Rainbow').id,
-  album_track_number: 2,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/underneaththerainbow/02Smiling(1).mp3")
-)
-Track.create!(
-  name: "Make You Mine",
-  album_id: Album.find_by_title('Underneath the Rainbow').id,
-  album_track_number: 3,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/underneaththerainbow/03MakeYouMine(1).mp3")
-)
-Track.create!(
-  name: "Funny",
-  album_id: Album.find_by_title('Underneath the Rainbow').id,
-  album_track_number: 4,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/underneaththerainbow/04Funny(1).mp3")
-)
-Track.create!(
-  name: "Dorner Party",
-  album_id: Album.find_by_title('Underneath the Rainbow').id,
-  album_track_number: 5,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/underneaththerainbow/05DornerParty(1).mp3")
-)
-Track.create!(
-  name: "Justice After All",
-  album_id: Album.find_by_title('Underneath the Rainbow').id,
-  album_track_number: 6,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/underneaththerainbow/06JusticeAfterAll(1).mp3")
-)
-Track.create!(
-  name: "Boys in the Wood",
-  album_id: Album.find_by_title('Underneath the Rainbow').id,
-  album_track_number: 7,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/underneaththerainbow/07BoysintheWood(1).mp3")
-)
-Track.create!(
-  name: "Waiting",
-  album_id: Album.find_by_title('Underneath the Rainbow').id,
-  album_track_number: 8,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/underneaththerainbow/08Waiting(1).mp3")
-)
-Track.create!(
-  name: "Do the Vibrate",
-  album_id: Album.find_by_title('Underneath the Rainbow').id,
-  album_track_number: 9,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/underneaththerainbow/09DotheVibrate(1).mp3")
-)
-Track.create!(
-  name: "I Don't Wanna Go Home",
-  album_id: Album.find_by_title('Underneath the Rainbow').id,
-  album_track_number: 10,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/underneaththerainbow/10IDon'tWannaGoHome(1).mp3")
-)
-Track.create!(
-  name: "Dandelion Dust",
-  album_id: Album.find_by_title('Underneath the Rainbow').id,
-  album_track_number: 11,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/underneaththerainbow/11DandelionDust(1).mp3")
-)
-Track.create!(
-  name: "Dog Years",
-  album_id: Album.find_by_title('Underneath the Rainbow').id,
-  album_track_number: 12,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/underneaththerainbow/12DogYears(1).mp3")
-)
+# Track.create!(
+#   name: "Drive By Buddy",
+#   album_id: Album.find_by_title('Underneath the Rainbow').id,
+#   album_track_number: 1,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/underneaththerainbow/01DriveByBuddy(1).mp3")
+# )
+# Track.create!(
+#   name: "Smiling",
+#   album_id: Album.find_by_title('Underneath the Rainbow').id,
+#   album_track_number: 2,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/underneaththerainbow/02Smiling(1).mp3")
+# )
+# Track.create!(
+#   name: "Make You Mine",
+#   album_id: Album.find_by_title('Underneath the Rainbow').id,
+#   album_track_number: 3,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/underneaththerainbow/03MakeYouMine(1).mp3")
+# )
+# Track.create!(
+#   name: "Funny",
+#   album_id: Album.find_by_title('Underneath the Rainbow').id,
+#   album_track_number: 4,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/underneaththerainbow/04Funny(1).mp3")
+# )
+# Track.create!(
+#   name: "Dorner Party",
+#   album_id: Album.find_by_title('Underneath the Rainbow').id,
+#   album_track_number: 5,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/underneaththerainbow/05DornerParty(1).mp3")
+# )
+# Track.create!(
+#   name: "Justice After All",
+#   album_id: Album.find_by_title('Underneath the Rainbow').id,
+#   album_track_number: 6,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/underneaththerainbow/06JusticeAfterAll(1).mp3")
+# )
+# Track.create!(
+#   name: "Boys in the Wood",
+#   album_id: Album.find_by_title('Underneath the Rainbow').id,
+#   album_track_number: 7,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/underneaththerainbow/07BoysintheWood(1).mp3")
+# )
+# Track.create!(
+#   name: "Waiting",
+#   album_id: Album.find_by_title('Underneath the Rainbow').id,
+#   album_track_number: 8,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/underneaththerainbow/08Waiting(1).mp3")
+# )
+# Track.create!(
+#   name: "Do the Vibrate",
+#   album_id: Album.find_by_title('Underneath the Rainbow').id,
+#   album_track_number: 9,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/underneaththerainbow/09DotheVibrate(1).mp3")
+# )
+# Track.create!(
+#   name: "I Don't Wanna Go Home",
+#   album_id: Album.find_by_title('Underneath the Rainbow').id,
+#   album_track_number: 10,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/underneaththerainbow/10IDon'tWannaGoHome(1).mp3")
+# )
+# Track.create!(
+#   name: "Dandelion Dust",
+#   album_id: Album.find_by_title('Underneath the Rainbow').id,
+#   album_track_number: 11,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/underneaththerainbow/11DandelionDust(1).mp3")
+# )
+# Track.create!(
+#   name: "Dog Years",
+#   album_id: Album.find_by_title('Underneath the Rainbow').id,
+#   album_track_number: 12,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/underneaththerainbow/12DogYears(1).mp3")
+# )
 
-# #################################################
-# #################################################
+# # #################################################
+# # #################################################
 
-Track.create!(
-  name: "180",
-  album_id: Album.find_by_title('Catastrophe').id,
-  album_track_number: 1,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/catastrophe/180(1).mp3")
-)
-Track.create!(
-  name: "Brick",
-  album_id: Album.find_by_title('Catastrophe').id,
-  album_track_number: 2,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/catastrophe/Brick(1).mp3")
-)
-Track.create!(
-  name: "Down To Ride",
-  album_id: Album.find_by_title('Catastrophe').id,
-  album_track_number: 3,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/catastrophe/DowntoRide(1).mp3")
-)
-Track.create!(
-  name: "Elimination",
-  album_id: Album.find_by_title('Catastrophe').id,
-  album_track_number: 4,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/catastrophe/Elimination(1).mp3")
-)
-Track.create!(
-  name: "Haunted",
-  album_id: Album.find_by_title('Catastrophe').id,
-  album_track_number: 5,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/catastrophe/Haunted(1).mp3")
-)
-Track.create!(
-  name: "Nay",
-  album_id: Album.find_by_title('Catastrophe').id,
-  album_track_number: 6,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/catastrophe/nay(1).mp3")
-)
-Track.create!(
-  name: "Out There",
-  album_id: Album.find_by_title('Catastrophe').id,
-  album_track_number: 7,
-  track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/catastrophe/Oldladiesbefragile(1).mp3")
-)
+# Track.create!(
+#   name: "180",
+#   album_id: Album.find_by_title('Catastrophe').id,
+#   album_track_number: 1,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/catastrophe/180(1).mp3")
+# )
+# Track.create!(
+#   name: "Brick",
+#   album_id: Album.find_by_title('Catastrophe').id,
+#   album_track_number: 2,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/catastrophe/Brick(1).mp3")
+# )
+# Track.create!(
+#   name: "Down To Ride",
+#   album_id: Album.find_by_title('Catastrophe').id,
+#   album_track_number: 3,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/catastrophe/DowntoRide(1).mp3")
+# )
+# Track.create!(
+#   name: "Elimination",
+#   album_id: Album.find_by_title('Catastrophe').id,
+#   album_track_number: 4,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/catastrophe/Elimination(1).mp3")
+# )
+# Track.create!(
+#   name: "Haunted",
+#   album_id: Album.find_by_title('Catastrophe').id,
+#   album_track_number: 5,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/catastrophe/Haunted(1).mp3")
+# )
+# Track.create!(
+#   name: "Nay",
+#   album_id: Album.find_by_title('Catastrophe').id,
+#   album_track_number: 6,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/catastrophe/nay(1).mp3")
+# )
+# Track.create!(
+#   name: "Out There",
+#   album_id: Album.find_by_title('Catastrophe').id,
+#   album_track_number: 7,
+#   track_url: File.new("/Users/adrianlobdill/Desktop/fullstackproj/HamcampApp/app/assets/tracks/catastrophe/Oldladiesbefragile(1).mp3")
+# )
 
 # #################################################
 # #################################################

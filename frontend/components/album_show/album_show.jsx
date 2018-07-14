@@ -11,6 +11,7 @@ class AlbumShow extends React.Component {
         artist: {
           username: null
         },
+        image_url: "",
         tracks: [
           { name: "",
           track_url: "" }
@@ -54,6 +55,8 @@ class AlbumShow extends React.Component {
 
     const editButton = this.props.currentUser ? <Link className='album-edit-link' to={`albums/${album.id}/edit`}>Edit Album</Link> : "";
 
+    const fastlyImgURL = this.state.currentAlbum.image_urlrfrrfrrfrf
+
     return (
       <div style={{backgroundColor: artist.secondary_color}} className='show-page-background'>
         <div className='show-page-container'>
@@ -65,7 +68,6 @@ class AlbumShow extends React.Component {
                   <h3 className='album-artist-name'>by <Link
                       to={`artists/${artist.id}`}
                       className='album-artist-name-link'>{artist.username}</Link>
-
                   </h3>
                 </div>
                   <br />
@@ -78,16 +80,16 @@ class AlbumShow extends React.Component {
                 { album.tracks.length === 0 ? null : addTracks }
 
 
-                <div className='description-section'>{album.description}</div>
+                <div className='description-section'>{ album.description }</div>
               </section>
               <div className='album-art'>
-                <img className='album-image' src={album.image_url}></img>
+                <img className='album-image' src={ fastlyImgURL }></img>
               </div>
             </main>
             <aside className='album-artist-info-sidebar'>
               <span className='artist-title'>
-                <Link to={`artists/${artist.id}`}>
-                  {artist.username}
+                <Link to={`artists/${ artist.id }`}>
+                  { artist.username }
                 </Link>
               </span>
               <span className='discography'></span>
