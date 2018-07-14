@@ -196,9 +196,11 @@ class AudioPlayer extends React.Component {
 
     const currentTrackNum = this.state.currentTrack;
 
+
     const prevTrackButtonStyle = currentTrackNum === 0 ? "https://res.cloudinary.com/adrianlobdill/image/upload/c_scale,o_20,w_23/v1484611361/noun_121425_cc_jt8gzd.png" : "https://res.cloudinary.com/adrianlobdill/image/upload/c_scale,w_23/v1484611361/noun_121425_cc_jt8gzd.png";
 
     const nextTrackButtonStyle = currentTrackNum === (tracks.length - 1) ? "https://res.cloudinary.com/adrianlobdill/image/upload/c_scale,o_20,w_23/v1484611457/noun_121427_cc_luesuz.png" : "https://res.cloudinary.com/adrianlobdill/image/upload/c_scale,w_23/v1484611457/noun_121427_cc_luesuz.png";
+
 
 
     const trackList = tracks.map((track, idx) => {
