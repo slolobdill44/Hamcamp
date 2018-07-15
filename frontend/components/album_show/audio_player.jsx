@@ -30,8 +30,6 @@ class AudioPlayer extends React.Component {
 
       const fastlyTrack = track.replace("s3-us-west-1.amazonaws.com/hamcamp", "s3bucket.hamcamp.co");
 
-      console.log(fastlyTrack);
-
       const music = document.getElementById('music');
       const source = document.getElementById('audio-source');
 
