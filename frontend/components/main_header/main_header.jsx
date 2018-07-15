@@ -13,27 +13,7 @@ class MainHeader extends React.Component {
     }
   }
 
-  componentDidMount() {
-    // console.log(this.props);
-
-    // let user = {
-    //     "key": "aa0ceb",
-    //     "firstName": this.props.user.username
-    // };
-
-    // let ldclient = ldClient.initialize('', user);
-
-    // const that = this;
-
-    // ldclient.on('ready', function() {
-    //   let showFeature = ldclient.variation("header-color");
-    //   that.setState({headerBackgroundColor: `${showFeature}`});
-    // });
-  }
-
-
   render () {
-    // console.log(this.props.user);
     const logoLink = this.props.user === null ? '/' : `/artists/${this.props.user.id}`;
 
     return (
