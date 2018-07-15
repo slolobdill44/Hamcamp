@@ -97,12 +97,12 @@ artist_id: User.find_by_username('Kayin').id,
 image: "https://res.cloudinary.com/adrianlobdill/image/upload/v1485159424/Catastrophe_xqaryc.jpg",
 description: "First EP by Kayin."
 )
-Album.create!(
-  title: "Bricolage",
-  artist_id: User.find_by_username('Kayin').id,
-  image: "https://res.cloudinary.com/adrianlobdill/image/upload/v1485159430/03_qgfpuv.jpgs",
-  description: "The second album by Kayin."
-)
+# Album.create!(
+#   title: "Bricolage",
+#   artist_id: User.find_by_username('Kayin').id,
+#   image: "https://res.cloudinary.com/adrianlobdill/image/upload/v1485159430/03_qgfpuv.jpgs",
+#   description: "The second album by Kayin."
+# )
 Album.create!(
   title: "Good Things",
   artist_id: User.find_by_username('Adrian').id,

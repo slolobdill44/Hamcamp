@@ -52,6 +52,7 @@ class ArtistShow extends React.Component {
           </Link>
         </li>
       );
+      
     });
 
 
