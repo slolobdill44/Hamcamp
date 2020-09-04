@@ -1,6 +1,6 @@
 # Hamcamp
 
-![hamcamp-logo][hamcamp-logo]: ./app/assets/images/hamcamp_logo_200px_V2.png
+![hamcamp-logo](app/assets/images/hamcamp_logo_200px_V2.png)
 
 [Live App][live]
 
