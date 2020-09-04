@@ -55,7 +55,7 @@ class AlbumShow extends React.Component {
 
     const editButton = this.props.currentUser ? <Link className='album-edit-link' to={`albums/${album.id}/edit`}>Edit Album</Link> : "";
 
-    const fastlyImgURL = this.state.currentAlbum.image_url.replace("s3-us-west-1.amazonaws.com/hamcamp", "s3bucket.hamcamp.co");
+    const fastlyImgURL = this.state.currentAlbum.image_url.replace("s3-us-west-1.amazonaws.com/hamcamp", "s3bucket.hamcamp.dev");
 
     return (
       <div style={{backgroundColor: artist.secondary_color}} className='show-page-background'>

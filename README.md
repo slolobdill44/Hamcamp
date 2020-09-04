@@ -1,11 +1,10 @@
 # Hamcamp
 
-![hamcamp-logo]
-[hamcamp-logo]: ./app/assets/images/hamcamp_logo_200px_V2.png
+![hamcamp-logo][hamcamp-logo]: ./app/assets/images/hamcamp_logo_200px_V2.png
 
 [Live App][live]
 
-[live]: https://www.hamcamp.co
+[live]: https://www.hamcamp.dev
 
 Hamcamp is a full-stack web application that was inspired by the desire to bring a Facebook music-sharing group to a wider audience.
 
